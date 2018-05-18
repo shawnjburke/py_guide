@@ -97,16 +97,27 @@ Setup a PyCharm configuration to run
 
 Setup Documentation Now
 ------------------------
-Good logging makes for good programs.  No one says that about documentation.  It's still impotant.  What makes it
-difficult is keeping documentaion in synch with changes to the program.  Therefore I believe in documenting in line
+Good logging makes for good programs.  No one says that about documentation.  It's still important.  What makes it
+difficult is keeping documentation in sync with changes to the program.  Therefore I believe in documenting in line
 to the code if possible.  This is especially useful when you bring on another programmer.  This is even more useful
 one year from now when you try to remember why you were doing something.  Which is why code should be self documenting,
 and documentation should be about the expectation of usage, and reasoning, perhaps architecture, which brought the code
 into existence.
 
-If you don't setup documentation of your code up front, you won't do it later.  Corrallary: Unless you're being paid to
+If you don't setup documentation of your code up front, you won't do it later.  Corollary: Unless you're being paid to
 by something like selling the company; at which time doing this is a soul crushing pia.  Set it up now
 
+Sphinx is the document engine of choice in Python.   You'll find most of what you need in the setup documentation of
+www.sphinx-doc.org.  Install it.
+
+.. code-block:: shell
+
+    >>> pip install -U sphinx
+
+Now we have the Sphinx Engine.  The way it works is you create files and fill them with reStructuredText or another markup
+language.  Markdown seems to be popular in the github crowd and `sphinx can support markdown`_.
+
+.. _sphinx can support markdown: <http://www.sphinx-doc.org/en/master/usage/markdown.html>
 
 There's no shame in Windows
 ---------------------------
