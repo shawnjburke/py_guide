@@ -1,6 +1,6 @@
-**************************
-FNG's Guide to Python 3
-**************************
+=====================
+FNG's Guide to Python
+=====================
 
 Not bad Python, not bad
 ------------------------
@@ -8,8 +8,10 @@ I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I
 in my code as is traditional Microsoft (M$ as many would put it).  There was a time when you never would have convinced
 me I would come to prefer snake_case as is common to Python.  I have.  In fact I'm quite enamored with you Python. You
 are quick with the script, or agile with the program structure.  You take pride in what makes a professional coder,
-appreciation for commenting, code read-ability, and syntactical grace (name_parameters="are cool", use_them="yes",
-                                                                       love_them="yes, defaulting_is_powerful=True)
+appreciation for commenting, code read-ability, and syntactical grace
+
+.. code-block::python
+    (name_parameters="are cool", use_them="yes", love_them="yes", defaulting_is_powerful=True)
 
 I guess that makes this my ode to Python.
 
@@ -44,30 +46,35 @@ Create a new project in PyCharm
 * of type Python
 * 3.x interpreter
 
+
+
+Add a directory to your project the same name as the project
+
+* trust me.  Yes.  We know have the structure project, project_name\project_name.  It will be okay.
+* It will be okay.
+
 Add your first file README
 
 * PyCharm wants to know what it is.  It's just a Text File
 * UPPERCASE no extension
-** I said respect for Linux.  By Transitive Property that's respect for Unix
-** Respect your elders.  They didn't use extensions.
-** Respect your elders. It was important so they capitalized telling you to README
-* Not README.txt
-** You just read why
-* Not README.rst
-** I'm a purist. When you do know what a .rst file is that will live with all the other .rst files
-** We'll get a README.rst and with respect, it wll in clude the contents of README in the root
+* project_name\README
 
-Add a directory to your project the same name as the project
-
-* trust me.  Yes.  We know have the structure project, project\project.  It will be okay.
-* It will be okay.
 
 Add a new Python File to your project
 
 * give it the name __init__.py
 * That's two underscores before init
-* Congratulations you've created a package.  We'll explain what that is later.  After we get to modules.
-* There's also a command in PyCharm to create a Python package.  It creates the director and automatically adds the
+
+.. code-block::python
+
+    | project_name
+    |--> project_name
+        |--> __init__.py
+    | README
+
+Congratulations you've created a package.  We'll explain what that is later.  After we get to modules.
+
+There's also a command in PyCharm to create a Python package.  It creates the director and automatically adds the
     __init.py file.  But we wanted you to get the experience of doing it for your self.
 
 Add another new Python File to your project
@@ -78,11 +85,13 @@ Add another new Python File to your project
 
 :example: print("Get to the chopper!")
 
+
+
 Setup a PyCharm configuration to run
 
 * Go to the Run menu and choose the Edit Configuration option
 * Click the + symbol (to _add_ a new configuration)
-* Choose the option for Python.  We want to _run_ a _python file_
+* Choose the option for Python.  We want to _run_ a python file
 * Change the name from Unnamed to the name of your project.  in this case, py_guide
 * On the script line choose the ... browse button on the right.  Choose __main__.py
 * Click OK
@@ -112,12 +121,83 @@ www.sphinx-doc.org.  Install it.
 
 .. code-block:: shell
 
-    >>> pip install -U sphinx
+    >> pip install -U sphinx
 
 Now we have the Sphinx Engine.  The way it works is you create files and fill them with reStructuredText or another markup
 language.  Markdown seems to be popular in the github crowd and `sphinx can support markdown`_.
 
 .. _sphinx can support markdown: <http://www.sphinx-doc.org/en/master/usage/markdown.html>
+
+You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
+instance, create a folder in your project called docs, a sibling of the project_name folder.  Inside that folder add a
+readme.rst file.
+
+.. code-block:: text
+
+    project_name/
+    ├- docs/
+    │  └- readme.rst
+    ├- project_name/
+    │  └- tests/
+    │  └- __init_.py
+    ├- README
+
+The readme.rst file will be used by the Sphinx engine to create an output file.  This seems a bit duplicative to the
+file we have in the root.  We're not going to remove that file because it's Pythonic, and we've decided to make having
+it a part of the coding standard.  Therefore will import the content of the root README file, via a directive in the
+docs\readme.rst file, which in turn creates an output file, such as html, when processed by Sphinx.  It's confusing,
+right?  It will make some sense after a while.
+
+In the docs\readme.rst file add the following contents:
+
+.. code-block::text
+
+    README
+    =================
+    .. include:: ../README
+
+Wait.  What just happened?
+
+We created a template file, filled with restructured text (thus .rst), which we can now read with the Sphinx engine.
+The Sphinx engine will see that the template says "go find a file named README in the root and include it's contents
+in this page".  Then the Sphinx will render it.  Render it to what you wonder?  Well whatever we tell it to (that the
+engine knows how to).  Very often that's HTML, but we could create a PDF, or a number of other formats.  We just need
+to tell the engine how to run.
+
+Sphinx is an engine, or program, and they need data to know what to do.  Sphinx is a command line utility so we have
+that.  In addition Sphinx has a configuration file.  To create it we'll use a sphinx provided setup program.  This
+program will ask a few questions.  When it asks for the path to the documentation choose the docs folder
+previously created.  Answer other questions as you see fit; I would opt for defaults if you don't have a reason
+to change the answer.  Here are items that I set in the list of questions
+
+* > Root path for the documentation [.]: docs
+* > Separate source and build directories (y/n) [n]: y
+* > autodoc: automatically insert docstrings from modules (y/n) [n]: y
+* > todo: write "todo" entries that can be shown or hidden on build (y/n) [n]: y
+* > coverage: checks for documentation coverage (y/n) [n]: y
+* > imgmath: include math, rendered as PNG or SVG images (y/n) [n]: y
+* > viewcode: include links to the source code of documented Python objects (y/n) [n]: y
+* > githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
+
+If you are using PyCharm (and why wouldn't you) under the tools menu, there's an option to start Sphinx Quickstart.
+
+If you are on Linux without PyCharm, then you need to execute the
+
+.. code-block::text
+
+    $ sphinx-quickstart
+
+If you are on Windows without PyCharm, then you need an executable (on my first run I thought sphinx-quickstart was
+a command in the Python console)
+
+.. code-block::text
+
+    C:\Python36\Scripts\sphinx-quickstart.exe
+
+Once you've gone through the quickstart we need to run the engine, against the source, to create a build of html.
+If you are in PyCharm use the build configurations.   There is a specific build configuration for Sphinx documentation
+generation.
+
 
 There's no shame in Windows
 ---------------------------

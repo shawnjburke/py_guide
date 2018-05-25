@@ -1,0 +1,16 @@
+reStructuredText Cheat Sheet
+=============================
+The Above Heading is Underlined With an Equal Sign =
+
+Here are the different types of heading taken from the Sphinx documentation
+http://www.sphinx-doc.org/en/stable/rest.html?highlight=heading
+
+############################
+(#) with overline, for parts
+############################
+
+*******************************
+(*) with overline, for chapters
+*******************************
+
+
