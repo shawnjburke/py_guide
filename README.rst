@@ -145,10 +145,10 @@ readme.rst file.
 The readme.rst file will be used by the Sphinx engine to create an output file.  This seems a bit duplicative to the
 file we have in the root.  We're not going to remove that file because it's Pythonic, and we've decided to make having
 it a part of the coding standard.  Therefore will import the content of the root README file, via a directive in the
-docs\readme.rst file, which in turn creates an output file, such as html, when processed by Sphinx.  It's confusing,
+docs\\readme.rst file, which in turn creates an output file, such as html, when processed by Sphinx.  It's confusing,
 right?  It will make some sense after a while.
 
-In the docs\readme.rst file add the following contents:
+In the docs\\readme.rst file add the following contents:
 
 .. code-block::text
 
