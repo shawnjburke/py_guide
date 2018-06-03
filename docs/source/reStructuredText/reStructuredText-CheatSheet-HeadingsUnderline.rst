@@ -1,5 +1,6 @@
-for sections
-============
+Headings with Underline
+=======================
+Section
 
 for subsubsections
 ^^^^^^^^^^^^^^^^^^

@@ -1,4 +1,5 @@
-reStructuredText Cheat Sheet
+=============================
+Headings With Overlines
 =============================
 The Above Heading is Underlined With an Equal Sign =
 
@@ -9,8 +10,6 @@ http://www.sphinx-doc.org/en/stable/rest.html?highlight=heading
 (#) with overline, for parts
 ############################
 
-*******************************
+********************************
 (*) with overline, for chapters
-*******************************
-
-
+********************************
