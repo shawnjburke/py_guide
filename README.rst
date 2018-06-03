@@ -23,6 +23,8 @@ practice structure that can be used as a begginning state for a python project. 
 should be to setup a new Python project, using a set of best practices and coding standards, which can apply across all
 types of Python projects.
 
+In the docs/ folder the steps are organized as follows.
+
 * Step 1 - `Install Python`_
 * Step 2 - `Install PyCharm`_
 * Step 3 - `Python Project Structure`_
