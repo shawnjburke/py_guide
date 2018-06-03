@@ -76,24 +76,8 @@ It appears to me, at least on my PyCharm, Python 3.6, Windows environment, that 
 sections on one page; a syntax error is thrown on Sphinx  compile.   That is in the `Sphinx Documentation`_ there
 is a list of items, which don't all see to be able to be on one page at the same time
 
-
-
 .. _Sphinx Documentation: http://www.sphinx-doc.org/en/stable/rest.html?highlight=heading
 
-+-------------------------------------------------------------------+---------------------------+
-| Headers Overline                                                  | Headers Underline         |
-| (can be used on one page)                                         | (can be used on one page) |
-+===================================================================+===========================+
-| * Text boxed by = (equal sign) is level 1                         |                           |
-| * Text boxed by # (hash|pound sign) is level 2                    | column 2                  |
-| * Text boxed by * (asterisk) is level 3                           |                           |
-+-------------------------------------------------------------------+---------------------------+
-| body row 2                                                        | ...                       |
-+-------------------------------------------------------------------+---------------------------+
-
-Now what about HTML style headers?
-
-h1. this is a title?
 
 ..  toctree::
     :maxdepth: 1
