@@ -19,7 +19,7 @@ I guess that makes this my ode to Python.
 Purpose of this Project
 ------------------------
 This project is intended to be an end-to-end guide on getting started with Python.  It's intended to establish a best
-practice structure that can be used as a begginning state for a python project.  Stepping through all the steps
+practice structure that can be used as a beginning state for a python project.  Stepping through all the steps
 should be to setup a new Python project, using a set of best practices and coding standards, which can apply across all
 types of Python projects.
 
