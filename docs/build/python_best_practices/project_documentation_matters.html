@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Project Documentation Matters &#8212; Python Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="reStructuredText Cheat Sheet" href="../reStructuredText/reStructuredText-CheatSheet.html" />
+    <link rel="prev" title="Let’s Build a Python Project" href="project_structure.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="project-documentation-matters">
+<h1>Project Documentation Matters<a class="headerlink" href="#project-documentation-matters" title="Permalink to this headline">¶</a></h1>
+<p>No really Chris, it does.</p>
+<div class="section" id="yes-yes-blah-blah-documentation-sucks">
+<h2>Yes, yes, blah, blah, documentation sucks<a class="headerlink" href="#yes-yes-blah-blah-documentation-sucks" title="Permalink to this headline">¶</a></h2>
+<p>Documentation is for the next developer.  Plain and simply.  And don’t start with arguments about job security if
+you are the only one who can read it, or tell me how much time you’ll loose if you do it, I am just not in the mood
+to hear it.  This is an age of auto-generated code documentation, and other tools like that.  Therefore, as with
+any good code documentation, we’ll make sure we carefully document intent, and the why’s of necessity, and write
+the code clearly in a way that documents that structure.   It’s a balance Padawan, chill out and let this documentation
+guide you <a class="footnote-reference" href="#footnote-01" id="id1">[1]</a>.</p>
+<div class="section" id="setup-documentation-now">
+<h3>Setup Documentation Now<a class="headerlink" href="#setup-documentation-now" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t setup documentation of your code up front, you won’t do it later.  Corollary: Unless you’re being paid to
+by something like selling the company; at which time doing this is a soul crushing pia.  Set it up now</p>
+<p>Sphinx is the document engine of choice in Python.   You’ll find most of what you need in the setup documentation of
+www.sphinx-doc.org.  Install it.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt; pip install -U sphinx
+</pre></div>
+</div>
+<p>Now we have the Sphinx Engine.  The way it works is you create files and fill them with reStructuredText or another markup
+language.  Markdown seems to be popular in the github crowd and <a class="reference external" href="&lt;http://www.sphinx-doc.org/en/master/usage/markdown.html&gt;">sphinx can support markdown</a>.</p>
+<p>You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
+instance, create a folder in your project called docs, a sibling of the project_name folder.  Inside that folder add a
+readme.rst file.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project_name/
+├- docs/
+│  └- readme.rst
+├- project_name/
+│  └- tests/
+│  └- __init_.py
+├- README
+</pre></div>
+</div>
+<p>The readme.rst file will be used by the Sphinx engine to create an output file.  This seems a bit duplicative to the
+file we have in the root.  We’re not going to remove that file because it’s Pythonic, and we’ve decided to make having
+it a part of the coding standard.  Therefore will import the content of the root README file, via a directive in the
+docs\readme.rst file, which in turn creates an output file, such as html, when processed by Sphinx.  It’s confusing,
+right?  It will make some sense after a while.</p>
+<p>In the docs\readme.rst file add the following contents:</p>
+<p>Wait.  What just happened?</p>
+<p>We created a template file, filled with restructured text (thus .rst), which we can now read with the Sphinx engine.
+The Sphinx engine will see that the template says “go find a file named README in the root and include it’s contents
+in this page”.  Then the Sphinx will render it.  Render it to what you wonder?  Well whatever we tell it to (that the
+engine knows how to).  Very often that’s HTML, but we could create a PDF, or a number of other formats.  We just need
+to tell the engine how to run.</p>
+<p>Sphinx is an engine, or program, and they need data to know what to do.  Sphinx is a command line utility so we have
+that.  In addition Sphinx has a configuration file.  To create it we’ll use a sphinx provided setup program.  This
+program will ask a few questions.  When it asks for the path to the documentation choose the docs folder
+previously created.  Answer other questions as you see fit; I would opt for defaults if you don’t have a reason
+to change the answer.  Here are items that I set in the list of questions</p>
+<ul class="simple">
+<li>&gt; Root path for the documentation [.]: docs</li>
+<li>&gt; Separate source and build directories (y/n) [n]: y</li>
+<li>&gt; autodoc: automatically insert docstrings from modules (y/n) [n]: y</li>
+<li>&gt; todo: write “todo” entries that can be shown or hidden on build (y/n) [n]: y</li>
+<li>&gt; coverage: checks for documentation coverage (y/n) [n]: y</li>
+<li>&gt; imgmath: include math, rendered as PNG or SVG images (y/n) [n]: y</li>
+<li>&gt; viewcode: include links to the source code of documented Python objects (y/n) [n]: y</li>
+<li>&gt; githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y</li>
+</ul>
+<p>If you are using PyCharm (and why wouldn’t you) under the tools menu, there’s an option to start Sphinx Quickstart.</p>
+<p>If you are on Linux without PyCharm, then you need to execute the</p>
+<p>If you are on Windows without PyCharm, then you need an executable (on my first run I thought sphinx-quickstart was
+a command in the Python console)</p>
+<p>Once you’ve gone through the quickstart we need to run the engine, against the source, to create a build of html.
+If you are in PyCharm use the build configurations.   There is a specific build configuration for Sphinx documentation
+generation.  Make sure that you have your setuptools package updated as versions around 28 through errors with
+PyCharm and these builds.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="footnote-01" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Yes, like the force.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Project Documentation Matters</a><ul>
+<li><a class="reference internal" href="#yes-yes-blah-blah-documentation-sucks">Yes, yes, blah, blah, documentation sucks</a><ul>
+<li><a class="reference internal" href="#setup-documentation-now">Setup Documentation Now</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="project_structure.html" title="previous chapter">Let’s Build a Python Project</a></li>
+      <li>Next: <a href="../reStructuredText/reStructuredText-CheatSheet.html" title="next chapter">reStructuredText Cheat Sheet</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/python_best_practices/project_documentation_matters.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Shawn J Burke.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/python_best_practices/project_documentation_matters.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
