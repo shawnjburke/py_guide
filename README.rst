@@ -34,3 +34,11 @@ In the docs/ folder the steps are organized as follows.
 ..  _Install Pycharm: /python_best_practices/install_Pycharm.html
 ..  _Python Project Structure: /python_best_practices/project_structure.html
 ..  _Python Documentation: /python_best_practices/project_documentation_matters.html
+
+What makes this different from other frameworks?
+------------------------------------------------
+It's my opinion.
+It attempts to not be specific to a type of project.  Web projects or console apps can benefit from this.
+It doesn't attempt to be an encompassing framework.  Just a starting point.
+This is not a web framework like django.
+There is not team behind this.  Just me.
