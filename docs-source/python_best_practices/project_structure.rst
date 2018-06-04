@@ -1,6 +1,59 @@
+=================================
 Let's Build a Python Project
------------------------------
+=================================
+
+When you've written code for a long time, and managed teams, the specifics of languages and "what's best" ceases
+to have as much meaning.  There will always be a new language, a new pattern, and another code changing paradigm.  What
+I'm more concerned with are the fundamentals of code that build cohesive, scalable teams.  As such coding standards are
+important to me.  Part of a good coding standard is a good project structure, based on good patterns, and specific
+implementation needs of the language; in this case, Python.
+
+#############################
+Best Practice Project Layout
+#############################
+
+Throughout this guide we'll build a program structure for best practices that will end up like this
+
+.. code-block::python
+
+    | project_name
+    |___ project_name
+    |   |___ __init__.py
+    | README
+
+    project_name/
+    ├── docs/
+    │   ├── .doctrees/
+    │   ├── _sources/
+    │   ├── _static/
+    │   ├── .buildinfo
+    │   ├── .nojekyll
+    │   ├── .genindex.html
+    │   ├── index.html
+    │   ├── search.html
+    │   └── searchindex.js
+    ├── docs-source/
+    │   ├── _build/
+    │   ├── _static/
+    │   ├── _templates/
+    │   ├── conf.py
+    │   ├── index.rst
+    │   ├── make.bat
+    │   ├── Makefile
+    │   └── readme.rst
+    └── project_name/
+    │   ├── __init__.py
+    │   └── __main__.py
+    │   README.rst
+
+
+########################
+Best Practice Spells
+########################
+
+**********************
 Choose a project name
+**********************
 
 * lower case
 * project_name with underscore over projectname

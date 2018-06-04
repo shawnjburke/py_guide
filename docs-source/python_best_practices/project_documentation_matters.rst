@@ -40,6 +40,7 @@ readme.rst file.
 
     project_name/
     ├- docs/
+    ├- docs-source/
     │  └- readme.rst
     ├- project_name/
     │  └- tests/
@@ -74,12 +75,18 @@ program will ask a few questions.  When it asks for the path to the documentatio
 previously created.  Answer other questions as you see fit; I would opt for defaults if you don't have a reason
 to change the answer.  Here are items that I set in the list of questions
 
-* > Root path for the documentation [.]: docs
-* > Separate source and build directories (y/n) [n]: y
+..  note::
+    Where possible I try to follow convention.  The convention for sphinx is to put your files for documentation in
+    a docs/ folder.  I'm going to depart from that and use a docs-source folder instead.  The reason for this is that
+    github pages support reading html files from the docs folder.  Therefore I'll make docs/ an output folder for html
+    and put the source markup file (in reStructuredText) in the docs-source/ folder instead.
+
+* > Root path for the documentation [.]: docs-source
+* > Separate source and build directories (y/n) [n]: n
 * > autodoc: automatically insert docstrings from modules (y/n) [n]: y
 * > todo: write "todo" entries that can be shown or hidden on build (y/n) [n]: y
 * > coverage: checks for documentation coverage (y/n) [n]: y
-* > imgmath: include math, rendered as PNG or SVG images (y/n) [n]: y
+* > imgmath: include math, rendered as PNG or SVG images (y/n) [n]: n
 * > viewcode: include links to the source code of documented Python objects (y/n) [n]: y
 * > githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
 
