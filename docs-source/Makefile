@@ -3,10 +3,10 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = PythonGuide
-SOURCEDIR     = source
-BUILDDIR      = build
+SPHINXBUILD   = sphinx-build
+SPHINXPROJ    = PythonGuideforPracticingWizards
+SOURCEDIR     = .
+BUILDDIR      = _build
 
 # Put it first so that "make" without argument is like "make help".
 help:
