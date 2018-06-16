@@ -15,11 +15,15 @@ any good code documentation, we'll make sure we carefully document intent, and t
 the code clearly in a way that documents that structure.   It's a balance Padawan, chill out and let this documentation
 guide you [#footnote-01]_.
 
+#########################
 Setup Documentation Now
-------------------------
+#########################
 If you don't setup documentation of your code up front, you won't do it later.  Corollary: Unless you're being paid to
 by something like selling the company; at which time doing this is a soul crushing pia.  Set it up now
 
+**********************
+Install Sphinx Engine
+**********************
 Sphinx is the document engine of choice in Python.   You'll find most of what you need in the setup documentation of
 www.sphinx-doc.org.  Install it.
 
@@ -32,9 +36,18 @@ language.  Markdown seems to be popular in the github crowd and `sphinx can supp
 
 .. _sphinx can support markdown: <http://www.sphinx-doc.org/en/master/usage/markdown.html>
 
+**************************************
+Create a reStructuredText markup file
+**************************************
 You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
-instance, create a folder in your project called docs, a sibling of the project_name folder.  Inside that folder add a
-readme.rst file.
+instance, create a folder in your project called docs-source [#footnote-02]_, a sibling of the project_name folder.  Inside that
+folder add a readme.rst file.
+
+Inside a template file you can
+
+# Add text and _*markup*_ to style that text
+# Use directives to style the text
+# Use directives to automatically generate or include other files
 
 .. code-block:: text
 
@@ -81,14 +94,16 @@ to change the answer.  Here are items that I set in the list of questions
     github pages support reading html files from the docs folder.  Therefore I'll make docs/ an output folder for html
     and put the source markup file (in reStructuredText) in the docs-source/ folder instead.
 
-* > Root path for the documentation [.]: docs-source
-* > Separate source and build directories (y/n) [n]: n
-* > autodoc: automatically insert docstrings from modules (y/n) [n]: y
-* > todo: write "todo" entries that can be shown or hidden on build (y/n) [n]: y
-* > coverage: checks for documentation coverage (y/n) [n]: y
-* > imgmath: include math, rendered as PNG or SVG images (y/n) [n]: n
-* > viewcode: include links to the source code of documented Python objects (y/n) [n]: y
-* > githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
+..  code-block:: Python
+
+    > Root path for the documentation [.]: docs-source
+    > Separate source and build directories (y/n) [n]: n
+    > autodoc: automatically insert docstrings from modules (y/n) [n]: y
+    > todo: write "todo" entries that can be shown or hidden on build (y/n) [n]: y
+    > coverage: checks for documentation coverage (y/n) [n]: y
+    > imgmath: include math, rendered as PNG or SVG images (y/n) [n]: n
+    > viewcode: include links to the source code of documented Python objects (y/n) [n]: y
+    > githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
 
 If you are using PyCharm (and why wouldn't you) under the tools menu, there's an option to start Sphinx Quickstart.
 
@@ -110,5 +125,22 @@ If you are in PyCharm use the build configurations.   There is a specific build 
 generation.  Make sure that you have your setuptools package updated as versions around 28 through errors with
 PyCharm and these builds.
 
+Modify conf.py
+-----------------
+For things such as adding additional theme support to sphinx builds
+
+..  code-block:: text
+
+    $ pip install sphinxjp.themes.basicstrap
+
+..  code-block:: Python
+
+    # Add to conf.py
+    extensions = ['sphinxjp.themes.basicstrap']
+    html_theme = 'basicstrap'
+
 ..  rubric:: Footnotes
 ..  [#footnote-01] Yes, like the force.
+..  [#footnote-02] It is traditional with Sphinx to use a docs folder.  However, with the latest in GitHub pages,
+    it's easy to publish html by putting it in a docs folder.  Therefore we'll use docs-source as our file for
+    reStructuredText and Sphinx configuration and support files.

@@ -14,7 +14,7 @@ Best Practice Project Layout
 
 Throughout this guide we'll build a program structure for best practices that will end up like this
 
-.. code-block::python
+.. code-block:: text
 
     | project_name
     |___ project_name
@@ -74,7 +74,7 @@ Add your first file README
 
 * PyCharm wants to know what it is.  It's just a Text File
 * UPPERCASE no extension
-* project_name\README
+* project_name\README.rst [#footnote-01]_
 
 
 Add a new Python File to your project
@@ -119,3 +119,10 @@ Setup a PyCharm configuration to run
 * Get to the chopper!
 * Followed by a blank line.  After that a summary of the process run and error number (0 is no error)
 * Process finished with exit code 0
+
+..  rubric:: Footnotes
+..  [#footnote-01] I would have previously demanded, in honor of those mighty Unix warriors who came before us,
+    that README should be capitalized with no extension.  I'd probably make a joke about paying respect to your
+    elders.  Practically though, I have found an extension useful in github, as it presents that text on the
+    landing page for a topic.  Therefore the page will be README.rst.  With some magic it will also be brought
+    into the rest of the documentation structure.
