@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Use setup.py From the Start &mdash; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Best Practices Index" href="index.html" />
+    <link rel="prev" title="Project Documentation Matters" href="project_documentation_matters.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python Guide for Practicing Wizards
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install_python.html">Install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_pycharm.html">Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_structure.html">Let’s Build a Python Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation_matters.html">Project Documentation Matters</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Use setup.py From the Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup-py">setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-wheels">Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypi-package-management">pypi Package Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Best Practices Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rants/index.html">Rants</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python Guide for Practicing Wizards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Use setup.py From the Start</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/python_best_practices/project_setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="use-setup-py-from-the-start">
+<h1>Use setup.py From the Start<a class="headerlink" href="#use-setup-py-from-the-start" title="Permalink to this headline">¶</a></h1>
+<p>As I’ve said before scalability of teams is more important to me than, for instance, language perfection, because
+there will always be a new language, a new pattern, and another code changing paradigm. Using <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is along
+those lines.  I do it because thinking like your a production application, used by others, is easier to do from the
+start, than backport later.  That’s an opinion, I get it, that’s why I wrote my own public guide.</p>
+<div class="section" id="setup-py">
+<h2>setup.py<a class="headerlink" href="#setup-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;py_guide&#39;</span><span class="p">,</span>
+      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1.0&#39;</span><span class="p">,</span>
+      <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;py_guide&#39;</span><span class="p">],</span>
+      <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+          <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span> <span class="p">]</span>
+        <span class="p">},</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-wheels">
+<h2>Python Wheels<a class="headerlink" href="#python-wheels" title="Permalink to this headline">¶</a></h2>
+<p>I found it a bit difficult to navigate the waters of Python installation packages when arrived to the scene.  It appears
+to be a side effect of Python having been around for so long, and having various lifetimes as more ofa script engine
+(as implemented), then to more of a structured language.  Over time, things change (<a class="reference external" href="https://packaging.python.org/discussions/wheel-vs-egg/">wheel vs egg</a>).  There appeared
+to be version called the <a class="reference external" href="http://setuptools.readthedocs.io/en/latest/formats.html">egg</a> which is now deprecated in lieu of the <a class="reference external" href="https://pypi.org/project/wheel/">Python Wheel</a> and brought to us via <a class="reference external" href="https://www.python.org/dev/peps/pep-0427/#abstract">PEP 0427</a></p>
+<p>There’s even a site tracking the <a class="reference external" href="https://pythonwheels.com/">egg to wheel</a> conversion.</p>
+<div class="admonition-todo admonition">
+<p class="first admonition-title">TODO:</p>
+<p class="last">I think a little more guidance will be need here, at a later date.</p>
+</div>
+</div>
+<div class="section" id="pypi-package-management">
+<h2>pypi Package Management<a class="headerlink" href="#pypi-package-management" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="index.html" class="btn btn-neutral float-right" title="Best Practices Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="project_documentation_matters.html" class="btn btn-neutral" title="Project Documentation Matters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Shawn J Burke.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2018.6.3.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

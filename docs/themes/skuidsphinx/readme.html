@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>README &#8212; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+    <link rel="stylesheet" href="_static/skuid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/skuid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="_static/js/skuid-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="There’s no shame in Windows" href="rants.html" />
+    <link rel="prev" title="Headings Cheat Sheet" href="reStructuredText/reStructuredText-CheatSheet-Headings.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script src="https://use.fontawesome.com/685baec918.js"></script>
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i" rel="stylesheet">
+
+
+  </head><body>
+
+
+<div id="app">
+
+  <nav class="navbar navbar-fixed-top">
+
+  <div class="nav-container">
+
+    <a class="navbar-brand" href="index.html">
+        <img src="_static/img/skuid_logo_white.png" alt="Skuid Documentation">
+        
+    </a>
+    <div id="mobile-nav-buttons">
+      <button id="openmobilenav" style="cursor:pointer" onclick="openMobileNav()" aria-label="Mobile Navigation Menu" aria-expanded="false" aria-hidden="false" >☰</button>
+      <button id="closemobilenav" ; style="display:none;cursor:pointer" onclick="closeMobileNav()" aria-label="Close Mobile Navigation Menu" aria-expanded="true" aria-hidden="true" >X</button>
+    </div>
+    <ul class="navbar-nav">
+        <img id="mobile-logo" src="_static/img/skuid_logo_white.png" alt="Skuid Documentation">
+        
+    </ul>
+  </div>
+  <div id="verNum" style="display:none">v</div>
+</nav>
+<nav>
+  
+  <div id="docs-and-search-bar" class="full-green-bg">
+      <div class="nav-container">
+      <h1>Docs</h1>
+      
+        
+<form action="search.html" method="get" class="navbar-search-form hide">
+  <i id="searchbar-icon" class="fa fa-search" aria-hidden="true"></i>
+  <input type="text" id="navbar-search" name="q" class="form-control" placeholder="Search the docs">
+</form>
+
+      
+    </div>
+  </div>
+  
+</nav>
+
+  
+  
+
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav" >
+        <div class="nav-container">
+        <ol>
+          <li><p aria-current="page" class="breadcrumb title">README</p></li>
+        </ol>
+      </div>
+    </nav>
+  
+
+
+
+  <div id="page-container" class="container">
+    
+
+    <div class="sidebar-global" role="complementary">
+        <div class="version-and-toc sticky-sidebar"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle version-select dropdown-menu-face" type="button" tabindex="0" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Version: v <i class="fa fa-angle-down dropdown-angle" aria-hidden="true"></i>
+</button>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+</div><div id="globaltoc" class="toc expand">
+  <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_python.html">Install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_pycharm.html">Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_structure.html">Let’s Build a Python Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_documentation_matters.html">Project Documentation Matters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet-Headings.html">Headings Cheat Sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet-Headings.html#with-over-line-for-title">( = ) with over line, for Title</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">README</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rants.html">There’s no shame in Windows</a></li>
+</ul>
+
+</div>
+        </div>
+    </div>
+    
+    <div class="sidebar-local" role="complementary"><div id="localtoc" class="sticky-sidebar">
+  <ul>
+<li><a class="reference internal" href="#">README</a><ul>
+<li><a class="reference internal" href="#fng-s-guide-to-python">FNG’s Guide to Python</a><ul>
+<li><a class="reference internal" href="#not-bad-python-not-bad">Not bad Python, not bad</a></li>
+<li><a class="reference internal" href="#purpose-of-this-project">Purpose of this Project</a></li>
+<li><a class="reference internal" href="#sphinx-supports-themes">Sphinx Supports Themes</a></li>
+<li><a class="reference internal" href="#what-makes-this-different-from-other-frameworks">What makes this different from other frameworks?</a></li>
+<li><a class="reference internal" href="#thank-yous">THANK YOUs !!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+   <div id="page-buttons">
+  <button class="btn std-btn" type="button"  id="showAll" style="display:none;" onclick="expandAll()">Show all sections</button>
+  <button class="btn std-btn" type="button" id="hideAll" style="display:none;" onclick="collapseAll()">Collapse all sections</button>
+  <button class="btn std-btn" type="button" id="searchToggle" style="display:none;" onclick="toggleSearchHighlighting()">Search Term Highlighting: On</button>
+</div>
+</div>
+    </div>
+    <div id="main">
+      <div id="mobile-global" aria-hidden="true">
+        <div class="version-and-toc"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle version-select dropdown-menu-face" type="button" tabindex="0" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Version: v <i class="fa fa-angle-down dropdown-angle" aria-hidden="true"></i>
+</button>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+</div>
+  <div class="g-menu-btn dropdown-menu-face" id="g-menu-btn">  <p> In This Section</p>
+    <i id="g-closedMenu" class="fa fa-angle-up dropdown-angle" aria-hidden="true"></i>
+    <i id="g-openMenu" class="fa fa-angle-down dropdown-angle" aria-hidden="true" style="display: none;"></i>
+  </div>
+  <div id="globaltoc" class="toc expand mobile-global-toc">
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_python.html">Install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_pycharm.html">Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_structure.html">Let’s Build a Python Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_documentation_matters.html">Project Documentation Matters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet-Headings.html">Headings Cheat Sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet-Headings.html#with-over-line-for-title">( = ) with over line, for Title</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">README</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rants.html">There’s no shame in Windows</a></li>
+</ul>
+
+  </div>
+</div>
+      </div>
+      <div id="mobile-local" class="hide" aria-hidden="true">
+        <div class="menu-btn dropdown-menu-face" id="menu-btn">
+  <p>In This Topic</p>
+  <i id="closedMenu" class="fa fa-angle-down dropdown-angle" aria-hidden="true"></i>
+  <i id="openMenu" class="fa fa-angle-up dropdown-angle" aria-hidden="true"></i>
+</div>
+<div id="localtoc">
+  <ul>
+<li><a class="reference internal" href="#">README</a><ul>
+<li><a class="reference internal" href="#fng-s-guide-to-python">FNG’s Guide to Python</a><ul>
+<li><a class="reference internal" href="#not-bad-python-not-bad">Not bad Python, not bad</a></li>
+<li><a class="reference internal" href="#purpose-of-this-project">Purpose of this Project</a></li>
+<li><a class="reference internal" href="#sphinx-supports-themes">Sphinx Supports Themes</a></li>
+<li><a class="reference internal" href="#what-makes-this-different-from-other-frameworks">What makes this different from other frameworks?</a></li>
+<li><a class="reference internal" href="#thank-yous">THANK YOUs !!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+      </div>
+      
+  <div class="section" id="readme">
+<h1>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fng-s-guide-to-python">
+<h2>FNG’s Guide to Python<a class="headerlink" href="#fng-s-guide-to-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="not-bad-python-not-bad">
+<h3>Not bad Python, not bad<a class="headerlink" href="#not-bad-python-not-bad" title="Permalink to this headline">¶</a></h3>
+<p>I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I grew up with camelCase and PascalCase
+in my code as is traditional Microsoft (M$ as many would put it).  There was a time when you never would have convinced
+me I would come to prefer snake_case as is common to Python.  I have.  In fact I’m quite enamored with you Python. You
+are quick with the script, or agile with the program structure.  You take pride in what makes a professional coder,
+appreciation for commenting, code read-ability, and syntactical grace</p>
+<p>I guess that makes this my ode to Python.</p>
+</div>
+<div class="section" id="purpose-of-this-project">
+<h3>Purpose of this Project<a class="headerlink" href="#purpose-of-this-project" title="Permalink to this headline">¶</a></h3>
+<p>This project is intended to be an end-to-end guide on getting started with Python.  It’s intended to establish a best
+practice structure that can be used as a beginning state for a python project.  Stepping through all the steps
+should be to setup a new Python project, using a set of best practices and coding standards, which can apply across all
+types of Python projects.</p>
+<p>The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
+data-source folder.  You can get to the root at <a class="reference external" href="https://shawnjburke.github.io/py-guide/">https://shawnjburke.github.io/py-guide/</a>.</p>
+<p>Best practice steps are organized as follows:</p>
+<ul class="simple">
+<li>Step 1 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/install_python.html">Install Python</a></li>
+<li>Step 2 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/install_Pycharm.html">Install PyCharm</a></li>
+<li>Step 3 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_structure.html">Python Project Structure</a></li>
+<li>Step 4 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_documentation_matters.html">Python Documentation</a></li>
+</ul>
+</div>
+<div class="section" id="sphinx-supports-themes">
+<h3>Sphinx Supports Themes<a class="headerlink" href="#sphinx-supports-themes" title="Permalink to this headline">¶</a></h3>
+<p>One feature I like with the Sphinx engine is the ability to use different themes.  As part of this project I’ve
+generated a number of different themes you can check out.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/agogo">https://shawnjburke.github.io/py-guide/themes/agogo</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/alabaster">https://shawnjburke.github.io/py-guide/themes/alabaster</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/basicstrap">https://shawnjburke.github.io/py-guide/themes/basicstrap</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/bizstyle">https://shawnjburke.github.io/py-guide/themes/bizstyle</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/classlic">https://shawnjburke.github.io/py-guide/themes/classlic</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/gopher">https://shawnjburke.github.io/py-guide/themes/gopher</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/haiku">https://shawnjburke.github.io/py-guide/themes/haiku</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/nature">https://shawnjburke.github.io/py-guide/themes/nature</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/revealjs">https://shawnjburke.github.io/py-guide/themes/revealjs</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/scrolls">https://shawnjburke.github.io/py-guide/themes/scrolls</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/sphinx_rtd_theme">https://shawnjburke.github.io/py-guide/themes/sphinx_rtd_theme</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/sphinxdoc">https://shawnjburke.github.io/py-guide/themes/sphinxdoc</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/traditional">https://shawnjburke.github.io/py-guide/themes/traditional</a></li>
+</ul>
+</div>
+<div class="section" id="what-makes-this-different-from-other-frameworks">
+<h3>What makes this different from other frameworks?<a class="headerlink" href="#what-makes-this-different-from-other-frameworks" title="Permalink to this headline">¶</a></h3>
+<p>It’s my opinion.
+It attempts to not be specific to a type of project.  Web projects or console apps can benefit from this.
+It doesn’t attempt to be an encompassing framework.  Just a starting point.
+This is not a web framework like django.
+There is not team behind this.  Just me.</p>
+</div>
+<div class="section" id="thank-yous">
+<h3>THANK YOUs !!<a class="headerlink" href="#thank-yous" title="Permalink to this headline">¶</a></h3>
+<p>My wife Stacy.
+My kids, Joe, Sam, and Maggie.</p>
+<p>Sphinx theme author <a class="reference external" href="https://github.com/tell-k/">Tell-K</a></p>
+<ul class="simple">
+<li>sphinxjp.themes.basicstrap</li>
+<li>sphinxjp.themes.revealjs</li>
+</ul>
+<p>Websites I referenced for inspiration</p>
+<ul class="simple">
+<li><a class="reference external" href="https://codepen.io/patrickhlauke/pen/azbYWZ">https://codepen.io/patrickhlauke/pen/azbYWZ</a></li>
+<li><a class="reference external" href="https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html">https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html</a></li>
+<li><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">https://github.com/rtfd/sphinx_rtd_theme/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+  </div>
+
+<!-- Algolia -->
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+
+<!-- Algolia template-->
+<script>
+  var client = algoliasearch('61R1U0YAQZ', '66f6a5ab961e9853c48afa683d800f92');
+  var index = client.initIndex('');
+  autocomplete('#navbar-search', { hint: false, debug: false }, [
+    {
+      source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+      displayKey: 'my_attribute',
+      templates: {
+        header: `<div id="moreResults">Press <strong>Enter</strong> to see all results.</div>`,
+        suggestion: function(suggestion) {
+          var sugTemplate = `<p class="hit-name"><a href="${suggestion.url}">${suggestion._highlightResult.hierarchy.lvl1.value}</a></p><p class="hit-text">${suggestion._highlightResult.content.value}</p>`
+          return sugTemplate;
+      }
+    }
+  }
+  ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+      if (isLatest == true) {
+        fixedURL = suggestion.url.replace(/docs.skuid.com\/.*?\//,"docs.skuid.com/latest/");
+        location.href = fixedURL
+      } else {
+            fixedURL = suggestion.url.replace(/docs.skuid.com\/.*?\//,"docs.skuid.com/v/");
+            location.href = fixedURL;
+      }
+  })
+  .on('autocomplete:cursorchanged', function() {
+    $('#moreResults').html('Press <strong>Enter</strong> to go to result.')
+  })
+  .on('autocomplete:cursorremoved',function() {
+      $('#moreResults').html('Press <strong>Enter</strong> to see all results.')
+  });
+</script>
+
+<!-- Version warning -->
+
+<script type="text/html" id="version-warning">
+  <div class="version-warning-box">
+      <div class="version-warning-header"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+ Heads up!</div>
+      <div class="version-warning-text">
+        <p>If you selected this iteration of our documentation, you’re on an older version of Skuid and don’t have access to useful features available in the latest version. <a href="https://www.skuid.com/releases/salesforce/">Time to upgrade!</a></p>
+        <p>Using <b>Skuid Platform</b>? <a href="https://docs.skuid.com" title="Go to latest" id="goToLatest">See the latest version of our docs.</a></p>
+      </div>
+    </div>
+  </div>
+</script>
+  <footer>
+    <div class="footer-content-all">
+  <div class="footer-page">
+    <p class="back-to-top"><a href="#">Back to top</a></p>
+  </div>
+  <div class="footer-site">
+    <div class="footer-social">
+      <h3>Social</h3>
+      <a href="https://www.facebook.com/skuidify/"><img id="facebook-icon" src="_static/icons/facebook.png"></a>
+      <a href="https://twitter.com/skuidify/"><img id="twitter-icon" src="_static/icons/twitter.png"></a>
+      <a href="https://www.linkedin.com/company/skuid/"><img id="linkedin-icon" src="_static/icons/linkedin.png"></a>
+      <a href="https://www.instagram.com/skuidify/"><img id="instagram-icon" src="_static/icons/instagram.png"></a>
+    </div>
+    <div class="footer-content">
+      <h3>About Skuid</h3>
+      <p>Bespoke UX at blazing speed.™ It means giving you tailored solutions at the speed of your business. It's what Skuid believes in. It's what we enjoy doing. We create the tools. You invent the solutions. No code. No kidding.™</p>
+      <p>Chattanooga | San Francisco | London | Zürich</p>
+      <p>Have feedback? Contact us at <a href="mailto:documentation@skuid.com" style="color: #ee8b21;">documentation@skuid.com</a>.</p>
+      
+      <p class="copyright"> &copy; Copyright Skuid, Inc. 2015-2016 | All rights reserved. <a href="https://docs.skuid.com/latest//skuid/skuid_terms_conditions.html">Legal terms and conditions.</a></p>
+      
+    </div>
+      
+    <a href="https://www.skuid.com" class="btn-visit">Visit Skuid.com</a>
+      
+  </div>
+</div>
+  </footer>
+</div>
+  </body>
+</html>
