@@ -33,12 +33,14 @@ Best practice steps are organized as follows:
 * Step 1 - `Install Python`_
 * Step 2 - `Install PyCharm`_
 * Step 3 - `Python Project Structure`_
-* Step 4 - `Python Documentation`_
+* Step 4 - `Documentation Matters`_
+* Step 5 - `setup.py`_ for success early in your project
 
 ..  _Install Python: https://shawnjburke.github.io/py-guide/python_best_practices/install_python.html
 ..  _Install Pycharm: https://shawnjburke.github.io/py-guide/python_best_practices/install_Pycharm.html
 ..  _Python Project Structure: https://shawnjburke.github.io/py-guide/python_best_practices/project_structure.html
-..  _Python Documentation: https://shawnjburke.github.io/py-guide/python_best_practices/project_documentation_matters.html
+..  _Documentation Matters: https://shawnjburke.github.io/py-guide/python_best_practices/project_documentation_matters.html
+..  _setup.py: https://shawnjburke.github.io/py-guide/python_best_practices/project_setup.html
 
 ############################
 Installation
@@ -84,7 +86,7 @@ It's my opinion.
 It attempts to not be specific to a type of project.  Web projects or console apps can benefit from this.
 It doesn't attempt to be an encompassing framework.  Just a starting point.
 This is not a web framework like django.
-There is not team behind this.  Just me.
+There is no team behind this.  Just me.
 
 ##################
     THANK YOUs !!
@@ -110,6 +112,9 @@ The Python Project Template from `Chris Warrick`_
 
 ..  _Chris Warrick: https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
 
+The `Hitchhiker's guide to Packaging`_ team
+
+.. _Hitchhiker's guide to Packaging: http://the-hitchhikers-guide-to-packaging.readthedocs.io
 
 Websites I referenced for inspiration
 
@@ -117,3 +122,5 @@ Websites I referenced for inspiration
 * https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html
 * https://github.com/rtfd/sphinx_rtd_theme/
 * https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
+* http://the-hitchhikers-guide-to-packaging.readthedocs.io
+* http://python-packaging.readthedocs.io/en/latest/minimal.html
