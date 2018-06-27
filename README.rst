@@ -9,7 +9,7 @@ I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I
 in my code as is traditional Microsoft (M$ as many would put it).  There was a time when you never would have convinced
 me I would come to prefer snake_case as is common to Python.  I have.  In fact I'm quite enamored with you Python. You
 are quick with the script, or agile with the program structure.  You take pride in what makes a professional coder,
-appreciation for commenting, code read-ability, and syntactical grace
+appreciation for commenting, code read-ability, and syntactical grace.
 
 .. code-block::python
     (name_parameters="are cool", use_them="yes", love_them="yes", defaulting_is_powerful=True)

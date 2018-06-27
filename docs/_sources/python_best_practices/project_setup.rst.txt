@@ -15,7 +15,7 @@ setup.py
 
     from setuptools import setup
 
-    setup(name='py_guide',
+    setup(name='sjb.py_guide',
           version='0.1.0',
           packages=['py_guide'],
           entry_points={

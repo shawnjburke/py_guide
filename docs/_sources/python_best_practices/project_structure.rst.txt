@@ -1,5 +1,5 @@
 =================================
-Let's Build a Python Project
+Python Project Structure
 =================================
 
 When you've written code for a long time, and managed teams, the specifics of languages and "what's best" ceases
@@ -9,12 +9,8 @@ important to me.  Part of a good coding standard is a good project structure, ba
 implementation needs of the language; in this case, Python.
 
 ################################
-Best Practice Defining Project
+Directory Structure
 ################################
-
-**********************
-Project Structure
-**********************
 
 Throughout this guide we'll build a program structure for best practices that will end up like this
 
@@ -66,25 +62,26 @@ Throughout this guide we'll build a program structure for best practices that wi
     master branch.
 
 
-**********************
+################################
 Choose a project name
-**********************
+################################
 
 * lower case
 * project_name with underscore over projectname
 * because of the pep choose a single name, because we are following google style guide which state
     package_name lower case + PEP single name = project_name is lower case
 
-********************************
+################################
 Create a new project
-********************************
+################################
 I am speaking of creating a new project in the conext of using PyCharm.
 
 * of type Python
 * 3.x interpreter
 
+*****************************
 Use a virtual environment
-=========================
+*****************************
 
 When I first started with python I did not use virtual environments.  I was wrong.  I am sorry.
 Virtual Environments, installed to our ``venv`` directory, are the the python executable, and
@@ -92,17 +89,18 @@ all related packages, for this project.  While not absolutely required it is a b
 for Python projects.  If you are to be Pythonic, you should use them, as tools, like creating
 requirements.txt file for your project with pip, work well in this structure
 
-
-Source code in project_name\project_name
-==========================================
+******************************************
+Source code in project_name\\project_name
+******************************************
 
 Add a directory to your project the same name as the project
 
-* trust me.  Yes.  We know have the structure project, project_name\project_name.  It will be okay.
+* trust me.  Yes, I know we now have the structure, project_name\\project_name.  It will be okay.
 * It will be okay.
 
+*****************************
 README.rst
-==========================================
+*****************************
 
 Add your first file README.rst
 
@@ -112,9 +110,9 @@ Add your first file README.rst
     * A project should have a document to acclimate a new user, and that's readme
     * Using the .rst extension will all github to format the contents on the source page
 
-
+*****************************
 __init__.py
-===========
+*****************************
 
 In PyCharm, add a new Python File to your project
 
@@ -135,8 +133,8 @@ Congratulations you've created a package.  We'll explain what that is later.  Af
 * Adding __init__.py file makes your module project_name a package
 * All packages are modules, modules are not all packages
 
-There's also a command in PyCharm to create a Python package.  It creates the director and automatically adds the
-    __init.py file.  But we wanted you to get the experience of doing it for your self.
+There's also a command in PyCharm to create a Python package.  It creates the directory and automatically adds
+the ``__init.py__`` file.  But we wanted you to get the experience of doing it for your self.
 
 Add another new Python File to your project
 
@@ -146,9 +144,10 @@ Add another new Python File to your project
 
 :example: print("Get to the chopper!")
 
-**************************************
-Setup a PyCharm configuration to run
-**************************************
+##########################
+PyCharm Run Configuration
+##########################
+
 When you build software like a pro, you have an automated build process.  At the local IDE level that often can involve
 using a Run Configuration utility, to use the term PyCharm has adopted.
 

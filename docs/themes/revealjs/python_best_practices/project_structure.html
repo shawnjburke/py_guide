@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Let’s Build a Python Project &mdash; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+    <title>Python Project Structure &mdash; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
 
     
 
@@ -36,22 +36,17 @@
     <div class="reveal">
       <div class="slides">
         
-  <div class="section" id="let-s-build-a-python-project">
-<h1>Let’s Build a Python Project<a class="headerlink" href="#let-s-build-a-python-project" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="python-project-structure">
+<h1>Python Project Structure<a class="headerlink" href="#python-project-structure" title="Permalink to this headline">¶</a></h1>
 <p>When you’ve written code for a long time, and managed teams, the specifics of languages and “what’s best” ceases
 to have as much meaning.  There will always be a new language, a new pattern, and another code changing paradigm.  What
 I’m more concerned with are the fundamentals of code that build cohesive, scalable teams.  As such coding standards are
-important to me.  Part of a good coding standard is a good project structure, based on good patterns, and specific
+important to me.  Part of a good coding standard is a good project structure, based on good patterns, and the specific
 implementation needs of the language; in this case, Python.</p>
-<div class="section" id="best-practice-project-layout">
-<h2>Best Practice Project Layout<a class="headerlink" href="#best-practice-project-layout" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="directory-structure">
+<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
 <p>Throughout this guide we’ll build a program structure for best practices that will end up like this</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| project_name
-|___ project_name
-|   |___ __init__.py
-| README
-
-project_name/
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project_name/
 ├── docs/
 │   ├── .doctrees/
 │   ├── _sources/
@@ -71,17 +66,34 @@ project_name/
 │   ├── make.bat
 │   ├── Makefile
 │   └── readme.rst
-└── project_name/
+├── project_name/
+│   ├── tests/
 │   ├── __init__.py
-│   └── __main__.py
-│   README.rst
+│   ├── __main__.py
+|   └── setup.py
+├── venv/
+├── LICENSE
+├── README.rst
+└── requirements.txt
 </pre></div>
 </div>
+<div class="admonition-sphinx-users admonition">
+<p class="first admonition-title">Sphinx users</p>
+<p class="last">Sphinx users will note that this is not a typical structure for documentation.  While putting this guide together I
+found GitHub had a GitHub Pages feature that would display documentation based on html in a <code class="docutils literal notranslate"><span class="pre">docs\</span></code> on the master
+branch.  With the popularity of that system, I figured it make sense to support it.</p>
 </div>
-<div class="section" id="best-practice-spells">
-<h2>Best Practice Spells<a class="headerlink" href="#best-practice-spells" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition">
+<p class="first admonition-title">TODO:</p>
+<p>Need to make sure this structure works fine on readthedocs.org.  Since the config file for Sphinx is flexible,
+and the conf-generator provides options to change source and build structure, I expect it wll work.  However,
+I’m remiss in not making sure a Python guide works well with readthedocs.org.</p>
+<p class="last">I will note that at time of writing, GitHub Pages were not configurable in terms of the directory used on the
+master branch.</p>
+</div>
+</div>
 <div class="section" id="choose-a-project-name">
-<h3>Choose a project name<a class="headerlink" href="#choose-a-project-name" title="Permalink to this headline">¶</a></h3>
+<h2>Choose a project name<a class="headerlink" href="#choose-a-project-name" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>lower case</li>
 <li>project_name with underscore over projectname</li>
@@ -91,32 +103,65 @@ project_name/
 </dl>
 </li>
 </ul>
-<p>Create a new project in PyCharm</p>
+</div>
+<div class="section" id="create-a-new-project">
+<h2>Create a new project<a class="headerlink" href="#create-a-new-project" title="Permalink to this headline">¶</a></h2>
+<p>I am speaking of creating a new project in the conext of using PyCharm.</p>
 <ul class="simple">
 <li>of type Python</li>
 <li>3.x interpreter</li>
 </ul>
+<div class="section" id="use-a-virtual-environment">
+<h3>Use a virtual environment<a class="headerlink" href="#use-a-virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p>When I first started with python I did not use virtual environments.  I was wrong.  I am sorry.
+Virtual Environments, installed to our <code class="docutils literal notranslate"><span class="pre">venv</span></code> directory, are the the python executable, and
+all related packages, for this project.  While not absolutely required it is a best practice
+for Python projects.  If you are to be Pythonic, you should use them, as tools, like creating
+requirements.txt file for your project with pip, work well in this structure</p>
+</div>
+<div class="section" id="source-code-in-project-name-project-name">
+<h3>Source code in project_name\project_name<a class="headerlink" href="#source-code-in-project-name-project-name" title="Permalink to this headline">¶</a></h3>
 <p>Add a directory to your project the same name as the project</p>
 <ul class="simple">
-<li>trust me.  Yes.  We know have the structure project, project_nameproject_name.  It will be okay.</li>
+<li>trust me.  Yes, I know we now have the structure, project_name\project_name.  It will be okay.</li>
 <li>It will be okay.</li>
 </ul>
-<p>Add your first file README</p>
-<ul class="simple">
+</div>
+<div class="section" id="readme-rst">
+<h3>README.rst<a class="headerlink" href="#readme-rst" title="Permalink to this headline">¶</a></h3>
+<p>Add your first file README.rst</p>
+<blockquote>
+<div><ul class="simple">
 <li>PyCharm wants to know what it is.  It’s just a Text File</li>
 <li>UPPERCASE no extension</li>
 <li>project_nameREADME.rst <a class="footnote-reference" href="#footnote-01" id="id1">[1]</a></li>
+<li>A project should have a document to acclimate a new user, and that’s readme</li>
+<li>Using the .rst extension will all github to format the contents on the source page</li>
 </ul>
-<p>Add a new Python File to your project</p>
+</div></blockquote>
+</div>
+<div class="section" id="init-py">
+<h3>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline">¶</a></h3>
+<p>In PyCharm, add a new Python File to your project</p>
 <ul class="simple">
 <li>give it the name __init__.py</li>
 <li>That’s two underscores before init</li>
+<li>Adding this file makes your module project_name a package</li>
+<li>All packages are modules, modules are not all packages</li>
 </ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project_name/
+├── project_name/
+│   ├── __init__.py
+├── README.rst
+</pre></div>
+</div>
 <p>Congratulations you’ve created a package.  We’ll explain what that is later.  After we get to modules.</p>
-<dl class="docutils">
-<dt>There’s also a command in PyCharm to create a Python package.  It creates the director and automatically adds the</dt>
-<dd>__init.py file.  But we wanted you to get the experience of doing it for your self.</dd>
-</dl>
+<ul class="simple">
+<li>Adding __init__.py file makes your module project_name a package</li>
+<li>All packages are modules, modules are not all packages</li>
+</ul>
+<p>There’s also a command in PyCharm to create a Python package.  It creates the directory and automatically adds
+the <code class="docutils literal notranslate"><span class="pre">__init.py__</span></code> file.  But we wanted you to get the experience of doing it for your self.</p>
 <p>Add another new Python File to your project</p>
 <ul class="simple">
 <li>give it th name __main__.py</li>
@@ -131,7 +176,12 @@ project_name/
 </tr>
 </tbody>
 </table>
-<p>Setup a PyCharm configuration to run</p>
+</div>
+</div>
+<div class="section" id="pycharm-run-configuration">
+<h2>PyCharm Run Configuration<a class="headerlink" href="#pycharm-run-configuration" title="Permalink to this headline">¶</a></h2>
+<p>When you build software like a pro, you have an automated build process.  At the local IDE level that often can involve
+using a Run Configuration utility, to use the term PyCharm has adopted.</p>
 <ul class="simple">
 <li>Go to the Run menu and choose the Edit Configuration option</li>
 <li>Click the + symbol (to _add_ a new configuration)</li>
@@ -159,7 +209,6 @@ landing page for a topic.  Therefore the page will be README.rst.  With some mag
 into the rest of the documentation structure.</td></tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 

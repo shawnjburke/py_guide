@@ -15,8 +15,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="reStructuredText Cheat Sheet" href="../reStructuredText/reStructuredText-CheatSheet.html" />
-    <link rel="prev" title="Let’s Build a Python Project" href="project_structure.html" /> 
+    <link rel="next" title="Use setup.py From the Start" href="project_setup.html" />
+    <link rel="prev" title="Python Project Structure" href="project_structure.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -25,10 +25,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../reStructuredText/reStructuredText-CheatSheet.html" title="reStructuredText Cheat Sheet"
+          <a href="project_setup.html" title="Use setup.py From the Start"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="project_structure.html" title="Let’s Build a Python Project"
+          <a href="project_structure.html" title="Python Project Structure"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a> &#187;</li> 
       </ul>
@@ -50,10 +50,13 @@ to hear it.  This is an age of auto-generated code documentation, and other tool
 any good code documentation, we’ll make sure we carefully document intent, and the why’s of necessity, and write
 the code clearly in a way that documents that structure.   It’s a balance Padawan, chill out and let this documentation
 guide you <a class="footnote-reference" href="#footnote-01" id="id1">[1]</a>.</p>
+</div>
 <div class="section" id="setup-documentation-now">
-<h3>Setup Documentation Now<a class="headerlink" href="#setup-documentation-now" title="Permalink to this headline">¶</a></h3>
+<h2>Setup Documentation Now<a class="headerlink" href="#setup-documentation-now" title="Permalink to this headline">¶</a></h2>
 <p>If you don’t setup documentation of your code up front, you won’t do it later.  Corollary: Unless you’re being paid to
 by something like selling the company; at which time doing this is a soul crushing pia.  Set it up now</p>
+<div class="section" id="install-sphinx-engine">
+<h3>Install Sphinx Engine<a class="headerlink" href="#install-sphinx-engine" title="Permalink to this headline">¶</a></h3>
 <p>Sphinx is the document engine of choice in Python.   You’ll find most of what you need in the setup documentation of
 www.sphinx-doc.org.  Install it.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt; pip install -U sphinx
@@ -61,9 +64,16 @@ www.sphinx-doc.org.  Install it.</p>
 </div>
 <p>Now we have the Sphinx Engine.  The way it works is you create files and fill them with reStructuredText or another markup
 language.  Markdown seems to be popular in the github crowd and <a class="reference external" href="&lt;http://www.sphinx-doc.org/en/master/usage/markdown.html&gt;">sphinx can support markdown</a>.</p>
+</div>
+<div class="section" id="create-a-restructuredtext-markup-file">
+<h3>Create a reStructuredText markup file<a class="headerlink" href="#create-a-restructuredtext-markup-file" title="Permalink to this headline">¶</a></h3>
 <p>You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
-instance, create a folder in your project called docs, a sibling of the project_name folder.  Inside that folder add a
-readme.rst file.</p>
+instance, create a folder in your project called docs-source <a class="footnote-reference" href="#footnote-02" id="id2">[2]</a>, a sibling of the project_name folder.  Inside that
+folder add a readme.rst file.</p>
+<p>Inside a template file you can</p>
+<p># Add text and _*markup*_ to style that text
+# Use directives to style the text
+# Use directives to automatically generate or include other files</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project_name/
 ├- docs/
 ├- docs-source/
@@ -98,16 +108,16 @@ a docs/ folder.  I’m going to depart from that and use a docs-source folder in
 github pages support reading html files from the docs folder.  Therefore I’ll make docs/ an output folder for html
 and put the source markup file (in reStructuredText) in the docs-source/ folder instead.</p>
 </div>
-<ul class="simple">
-<li>&gt; Root path for the documentation [.]: docs-source</li>
-<li>&gt; Separate source and build directories (y/n) [n]: n</li>
-<li>&gt; autodoc: automatically insert docstrings from modules (y/n) [n]: y</li>
-<li>&gt; todo: write “todo” entries that can be shown or hidden on build (y/n) [n]: y</li>
-<li>&gt; coverage: checks for documentation coverage (y/n) [n]: y</li>
-<li>&gt; imgmath: include math, rendered as PNG or SVG images (y/n) [n]: n</li>
-<li>&gt; viewcode: include links to the source code of documented Python objects (y/n) [n]: y</li>
-<li>&gt; githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y</li>
-</ul>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Root</span> <span class="n">path</span> <span class="k">for</span> <span class="n">the</span> <span class="n">documentation</span> <span class="p">[</span><span class="o">.</span><span class="p">]:</span> <span class="n">docs</span><span class="o">-</span><span class="n">source</span>
+<span class="o">&gt;</span> <span class="n">Separate</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">directories</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">n</span>
+<span class="o">&gt;</span> <span class="n">autodoc</span><span class="p">:</span> <span class="n">automatically</span> <span class="n">insert</span> <span class="n">docstrings</span> <span class="kn">from</span> <span class="nn">modules</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">todo</span><span class="p">:</span> <span class="n">write</span> <span class="s2">&quot;todo&quot;</span> <span class="n">entries</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">shown</span> <span class="ow">or</span> <span class="n">hidden</span> <span class="n">on</span> <span class="n">build</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">coverage</span><span class="p">:</span> <span class="n">checks</span> <span class="k">for</span> <span class="n">documentation</span> <span class="n">coverage</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">imgmath</span><span class="p">:</span> <span class="n">include</span> <span class="n">math</span><span class="p">,</span> <span class="n">rendered</span> <span class="k">as</span> <span class="n">PNG</span> <span class="ow">or</span> <span class="n">SVG</span> <span class="n">images</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">n</span>
+<span class="o">&gt;</span> <span class="n">viewcode</span><span class="p">:</span> <span class="n">include</span> <span class="n">links</span> <span class="n">to</span> <span class="n">the</span> <span class="n">source</span> <span class="n">code</span> <span class="n">of</span> <span class="n">documented</span> <span class="n">Python</span> <span class="n">objects</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">githubpages</span><span class="p">:</span> <span class="n">create</span> <span class="o">.</span><span class="n">nojekyll</span> <span class="nb">file</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">the</span> <span class="n">document</span> <span class="n">on</span> <span class="n">GitHub</span> <span class="n">pages</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">y</span>
+</pre></div>
+</div>
 <p>If you are using PyCharm (and why wouldn’t you) under the tools menu, there’s an option to start Sphinx Quickstart.</p>
 <p>If you are on Linux without PyCharm, then you need to execute the</p>
 <p>If you are on Windows without PyCharm, then you need an executable (on my first run I thought sphinx-quickstart was
@@ -116,6 +126,17 @@ a command in the Python console)</p>
 If you are in PyCharm use the build configurations.   There is a specific build configuration for Sphinx documentation
 generation.  Make sure that you have your setuptools package updated as versions around 28 through errors with
 PyCharm and these builds.</p>
+<div class="section" id="modify-conf-py">
+<h4>Modify conf.py<a class="headerlink" href="#modify-conf-py" title="Permalink to this headline">¶</a></h4>
+<p>For things such as adding additional theme support to sphinx builds</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ pip install sphinxjp.themes.basicstrap
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to conf.py</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinxjp.themes.basicstrap&#39;</span><span class="p">]</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;basicstrap&#39;</span>
+</pre></div>
+</div>
 <p class="rubric">Footnotes</p>
 <table class="docutils footnote" frame="void" id="footnote-01" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -123,6 +144,15 @@ PyCharm and these builds.</p>
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Yes, like the force.</td></tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="footnote-02" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>It is traditional with Sphinx to use a docs folder.  However, with the latest in GitHub pages,
+it’s easy to publish html by putting it in a docs folder.  Therefore we’ll use docs-source as our file for
+reStructuredText and Sphinx configuration and support files.</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -136,39 +166,19 @@ PyCharm and these builds.</p>
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Project Documentation Matters</a><ul>
-<li><a class="reference internal" href="#yes-yes-blah-blah-documentation-sucks">Yes, yes, blah, blah, documentation sucks</a><ul>
-<li><a class="reference internal" href="#setup-documentation-now">Setup Documentation Now</a></li>
+<li><a class="reference internal" href="#yes-yes-blah-blah-documentation-sucks">Yes, yes, blah, blah, documentation sucks</a></li>
+<li><a class="reference internal" href="#setup-documentation-now">Setup Documentation Now</a><ul>
+<li><a class="reference internal" href="#install-sphinx-engine">Install Sphinx Engine</a></li>
+<li><a class="reference internal" href="#create-a-restructuredtext-markup-file">Create a reStructuredText markup file</a><ul>
+<li><a class="reference internal" href="#modify-conf-py">Modify conf.py</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="project_structure.html"
-                        title="previous chapter">Let’s Build a Python Project</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../reStructuredText/reStructuredText-CheatSheet.html"
-                        title="next chapter">reStructuredText Cheat Sheet</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/python_best_practices/project_documentation_matters.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -180,10 +190,10 @@ PyCharm and these builds.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../reStructuredText/reStructuredText-CheatSheet.html" title="reStructuredText Cheat Sheet"
+          <a href="project_setup.html" title="Use setup.py From the Start"
              >next</a> |</li>
         <li class="right" >
-          <a href="project_structure.html" title="Let’s Build a Python Project"
+          <a href="project_structure.html" title="Python Project Structure"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a> &#187;</li> 
       </ul>

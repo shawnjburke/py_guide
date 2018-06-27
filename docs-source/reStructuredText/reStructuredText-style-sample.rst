@@ -1,7 +1,7 @@
 ====================================================
 reStructuredText Sample of Stylings
 ====================================================
-Originally taken from a `Sphix Bootstrap theme`_.  Thanks to author `tell-K`_.
+Originally taken from a `Sphinx Bootstrap theme`_.  Thanks to author `tell-K`_.
 
 .. _tell-K: mailto://ffk2005@gmail.com
 .. _Sphinx Bootstrap theme: https://pythonhosted.org/sphinxjp.themes.basicstrap/_sources/sample.txt
