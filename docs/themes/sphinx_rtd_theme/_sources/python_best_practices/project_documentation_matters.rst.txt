@@ -127,6 +127,7 @@ PyCharm and these builds.
 
 Modify conf.py
 -----------------
+
 For things such as adding additional theme support to sphinx builds
 
 ..  code-block:: text

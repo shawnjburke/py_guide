@@ -49,8 +49,8 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Python Guide for Practicing Wizards 2018.6.3.1 documentation" href="index.html" />
-    <link rel="next" title="There’s no shame in Windows" href="rants.html" />
-    <link rel="prev" title="Headings Cheat Sheet" href="reStructuredText/reStructuredText-CheatSheet-Headings.html" /> 
+    <link rel="next" title="Rants" href="rants/index.html" />
+    <link rel="prev" title="Python Package Index" href="python_package_index.html" /> 
   </head>
   <body role="document">
     <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
@@ -74,8 +74,14 @@
 <li><a class="reference internal" href="#fng-s-guide-to-python">FNG’s Guide to Python</a><ul>
 <li><a class="reference internal" href="#not-bad-python-not-bad">Not bad Python, not bad</a></li>
 <li><a class="reference internal" href="#purpose-of-this-project">Purpose of this Project</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#sphinx-supports-themes">Sphinx Supports Themes</a></li>
 <li><a class="reference internal" href="#what-makes-this-different-from-other-frameworks">What makes this different from other frameworks?</a></li>
-<li><a class="reference internal" href="#thank-yous">THANK YOUs !!</a></li>
+<li><a class="reference internal" href="#thank-yous">THANK YOUs !!</a><ul>
+<li><a class="reference internal" href="#family">Family</a></li>
+<li><a class="reference internal" href="#fellow-passionate-python-people">Fellow Passionate Python People</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -86,8 +92,8 @@
               </li>
 
             
-              <li><a href="reStructuredText/reStructuredText-CheatSheet-Headings.html" title="Headings Cheat Sheet" accesskey="P">previous </a></li>
-              <li><a href="rants.html" title="There’s no shame in Windows" accesskey="N">next </a></li>
+              <li><a href="python_package_index.html" title="Python Package Index" accesskey="P">previous </a></li>
+              <li><a href="rants/index.html" title="Rants" accesskey="N">next </a></li>
               <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
             
             <li class="visible-xs"><a href="_sources/readme.rst.txt" rel="nofollow">Show Source</a></li>
@@ -128,43 +134,20 @@
 <li><a class="reference internal" href="#fng-s-guide-to-python">FNG’s Guide to Python</a><ul>
 <li><a class="reference internal" href="#not-bad-python-not-bad">Not bad Python, not bad</a></li>
 <li><a class="reference internal" href="#purpose-of-this-project">Purpose of this Project</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#sphinx-supports-themes">Sphinx Supports Themes</a></li>
 <li><a class="reference internal" href="#what-makes-this-different-from-other-frameworks">What makes this different from other frameworks?</a></li>
-<li><a class="reference internal" href="#thank-yous">THANK YOUs !!</a></li>
+<li><a class="reference internal" href="#thank-yous">THANK YOUs !!</a><ul>
+<li><a class="reference internal" href="#family">Family</a></li>
+<li><a class="reference internal" href="#fellow-passionate-python-people">Fellow Passionate Python People</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="reStructuredText/reStructuredText-CheatSheet-Headings.html"
-                        title="previous chapter">Headings Cheat Sheet</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="rants.html"
-                        title="next chapter">There’s no shame in Windows</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/readme.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" role="search">
-  <h3>Quick search</h3>
-  <form class="search form-inline" action="search.html" method="get">
-      <div class="input-append input-group">
-        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
-        <span class="input-group-btn">
-        <input type="submit" class="btn" value="Go" />
-        </span>
-      </div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
   </div>
 </div> 
         
@@ -185,14 +168,14 @@
 in my code as is traditional Microsoft (M$ as many would put it).  There was a time when you never would have convinced
 me I would come to prefer snake_case as is common to Python.  I have.  In fact I’m quite enamored with you Python. You
 are quick with the script, or agile with the program structure.  You take pride in what makes a professional coder,
-appreciation for commenting, code read-ability, and syntactical grace</p>
+appreciation for commenting, code read-ability, and syntactical grace.</p>
 <p>I guess that makes this my ode to Python.</p>
 </div>
 <div class="section" id="purpose-of-this-project">
 <h3>Purpose of this Project<a class="headerlink" href="#purpose-of-this-project" title="Permalink to this headline">¶</a></h3>
-<p>This project is intended to be an end-to-end guide on getting started with Python.  It’s intended to establish a best
+<p>This project is intended to be a guide on getting started with Python.  It’s intended to establish a best
 practice structure that can be used as a beginning state for a python project.  Stepping through all the steps
-should be to setup a new Python project, using a set of best practices and coding standards, which can apply across all
+should yield a new Python project, using a set of best practices and coding standards, which can apply across all
 types of Python projects.</p>
 <p>The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
 data-source folder.  You can get to the root at <a class="reference external" href="https://shawnjburke.github.io/py-guide/">https://shawnjburke.github.io/py-guide/</a>.</p>
@@ -201,7 +184,36 @@ data-source folder.  You can get to the root at <a class="reference external" hr
 <li>Step 1 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/install_python.html">Install Python</a></li>
 <li>Step 2 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/install_Pycharm.html">Install PyCharm</a></li>
 <li>Step 3 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_structure.html">Python Project Structure</a></li>
-<li>Step 4 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_documentation_matters.html">Python Documentation</a></li>
+<li>Step 4 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_documentation_matters.html">Documentation Matters</a></li>
+<li>Step 5 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_setup.html">setup.py</a> for success early in your project</li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>At this time you can’t install this module.  At a later version the installation will provide an interface to create
+the recommended project structure, documented here.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">some_future_time</span> <span class="o">--</span><span class="n">todo</span><span class="o">=</span><span class="n">create_installer</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sphinx-supports-themes">
+<h3>Sphinx Supports Themes<a class="headerlink" href="#sphinx-supports-themes" title="Permalink to this headline">¶</a></h3>
+<p>One feature I like with the Sphinx engine is the ability to use different themes.  As part of this project I’ve
+generated a number of different themes you can check out.</p>
+<ul class="simple">
+<li><a class="reference external" href="themes/agogo">py-guide/themes/agogo</a></li>
+<li><a class="reference external" href="themes/alabaster">py-guide/themes/alabaster</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/basicstrap">https://shawnjburke.github.io/py-guide/themes/basicstrap</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/bizstyle">https://shawnjburke.github.io/py-guide/themes/bizstyle</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/classlic">https://shawnjburke.github.io/py-guide/themes/classlic</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/gopher">https://shawnjburke.github.io/py-guide/themes/gopher</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/haiku">https://shawnjburke.github.io/py-guide/themes/haiku</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/nature">https://shawnjburke.github.io/py-guide/themes/nature</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/revealjs">https://shawnjburke.github.io/py-guide/themes/revealjs</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/scrolls">https://shawnjburke.github.io/py-guide/themes/scrolls</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/sphinx_rtd_theme">https://shawnjburke.github.io/py-guide/themes/sphinx_rtd_theme</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/sphinxdoc">https://shawnjburke.github.io/py-guide/themes/sphinxdoc</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/traditional">https://shawnjburke.github.io/py-guide/themes/traditional</a></li>
 </ul>
 </div>
 <div class="section" id="what-makes-this-different-from-other-frameworks">
@@ -210,22 +222,34 @@ data-source folder.  You can get to the root at <a class="reference external" hr
 It attempts to not be specific to a type of project.  Web projects or console apps can benefit from this.
 It doesn’t attempt to be an encompassing framework.  Just a starting point.
 This is not a web framework like django.
-There is not team behind this.  Just me.</p>
+There is no team behind this.  Just me.</p>
 </div>
 <div class="section" id="thank-yous">
 <h3>THANK YOUs !!<a class="headerlink" href="#thank-yous" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="family">
+<h4>Family<a class="headerlink" href="#family" title="Permalink to this headline">¶</a></h4>
 <p>My wife Stacy.
 My kids, Joe, Sam, and Maggie.</p>
+</div>
+<div class="section" id="fellow-passionate-python-people">
+<h4>Fellow Passionate Python People<a class="headerlink" href="#fellow-passionate-python-people" title="Permalink to this headline">¶</a></h4>
 <p>Sphinx theme author <a class="reference external" href="https://github.com/tell-k/">Tell-K</a></p>
 <ul class="simple">
 <li>sphinxjp.themes.basicstrap</li>
 <li>sphinxjp.themes.revealjs</li>
 </ul>
+<p>The Python Project Template from <a class="reference external" href="https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/">Chris Warrick</a></p>
+<p>The <a class="reference external" href="http://the-hitchhikers-guide-to-packaging.readthedocs.io">Hitchhiker’s guide to Packaging</a> team</p>
 <p>Websites I referenced for inspiration</p>
 <ul class="simple">
 <li><a class="reference external" href="https://codepen.io/patrickhlauke/pen/azbYWZ">https://codepen.io/patrickhlauke/pen/azbYWZ</a></li>
 <li><a class="reference external" href="https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html">https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html</a></li>
+<li><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">https://github.com/rtfd/sphinx_rtd_theme/</a></li>
+<li><a class="reference external" href="https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/">https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/</a></li>
+<li><a class="reference external" href="http://the-hitchhikers-guide-to-packaging.readthedocs.io">http://the-hitchhikers-guide-to-packaging.readthedocs.io</a></li>
+<li><a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/minimal.html">http://python-packaging.readthedocs.io/en/latest/minimal.html</a></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -249,8 +273,8 @@ My kids, Joe, Sam, and Maggie.</p>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
-        <li><a href="reStructuredText/reStructuredText-CheatSheet-Headings.html" title="Headings Cheat Sheet" >previous</a></li>
-        <li><a href="rants.html" title="There’s no shame in Windows" >next</a></li>
+        <li><a href="python_package_index.html" title="Python Package Index" >previous</a></li>
+        <li><a href="rants/index.html" title="Rants" >next</a></li>
         <li><a href="genindex.html" title="General Index" >index</a></li>
         <li><a href="#">top</a></li> 
       

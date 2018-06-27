@@ -22,8 +22,9 @@ Packages I Have Used
 |                        |                 | is the standard documentation engine in the     |
 |                        |                 | Python community                                |
 +------------------------+-----------------+-------------------------------------------------+
-| ...                    | ...             | ...                                             |
+| `Menu`_                | User            | Used with console menu creation                 |
 +------------------------+-----------------+-------------------------------------------------+
 
 .. _argParse: https://docs.python.org/3/library/argparse.html
 .. _Sphinx: http://www.sphinx-doc.org
+.. _Menu: https://pypi.org/project/Menu/

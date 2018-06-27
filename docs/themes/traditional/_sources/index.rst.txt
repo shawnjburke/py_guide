@@ -49,13 +49,16 @@ Table of Contents
     python_best_practices/install_pycharm
     python_best_practices/project_structure
     python_best_practices/project_documentation_matters
+    python_best_practices/project_setup
+    python_best_practices/index
     reStructuredText/reStructuredText-CheatSheet
+    python_package_index
     readme
 
 ..  toctree::
     :hidden:
 
-    rants
+    rants/index
 
 Indices and tables
 ==================

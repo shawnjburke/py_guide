@@ -13,6 +13,7 @@ source material, written in restructured text [#foot-note-1]_.
     :caption: Contents:
 
     reStructuredText-CheatSheet-Headings
+    reStructuredText-style-sample
 
 .. rubric:: Footnotes
 .. [#foot-note-1] I was not influenced by being on github to be a markdown fan.  When I choose to use reStructuredText
