@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Let’s Build a Python Project &mdash; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="../_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="../_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="../_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="../_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../',
+            VERSION:     '2018.6.3.1',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="../_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="../_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Python Guide for Practicing Wizards 2018.6.3.1 documentation" href="../index.html" />
+    <link rel="next" title="Project Documentation Matters" href="project_documentation_matters.html" />
+    <link rel="prev" title="Install PyCharm" href="install_pycharm.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Let’s Build a Python Project</a><ul>
+<li><a class="reference internal" href="#best-practice-project-layout">Best Practice Project Layout</a></li>
+<li><a class="reference internal" href="#best-practice-spells">Best Practice Spells</a><ul>
+<li><a class="reference internal" href="#choose-a-project-name">Choose a project name</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="install_pycharm.html" title="Install PyCharm" accesskey="P">previous </a></li>
+              <li><a href="project_documentation_matters.html" title="Project Documentation Matters" accesskey="N">next </a></li>
+              <li><a href="../genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+            <li class="visible-xs"><a href="../_sources/python_best_practices/project_structure.rst.txt" rel="nofollow">Show Source</a></li>
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="../search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Let’s Build a Python Project</a><ul>
+<li><a class="reference internal" href="#best-practice-project-layout">Best Practice Project Layout</a></li>
+<li><a class="reference internal" href="#best-practice-spells">Best Practice Spells</a><ul>
+<li><a class="reference internal" href="#choose-a-project-name">Choose a project name</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install_pycharm.html"
+                        title="previous chapter">Install PyCharm</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="project_documentation_matters.html"
+                        title="next chapter">Project Documentation Matters</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/python_best_practices/project_structure.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="../search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="let-s-build-a-python-project">
+<h1>Let’s Build a Python Project<a class="headerlink" href="#let-s-build-a-python-project" title="Permalink to this headline">¶</a></h1>
+<p>When you’ve written code for a long time, and managed teams, the specifics of languages and “what’s best” ceases
+to have as much meaning.  There will always be a new language, a new pattern, and another code changing paradigm.  What
+I’m more concerned with are the fundamentals of code that build cohesive, scalable teams.  As such coding standards are
+important to me.  Part of a good coding standard is a good project structure, based on good patterns, and specific
+implementation needs of the language; in this case, Python.</p>
+<div class="section" id="best-practice-project-layout">
+<h2>Best Practice Project Layout<a class="headerlink" href="#best-practice-project-layout" title="Permalink to this headline">¶</a></h2>
+<p>Throughout this guide we’ll build a program structure for best practices that will end up like this</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| project_name
+|___ project_name
+|   |___ __init__.py
+| README
+
+project_name/
+├── docs/
+│   ├── .doctrees/
+│   ├── _sources/
+│   ├── _static/
+│   ├── .buildinfo
+│   ├── .nojekyll
+│   ├── .genindex.html
+│   ├── index.html
+│   ├── search.html
+│   └── searchindex.js
+├── docs-source/
+│   ├── _build/
+│   ├── _static/
+│   ├── _templates/
+│   ├── conf.py
+│   ├── index.rst
+│   ├── make.bat
+│   ├── Makefile
+│   └── readme.rst
+└── project_name/
+│   ├── __init__.py
+│   └── __main__.py
+│   README.rst
+</pre></div>
+</div>
+</div>
+<div class="section" id="best-practice-spells">
+<h2>Best Practice Spells<a class="headerlink" href="#best-practice-spells" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="choose-a-project-name">
+<h3>Choose a project name<a class="headerlink" href="#choose-a-project-name" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>lower case</li>
+<li>project_name with underscore over projectname</li>
+<li><dl class="first docutils">
+<dt>because of the pep choose a single name, because we are following google style guide which state</dt>
+<dd>package_name lower case + PEP single name = project_name is lower case</dd>
+</dl>
+</li>
+</ul>
+<p>Create a new project in PyCharm</p>
+<ul class="simple">
+<li>of type Python</li>
+<li>3.x interpreter</li>
+</ul>
+<p>Add a directory to your project the same name as the project</p>
+<ul class="simple">
+<li>trust me.  Yes.  We know have the structure project, project_nameproject_name.  It will be okay.</li>
+<li>It will be okay.</li>
+</ul>
+<p>Add your first file README</p>
+<ul class="simple">
+<li>PyCharm wants to know what it is.  It’s just a Text File</li>
+<li>UPPERCASE no extension</li>
+<li>project_nameREADME.rst <a class="footnote-reference" href="#footnote-01" id="id1">[1]</a></li>
+</ul>
+<p>Add a new Python File to your project</p>
+<ul class="simple">
+<li>give it the name __init__.py</li>
+<li>That’s two underscores before init</li>
+</ul>
+<p>Congratulations you’ve created a package.  We’ll explain what that is later.  After we get to modules.</p>
+<dl class="docutils">
+<dt>There’s also a command in PyCharm to create a Python package.  It creates the director and automatically adds the</dt>
+<dd>__init.py file.  But we wanted you to get the experience of doing it for your self.</dd>
+</dl>
+<p>Add another new Python File to your project</p>
+<ul class="simple">
+<li>give it th name __main__.py</li>
+<li>Let’s use main.py to give our project some output.  What will it do if you run py_guide?</li>
+<li>Let’s just make it say something.  Add the following code into the file __main__.py</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">example:</th><td class="field-body">print(“Get to the chopper!”)</td>
+</tr>
+</tbody>
+</table>
+<p>Setup a PyCharm configuration to run</p>
+<ul class="simple">
+<li>Go to the Run menu and choose the Edit Configuration option</li>
+<li>Click the + symbol (to _add_ a new configuration)</li>
+<li>Choose the option for Python.  We want to _run_ a python file</li>
+<li>Change the name from Unnamed to the name of your project.  in this case, py_guide</li>
+<li>On the script line choose the … browse button on the right.  Choose __main__.py</li>
+<li>Click OK</li>
+<li>In the upper right of the PyCharm IDE ou should see a drop_down with text py_guide and a play button</li>
+<li>Click the play button.  The configuration you just made runs.</li>
+<li>If you’ve done this successfully then a Python console will appear in the bottom of PyCharm</li>
+<li>It will print out the path to what it just started</li>
+<li>It will execute the __main__.py file causing it to print the next line of the console</li>
+<li>Get to the chopper!</li>
+<li>Followed by a blank line.  After that a summary of the process run and error number (0 is no error)</li>
+<li>Process finished with exit code 0</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="footnote-01" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>I would have previously demanded, in honor of those mighty Unix warriors who came before us,
+that README should be capitalized with no extension.  I’d probably make a joke about paying respect to your
+elders.  Practically though, I have found an extension useful in github, as it presents that text on the
+landing page for a topic.  Therefore the page will be README.rst.  With some magic it will also be brought
+into the rest of the documentation structure.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="../index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="install_pycharm.html" title="Install PyCharm" >previous</a></li>
+        <li><a href="project_documentation_matters.html" title="Project Documentation Matters" >next</a></li>
+        <li><a href="../genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2018, Shawn J Burke.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.5.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Headings Cheat Sheet</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+  </head>
+  <body style='display: none'>
+    
+  <div class="section" id="headings-cheat-sheet">
+<h1>Headings Cheat Sheet<a class="headerlink" href="#headings-cheat-sheet" title="Permalink to this headline">¶</a></h1>
+<p>Here are the different types of heading taken from the Sphinx documentation
+<a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html?highlight=heading">http://www.sphinx-doc.org/en/stable/rest.html?highlight=heading</a></p>
+<div class="topic">
+<p class="topic-title first">from the Sphinx documentation</p>
+<p>Normally, there are no heading levels assigned to certain characters as the structure is determined from the
+succession of headings. However, this convention is used in Python’s Style Guide for documenting
+which you may follow:</p>
+<ul class="simple">
+<li># with overline, for parts (hash)</li>
+<li>* with overline, for chapters (asterisk)</li>
+<li>= for sections (equal sign)</li>
+<li>- for subsections (dash)</li>
+<li>^ for subsubsections (carrot)</li>
+<li>” for paragraphs (double quote)</li>
+</ul>
+</div>
+<p>When I read that I expected to be able to put all those on one page, and merrily went about my way doing so.  When I
+did it created a runtime error.  Or at least I thought.  However, as I wrote this page, I found all playing together;
+ah the joys of development.  Disirregardlessly <a class="footnote-reference" href="#foot-note-01" id="id1">[1]</a> [, they play together as described below.
+Make sure to look at things like the page Table of Contents which are impacted by these hierarchies.</p>
+</div>
+<div class="section" id="with-over-line-for-title">
+<h1>( = ) with over line, for Title<a class="headerlink" href="#with-over-line-for-title" title="Permalink to this headline">¶</a></h1>
+<p>Single equal sign, under and over, the words for the Title.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">===============================</span>
+<span class="p">(</span> <span class="o">=</span> <span class="p">)</span> <span class="k">with</span> <span class="n">over</span> <span class="n">line</span><span class="p">,</span> <span class="k">for</span> <span class="n">Title</span>
+<span class="o">===============================</span>
+</pre></div>
+</div>
+<div class="section" id="with-over-line-for-parts">
+<h2>( # ) with over line, for parts<a class="headerlink" href="#with-over-line-for-parts" title="Permalink to this headline">¶</a></h2>
+<p>Known today as the hash, in the united states formerly the pound sign, the text surrounded above and below is for
+parts.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">###############################</span>
+<span class="p">(</span> <span class="c1"># ) with over line, for parts</span>
+<span class="c1">###############################</span>
+</pre></div>
+</div>
+<div class="section" id="with-over-line-for-chapters">
+<h3>( * ) with over line, for chapters<a class="headerlink" href="#with-over-line-for-chapters" title="Permalink to this headline">¶</a></h3>
+<p>The asterik, when used over and under the text, will create a chapter in reStructuredText markup.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**********************************</span>
+<span class="p">(</span> <span class="o">*</span> <span class="p">)</span> <span class="k">with</span> <span class="n">over</span> <span class="n">line</span><span class="p">,</span> <span class="k">for</span> <span class="n">chapters</span>
+<span class="o">**********************************</span>
+</pre></div>
+</div>
+<div class="section" id="underline-for-sections">
+<h4>( = ) underline for Sections<a class="headerlink" href="#underline-for-sections" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">=</span><span class="p">)</span> <span class="n">underline</span> <span class="k">for</span> <span class="n">Sections</span>
+<span class="o">==========================</span>
+</pre></div>
+</div>
+<div class="section" id="sub-sections">
+<h5>( - ) Sub-Sections<a class="headerlink" href="#sub-sections" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="o">-</span> <span class="p">)</span> <span class="n">Sub</span><span class="o">-</span><span class="n">Sections</span>
+<span class="o">--------------------</span>
+</pre></div>
+</div>
+<div class="section" id="sub-sub-sections">
+<h6>( ^ ) Sub-sub-sections<a class="headerlink" href="#sub-sub-sections" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="o">^</span> <span class="p">)</span> <span class="n">Sub</span><span class="o">-</span><span class="n">sub</span><span class="o">-</span><span class="n">sections</span>
+<span class="o">^^^^^^^^^^^^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+<div class="section" id="paragraphs">
+<h7>( ” ) Paragraphs<a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h7>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="s2">&quot; ) Paragraphs</span>
+<span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p class="rubric">Foootnotes</p>
+<table class="docutils footnote" frame="void" id="foot-note-01" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>That one’s for you Cody.  Everyone else can delete the word from the sentence and understand
+there’s a good story if you get to meet Cory.  That one’s for you too buddy.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+  <div id="help">
+      Use the left and right arrow keys or click the left and right
+      edges of the page to navigate between slides.<br>
+      (Press 'H' or navigate to hide this message.)
+  </div>
+  </body>
+  <script type="text/javascript" src="../_static/js/initialize.js"></script>
+  <script type="text/javascript" src="../_static/js/slides.js"></script>
+</html>

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Let’s Build a Python Project &#8212; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project Documentation Matters" href="project_documentation_matters.html" />
+    <link rel="prev" title="Install PyCharm" href="install_pycharm.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="project_documentation_matters.html" title="Project Documentation Matters"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="install_pycharm.html" title="Install PyCharm"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="let-s-build-a-python-project">
+<h1>Let’s Build a Python Project<a class="headerlink" href="#let-s-build-a-python-project" title="Permalink to this headline">¶</a></h1>
+<p>When you’ve written code for a long time, and managed teams, the specifics of languages and “what’s best” ceases
+to have as much meaning.  There will always be a new language, a new pattern, and another code changing paradigm.  What
+I’m more concerned with are the fundamentals of code that build cohesive, scalable teams.  As such coding standards are
+important to me.  Part of a good coding standard is a good project structure, based on good patterns, and specific
+implementation needs of the language; in this case, Python.</p>
+<div class="section" id="best-practice-project-layout">
+<h2>Best Practice Project Layout<a class="headerlink" href="#best-practice-project-layout" title="Permalink to this headline">¶</a></h2>
+<p>Throughout this guide we’ll build a program structure for best practices that will end up like this</p>
+</div>
+<div class="section" id="best-practice-spells">
+<h2>Best Practice Spells<a class="headerlink" href="#best-practice-spells" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="choose-a-project-name">
+<h3>Choose a project name<a class="headerlink" href="#choose-a-project-name" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>lower case</li>
+<li>project_name with underscore over projectname</li>
+<li><dl class="first docutils">
+<dt>because of the pep choose a single name, because we are following google style guide which state</dt>
+<dd>package_name lower case + PEP single name = project_name is lower case</dd>
+</dl>
+</li>
+</ul>
+<p>Create a new project in PyCharm</p>
+<ul class="simple">
+<li>of type Python</li>
+<li>3.x interpreter</li>
+</ul>
+<p>Add a directory to your project the same name as the project</p>
+<ul class="simple">
+<li>trust me.  Yes.  We know have the structure project, project_nameproject_name.  It will be okay.</li>
+<li>It will be okay.</li>
+</ul>
+<p>Add your first file README</p>
+<ul class="simple">
+<li>PyCharm wants to know what it is.  It’s just a Text File</li>
+<li>UPPERCASE no extension</li>
+<li>project_nameREADME</li>
+</ul>
+<p>Add a new Python File to your project</p>
+<ul class="simple">
+<li>give it the name __init__.py</li>
+<li>That’s two underscores before init</li>
+</ul>
+<p>Congratulations you’ve created a package.  We’ll explain what that is later.  After we get to modules.</p>
+<dl class="docutils">
+<dt>There’s also a command in PyCharm to create a Python package.  It creates the director and automatically adds the</dt>
+<dd>__init.py file.  But we wanted you to get the experience of doing it for your self.</dd>
+</dl>
+<p>Add another new Python File to your project</p>
+<ul class="simple">
+<li>give it th name __main__.py</li>
+<li>Let’s use main.py to give our project some output.  What will it do if you run py_guide?</li>
+<li>Let’s just make it say something.  Add the following code into the file __main__.py</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">example:</th><td class="field-body">print(“Get to the chopper!”)</td>
+</tr>
+</tbody>
+</table>
+<p>Setup a PyCharm configuration to run</p>
+<ul class="simple">
+<li>Go to the Run menu and choose the Edit Configuration option</li>
+<li>Click the + symbol (to _add_ a new configuration)</li>
+<li>Choose the option for Python.  We want to _run_ a python file</li>
+<li>Change the name from Unnamed to the name of your project.  in this case, py_guide</li>
+<li>On the script line choose the … browse button on the right.  Choose __main__.py</li>
+<li>Click OK</li>
+<li>In the upper right of the PyCharm IDE ou should see a drop_down with text py_guide and a play button</li>
+<li>Click the play button.  The configuration you just made runs.</li>
+<li>If you’ve done this successfully then a Python console will appear in the bottom of PyCharm</li>
+<li>It will print out the path to what it just started</li>
+<li>It will execute the __main__.py file causing it to print the next line of the console</li>
+<li>Get to the chopper!</li>
+<li>Followed by a blank line.  After that a summary of the process run and error number (0 is no error)</li>
+<li>Process finished with exit code 0</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Let’s Build a Python Project</a><ul>
+<li><a class="reference internal" href="#best-practice-project-layout">Best Practice Project Layout</a></li>
+<li><a class="reference internal" href="#best-practice-spells">Best Practice Spells</a><ul>
+<li><a class="reference internal" href="#choose-a-project-name">Choose a project name</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install_pycharm.html"
+                        title="previous chapter">Install PyCharm</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="project_documentation_matters.html"
+                        title="next chapter">Project Documentation Matters</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/python_best_practices/project_structure.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="project_documentation_matters.html" title="Project Documentation Matters"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="install_pycharm.html" title="Install PyCharm"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Shawn J Burke.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>
