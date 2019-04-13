@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Best Practices Index" href="index.html" />
+    <link rel="next" title="Great Software has Great Logging" href="project_logging.html" />
     <link rel="prev" title="Project Documentation Matters" href="project_documentation_matters.html" /> 
 
   
@@ -87,10 +87,12 @@
 <li class="toctree-l1"><a class="reference internal" href="project_documentation_matters.html">Project Documentation Matters</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Use setup.py From the Start</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup-py">setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-numbering">Version Numbering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python-wheels">Python Wheels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pypi-package-management">pypi Package Management</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="project_logging.html">Great Software has Great Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Best Practices Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
@@ -170,22 +172,50 @@ those lines.  I do it because thinking like your a production application, used 
 start, than backport later.  That’s an opinion, I get it, that’s why I wrote my own public guide.</p>
 <div class="section" id="setup-py">
 <h2>setup.py<a class="headerlink" href="#setup-py" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
 
-<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.py_guide&#39;</span><span class="p">,</span>
-      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1.0&#39;</span><span class="p">,</span>
-      <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;py_guide&#39;</span><span class="p">],</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="s1">&#39;Shawn J Burke&#39;</span><span class="p">,</span>
+      <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;pypi.python@teamburke.com&#39;</span><span class="p">,</span>
+      <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Python Project &amp; Coding Standards for Practicing Wizards&#39;</span><span class="p">,</span>
       <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-          <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span> <span class="p">]</span>
+          <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span><span class="p">]</span>
         <span class="p">},</span>
+      <span class="n">license</span><span class="o">=</span><span class="s1">&#39;GNU GENERAL PUBLIC LICENSE&#39;</span><span class="p">,</span>
+      <span class="c1"># newline separates Description: header in PKG-INFO from readme content</span>
+      <span class="n">long_description</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;README.rst&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span>
+      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.py_guide&#39;</span><span class="p">,</span>
+      <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(</span><span class="s2">&quot;py_guide&quot;</span><span class="p">),</span>
+      <span class="n">project_urls</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Bug Tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/issues/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Documentation&quot;</span><span class="p">:</span> <span class="s2">&quot;https://shawnjburke.github.io/py_guide/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Source Code&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/&quot;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/shawnjburke/py_guide&quot;</span><span class="p">,</span>
+      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;2019.4.6&#39;</span><span class="p">,</span>
       <span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="section" id="version-numbering">
+<h2>Version Numbering<a class="headerlink" href="#version-numbering" title="Permalink to this headline">¶</a></h2>
+<p>How to give your application a version number can be a topic of some debate.   When creating them I live by</p>
+<ul class="simple">
+<li>Marketing will always call it something else.  Don’t tie the code version to what people refer to it as.</li>
+<li>Do pick something.  Most any scheme is better than nothing.</li>
+</ul>
+<p>Ultimately I’ve become a fan of a school of thought that version numbers can be based on a date.  There’s something
+about the date <code class="docutils literal notranslate"><span class="pre">2019.4.10</span></code> that human beings relate to, over incremental numbers <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, when considering the
+broad skill of technical, business, and nerds that may be involved in an application.  I also think it works well
+for patches <code class="docutils literal notranslate"><span class="pre">2019.4.11</span></code>.  You don’t have to decide what it means to be a major.minor syntax,
+<code class="docutils literal notranslate"><span class="pre">1.1</span></code> versus <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code> type of number, and anyone can figure it out.  If you need to be granular the you
+add the time, <code class="docutils literal notranslate"><span class="pre">2019.4.10.2306</span></code>.  You could even add a tag if necessary, <code class="docutils literal notranslate"><span class="pre">2019.4.10.dev</span></code>. As seen, this works
+well in a development environments with lots of builds, you just add the time (even more precision), tags, etc. that
+are needed <code class="docutils literal notranslate"><span class="pre">2019.4.10.dev</span></code> or <code class="docutils literal notranslate"><span class="pre">2019.4.10.2306.21.dev</span></code>.</p>
+</div>
 <div class="section" id="python-wheels">
 <h2>Python Wheels<a class="headerlink" href="#python-wheels" title="Permalink to this headline">¶</a></h2>
 <p>I found it a bit difficult to navigate the waters of Python installation packages when arrived to the scene.  It appears
-to be a side effect of Python having been around for so long, and having various lifetimes as more ofa script engine
+to be a side effect of Python having been around for so long, and having various lifetimes as more of a script engine
 (as implemented), then to more of a structured language.  Over time, things change (<a class="reference external" href="https://packaging.python.org/discussions/wheel-vs-egg/">wheel vs egg</a>).  There appeared
 to be version called the <a class="reference external" href="http://setuptools.readthedocs.io/en/latest/formats.html">egg</a> which is now deprecated in lieu of the <a class="reference external" href="https://pypi.org/project/wheel/">Python Wheel</a> and brought to us via <a class="reference external" href="https://www.python.org/dev/peps/pep-0427/#abstract">PEP 0427</a></p>
 <p>There’s even a site tracking the <a class="reference external" href="https://pythonwheels.com/">egg to wheel</a> conversion.</p>
@@ -207,7 +237,7 @@ to be version called the <a class="reference external" href="http://setuptools.r
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="index.html" class="btn btn-neutral float-right" title="Best Practices Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="project_logging.html" class="btn btn-neutral float-right" title="Great Software has Great Logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="project_documentation_matters.html" class="btn btn-neutral" title="Project Documentation Matters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

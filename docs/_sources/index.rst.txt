@@ -48,6 +48,7 @@ Table of Contents
     python_best_practices/install_python
     python_best_practices/install_pycharm
     python_best_practices/project_structure
+    python_best_practices/project_documentation_code
     python_best_practices/project_documentation_matters
     python_best_practices/project_setup
     python_best_practices/project_logging

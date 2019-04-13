@@ -2,7 +2,7 @@
 Project Documentation Matters
 ================================
 
-No really Chris, it does.
+No, really Chris, it does.
 
 ##########################################
 Yes, yes, blah, blah, documentation sucks
