@@ -36,11 +36,11 @@ Best practice steps are organized as follows:
 * Step 4 - `Documentation Matters`_
 * Step 5 - `setup.py`_ for success early in your project
 
-..  _Install Python: https://shawnjburke.github.io/py-guide/python_best_practices/install_python.html
-..  _Install Pycharm: https://shawnjburke.github.io/py-guide/python_best_practices/install_Pycharm.html
-..  _Python Project Structure: https://shawnjburke.github.io/py-guide/python_best_practices/project_structure.html
-..  _Documentation Matters: https://shawnjburke.github.io/py-guide/python_best_practices/project_documentation_matters.html
-..  _setup.py: https://shawnjburke.github.io/py-guide/python_best_practices/project_setup.html
+..  _Install Python: https://shawnjburke.github.io/py_guide/python_best_practices/install_python.html
+..  _Install Pycharm: https://shawnjburke.github.io/py_guide/python_best_practices/install_Pycharm.html
+..  _Python Project Structure: https://shawnjburke.github.io/py_guide/python_best_practices/project_structure.html
+..  _Documentation Matters: https://shawnjburke.github.io/py_guide/python_best_practices/project_documentation_matters.html
+..  _setup.py: https://shawnjburke.github.io/py_guide/python_best_practices/project_setup.html
 
 ############################
 Installation
