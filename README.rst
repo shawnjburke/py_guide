@@ -60,33 +60,33 @@ One feature I like with the Sphinx engine is the ability to use different themes
 generated a number of different themes you can check out.
 
 
-* `py_quide/themes/agogo`_
-* `py_quide/themes/alabaster`_
-* `py_quide/themes/basicstrap`_
-* `py_quide/themes/bizstyle`_
-* `py_quide/themes/classlic`_
-* `py_quide/themes/gopher`_
-* `py_quide/themes/haiku`_
-* `py_quide/themes/nature`_
-* `py_quide/themes/revealjs`_
-* `py_quide/themes/scrolls`_
-* `py_quide/themes/sphinx_rtd_theme`_
-* `py_quide/themes/sphinxdoc`_
-* `py_quide/themes/traditional`_
+* `py_guide/themes/agogo`_
+* `py_guide/themes/alabaster`_
+* `py_guide/themes/basicstrap`_
+* `py_guide/themes/bizstyle`_
+* `py_guide/themes/classlic`_
+* `py_guide/themes/gopher`_
+* `py_guide/themes/haiku`_
+* `py_guide/themes/nature`_
+* `py_guide/themes/revealjs`_
+* `py_guide/themes/scrolls`_
+* `py_guide/themes/sphinx_rtd_theme`_
+* `py_guide/themes/sphinxdoc`_
+* `py_guide/themes/traditional`_
 
-..  _py-guide/themes/agogo: themes/agogo
-..  _py-guide/themes/alabaster: themes/alabaster
-..  _py_quide/themes/basicstrap: themes/basicstrap
-..  _py_quide/themes/bizstyle: themes/bizstyle
-..  _py_quide/themes/classlic: themes/classlic
-..  _py_quide/themes/gopher: themes/gopher
-..  _py_quide/themes/haiku: themes/haiku
-..  _py_quide/themes/nature: themes/nature
-..  _py_quide/themes/revealjs: themes/revealjs
-..  _py_quide/themes/scrolls: themes/scrolls
-..  _py_quide/themes/sphinx_rtd_theme: themes/sphinx_rtd_theme
-..  _py_quide/themes/sphinxdoc: themes/sphinxdoc
-..  _py_quide/themes/traditional: themes/traditional
+..  _py_guide/themes/agogo: https://shawnjburke.github.io/py_guide/themes/agogo
+..  _py_guide/themes/alabaster: https://shawnjburke.github.io/py_guide/themes/alabaster
+..  _py_guide/themes/basicstrap: https://shawnjburke.github.io/py_guide/themes/basicstrap
+..  _py_guide/themes/bizstyle: https://shawnjburke.github.io/py_guide/themes/bizstyle
+..  _py_guide/themes/classlic: https://shawnjburke.github.io/py_guide/themes/classlic
+..  _py_guide/themes/gopher: https://shawnjburke.github.io/py_guide/themes/gopher
+..  _py_guide/themes/haiku: https://shawnjburke.github.io/py_guide/themes/haiku
+..  _py_guide/themes/nature: https://shawnjburke.github.io/py_guide/themes/nature
+..  _py_guide/themes/revealjs: https://shawnjburke.github.io/py_guide/themes/revealjs
+..  _py_guide/themes/scrolls: https://shawnjburke.github.io/py_guide/themes/scrolls
+..  _py_guide/themes/sphinx_rtd_theme: https://shawnjburke.github.io/py_guide/themes/sphinx_rtd_theme
+..  _py_guide/themes/sphinxdoc: https://shawnjburke.github.io/py_guide/themes/sphinxdoc
+..  _py_guide/themes/traditional: https://shawnjburke.github.io/py_guide/themes/traditional
 
 ##################################################
 What makes this different from other frameworks?
