@@ -26,7 +26,7 @@ should yield a new Python project, using a set of best practices and coding stan
 types of Python projects.
 
 The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
-data-source folder.  You can get to the root at https://shawnjburke.github.io/py-guide/.
+data-source folder.  You can get to the root at `py_quide`.
 
 Best practice steps are organized as follows:
 
@@ -36,11 +36,11 @@ Best practice steps are organized as follows:
 * Step 4 - `Documentation Matters`_
 * Step 5 - `setup.py`_ for success early in your project
 
-..  _Install Python: https://shawnjburke.github.io/py_guide/python_best_practices/install_python.html
-..  _Install Pycharm: https://shawnjburke.github.io/py_guide/python_best_practices/install_Pycharm.html
-..  _Python Project Structure: https://shawnjburke.github.io/py_guide/python_best_practices/project_structure.html
-..  _Documentation Matters: https://shawnjburke.github.io/py_guide/python_best_practices/project_documentation_matters.html
-..  _setup.py: https://shawnjburke.github.io/py_guide/python_best_practices/project_setup.html
+..  _Install Python: `py_guide/python_best_practices/install_python.html
+..  _Install Pycharm: `py_guide/python_best_practices/install_Pycharm.html
+..  _Python Project Structure: `py_guide/python_best_practices/project_structure.html
+..  _Documentation Matters: `py_guide/python_best_practices/project_documentation_matters.html
+..  _setup.py: `py_guide/python_best_practices/project_setup.html
 
 ############################
 Installation
@@ -59,24 +59,34 @@ Sphinx Supports Themes
 One feature I like with the Sphinx engine is the ability to use different themes.  As part of this project I've
 generated a number of different themes you can check out.
 
-* `py-guide/themes/agogo`_
-* `py-guide/themes/alabaster`_
-* https://shawnjburke.github.io/py-guide/themes/basicstrap
-* https://shawnjburke.github.io/py-guide/themes/bizstyle
-* https://shawnjburke.github.io/py-guide/themes/classlic
-* https://shawnjburke.github.io/py-guide/themes/gopher
-* https://shawnjburke.github.io/py-guide/themes/haiku
-* https://shawnjburke.github.io/py-guide/themes/nature
-* https://shawnjburke.github.io/py-guide/themes/revealjs
-* https://shawnjburke.github.io/py-guide/themes/scrolls
-* https://shawnjburke.github.io/py-guide/themes/sphinx_rtd_theme
-* https://shawnjburke.github.io/py-guide/themes/sphinxdoc
-* https://shawnjburke.github.io/py-guide/themes/traditional
 
-
+* `py_quide/themes/agogo`_
+* `py_quide/themes/alabaster`_
+* `py_quide/themes/basicstrap`_
+* `py_quide/themes/bizstyle`_
+* `py_quide/themes/classlic`_
+* `py_quide/themes/gopher`_
+* `py_quide/themes/haiku`_
+* `py_quide/themes/nature`_
+* `py_quide/themes/revealjs`_
+* `py_quide/themes/scrolls`_
+* `py_quide/themes/sphinx_rtd_theme`_
+* `py_quide/themes/sphinxdoc`_
+* `py_quide/themes/traditional`_
 
 ..  _py-guide/themes/agogo: themes/agogo
 ..  _py-guide/themes/alabaster: themes/alabaster
+..  _py_quide/themes/basicstrap: themes/basicstrap
+..  _py_quide/themes/bizstyle: themes/bizstyle
+..  _py_quide/themes/classlic: themes/classlic
+..  _py_quide/themes/gopher: themes/gopher
+..  _py_quide/themes/haiku: themes/haiku
+..  _py_quide/themes/nature: themes/nature
+..  _py_quide/themes/revealjs: themes/revealjs
+..  _py_quide/themes/scrolls: themes/scrolls
+..  _py_quide/themes/sphinx_rtd_theme: themes/sphinx_rtd_theme
+..  _py_quide/themes/sphinxdoc: themes/sphinxdoc
+..  _py_quide/themes/traditional: themes/traditional
 
 ##################################################
 What makes this different from other frameworks?
