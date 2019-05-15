@@ -4,11 +4,11 @@
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <option name="SDK_HOME" value="" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/docs-source/" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/docs_source/" />
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <option name="docutils_input_file" value="Z:\Users\sburke\Dropbox\dev\py_guide\docs-source" />
+    <option name="docutils_input_file" value="Z:\Users\sburke\Dropbox\dev\py_guide\docs_source" />
     <option name="docutils_output_file" value="Z:\Users\sburke\Dropbox\dev\py_guide\docs\themes\sphinx_rtd_theme" />
     <option name="docutils_params" value="-D html_theme=sphinx_rtd_theme" />
     <option name="docutils_task" value="html" />

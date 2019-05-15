@@ -13,7 +13,10 @@ setup(author='Shawn J Burke',
       license='GNU GENERAL PUBLIC LICENSE',
       # newline separates Description: header in PKG-INFO from readme content
       long_description='\n' + open('README.rst').read(),
-      name='sjb.py_guide',
+      # setuptools will change an underscore (_) to a dash (-), in name, so doing it here explicitly
+      # PEP 8: Python packages should also have short, all-lowercase names, although the use of
+      #        underscores is discouraged.
+      name='sjb.py-guide',
       packages=find_packages("py_guide"),
       project_urls={
         "Bug Tracker": "https://github.com/shawnjburke/py_guide/issues/",

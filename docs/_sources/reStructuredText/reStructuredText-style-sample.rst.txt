@@ -47,6 +47,10 @@ Admonitions (Sphinx Additional)
 .. seealso::
    This is sample of admonition directive for "SeeAlso".
 
+.. admonition:: TODO:
+
+   Show the user that .. admonition:: Name can be used to create this box
+
 .. versionadded:: 0.3.1
    Here is description of specification which added on that version.
 

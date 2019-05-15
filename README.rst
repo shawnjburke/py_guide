@@ -134,3 +134,9 @@ Websites I referenced for inspiration
 * https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
 * http://the-hitchhikers-guide-to-packaging.readthedocs.io
 * http://python-packaging.readthedocs.io/en/latest/minimal.html
+* https://www.geeksforgeeks.org/difference-various-implementations-python/
+* https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package
+* https://packaging.python.org/discussions/wheel-vs-egg/
+* https://github.com/pypa/pip/issues/5243#issuecomment-381513000
+* https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds
+* https://packaging.python.org/guides/single-sourcing-package-version/
