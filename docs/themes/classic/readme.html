@@ -6,16 +6,19 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>README &#8212; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+    <title>README &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Rants" href="rants/index.html" />
+    <link rel="next" title="Tips and Tricks" href="tips.html" />
     <link rel="prev" title="Python Package Index" href="python_package_index.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -25,12 +28,15 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="rants/index.html" title="Rants"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tips.html" title="Tips and Tricks"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="python_package_index.html" title="Python Package Index"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -43,6 +49,17 @@
 <h1>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fng-s-guide-to-python">
 <h2>FNG’s Guide to Python<a class="headerlink" href="#fng-s-guide-to-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-history">
+<h3>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.</li>
+<li><dl class="first docutils">
+<dt>0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to</dt>
+<dd>create a project is in an development state.</dd>
+</dl>
+</li>
+</ul>
+</div>
 <div class="section" id="not-bad-python-not-bad">
 <h3>Not bad Python, not bad<a class="headerlink" href="#not-bad-python-not-bad" title="Permalink to this headline">¶</a></h3>
 <p>I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I grew up with camelCase and PascalCase
@@ -59,15 +76,31 @@ practice structure that can be used as a beginning state for a python project.  
 should yield a new Python project, using a set of best practices and coding standards, which can apply across all
 types of Python projects.</p>
 <p>The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
-data-source folder.  You can get to the root at <a class="reference external" href="https://shawnjburke.github.io/py-guide/">https://shawnjburke.github.io/py-guide/</a>.</p>
+data-source folder.  You can get to the root at <cite>py_quide</cite>.</p>
 <p>Best practice steps are organized as follows:</p>
 <ul class="simple">
-<li>Step 1 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/install_python.html">Install Python</a></li>
-<li>Step 2 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/install_Pycharm.html">Install PyCharm</a></li>
-<li>Step 3 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_structure.html">Python Project Structure</a></li>
-<li>Step 4 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_documentation_matters.html">Documentation Matters</a></li>
-<li>Step 5 - <a class="reference external" href="https://shawnjburke.github.io/py-guide/python_best_practices/project_setup.html">setup.py</a> for success early in your project</li>
+<li>Step 1 - <a class="reference external" href="`py_guide/python_best_practices/install_python.html">Install Python</a></li>
+<li>Step 2 - <a class="reference external" href="`py_guide/python_best_practices/install_Pycharm.html">Install PyCharm</a></li>
+<li>Step 3 - <a class="reference external" href="`py_guide/python_best_practices/project_structure.html">Python Project Structure</a></li>
+<li>Step 4 - <a class="reference external" href="`py_guide/python_best_practices/project_documentation_matters.html">Documentation Matters</a></li>
+<li>Step 5 - <a class="reference external" href="`py_guide/python_best_practices/project_setup.html">setup.py</a> for success early in your project</li>
 </ul>
+<div class="section" id="what-we-have-tried-to-think-through">
+<h4>What we have tried to think through<a class="headerlink" href="#what-we-have-tried-to-think-through" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Project Strucutre - as an old programmer having a standard way to do any coding language, is just something I find</dt>
+<dd>efficient.  In addition to thinking like a developer I’ve worked in release management, IT, being the boss, and I
+tend to appraoch things in a wholistic fashion.  It doesn’t matter how cool your code is if you can’t install and
+maintain it.</dd>
+</dl>
+<p>Documentation is important - if I have a structure that is already setup for how to document, leveraging in line code
+syntax, then developers are more likely to make use of it.  This is good, because documentation is not for you, but
+for the coder left maintaining your app, when you’ve moved on to your new fancy job (because of this awesome app you
+just made).</p>
+<p>Releasing - I have found releasing is an after thought.  This often results in things like finding out your project
+structure isn’t conducive to packaging your release.  Or thinking through where you store your version number as it’s
+used in several files (normally).</p>
+</div>
 </div>
 <div class="section" id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
@@ -82,19 +115,19 @@ the recommended project structure, documented here.</p>
 <p>One feature I like with the Sphinx engine is the ability to use different themes.  As part of this project I’ve
 generated a number of different themes you can check out.</p>
 <ul class="simple">
-<li><a class="reference external" href="themes/agogo">py-guide/themes/agogo</a></li>
-<li><a class="reference external" href="themes/alabaster">py-guide/themes/alabaster</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/basicstrap">https://shawnjburke.github.io/py-guide/themes/basicstrap</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/bizstyle">https://shawnjburke.github.io/py-guide/themes/bizstyle</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/classlic">https://shawnjburke.github.io/py-guide/themes/classlic</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/gopher">https://shawnjburke.github.io/py-guide/themes/gopher</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/haiku">https://shawnjburke.github.io/py-guide/themes/haiku</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/nature">https://shawnjburke.github.io/py-guide/themes/nature</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/revealjs">https://shawnjburke.github.io/py-guide/themes/revealjs</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/scrolls">https://shawnjburke.github.io/py-guide/themes/scrolls</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/sphinx_rtd_theme">https://shawnjburke.github.io/py-guide/themes/sphinx_rtd_theme</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/sphinxdoc">https://shawnjburke.github.io/py-guide/themes/sphinxdoc</a></li>
-<li><a class="reference external" href="https://shawnjburke.github.io/py-guide/themes/traditional">https://shawnjburke.github.io/py-guide/themes/traditional</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/agogo">py_guide/themes/agogo</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/alabaster">py_guide/themes/alabaster</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/basicstrap">py_guide/themes/basicstrap</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/bizstyle">py_guide/themes/bizstyle</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/classlic">py_guide/themes/classlic</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/gopher">py_guide/themes/gopher</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/haiku">py_guide/themes/haiku</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/nature">py_guide/themes/nature</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/revealjs">py_guide/themes/revealjs</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/scrolls">py_guide/themes/scrolls</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/sphinx_rtd_theme">py_guide/themes/sphinx_rtd_theme</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/sphinxdoc">py_guide/themes/sphinxdoc</a></li>
+<li><a class="reference external" href="https://shawnjburke.github.io/py_guide/themes/traditional">py_guide/themes/traditional</a></li>
 </ul>
 </div>
 <div class="section" id="what-makes-this-different-from-other-frameworks">
@@ -129,6 +162,12 @@ My kids, Joe, Sam, and Maggie.</p>
 <li><a class="reference external" href="https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/">https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/</a></li>
 <li><a class="reference external" href="http://the-hitchhikers-guide-to-packaging.readthedocs.io">http://the-hitchhikers-guide-to-packaging.readthedocs.io</a></li>
 <li><a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/minimal.html">http://python-packaging.readthedocs.io/en/latest/minimal.html</a></li>
+<li><a class="reference external" href="https://www.geeksforgeeks.org/difference-various-implementations-python/">https://www.geeksforgeeks.org/difference-various-implementations-python/</a></li>
+<li><a class="reference external" href="https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package">https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package</a></li>
+<li><a class="reference external" href="https://packaging.python.org/discussions/wheel-vs-egg/">https://packaging.python.org/discussions/wheel-vs-egg/</a></li>
+<li><a class="reference external" href="https://github.com/pypa/pip/issues/5243#issuecomment-381513000">https://github.com/pypa/pip/issues/5243#issuecomment-381513000</a></li>
+<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds">https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds</a></li>
+<li><a class="reference external" href="https://packaging.python.org/guides/single-sourcing-package-version/">https://packaging.python.org/guides/single-sourcing-package-version/</a></li>
 </ul>
 </div>
 </div>
@@ -141,12 +180,16 @@ My kids, Joe, Sam, and Maggie.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">README</a><ul>
 <li><a class="reference internal" href="#fng-s-guide-to-python">FNG’s Guide to Python</a><ul>
+<li><a class="reference internal" href="#version-history">Version History</a></li>
 <li><a class="reference internal" href="#not-bad-python-not-bad">Not bad Python, not bad</a></li>
-<li><a class="reference internal" href="#purpose-of-this-project">Purpose of this Project</a></li>
+<li><a class="reference internal" href="#purpose-of-this-project">Purpose of this Project</a><ul>
+<li><a class="reference internal" href="#what-we-have-tried-to-think-through">What we have tried to think through</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#sphinx-supports-themes">Sphinx Supports Themes</a></li>
 <li><a class="reference internal" href="#what-makes-this-different-from-other-frameworks">What makes this different from other frameworks?</a></li>
@@ -172,17 +215,20 @@ My kids, Joe, Sam, and Maggie.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="rants/index.html" title="Rants"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tips.html" title="Tips and Tricks"
              >next</a> |</li>
         <li class="right" >
           <a href="python_package_index.html" title="Python Package Index"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018, Shawn J Burke.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>

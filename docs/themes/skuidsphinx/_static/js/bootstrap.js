@@ -72,6 +72,8 @@ if (typeof jQuery === 'undefined') {
       if (e.isDefaultPrevented()) return
 
       $this.attr('aria-expanded', 'false')
+      $parent.find('#unsupportedMenu').attr('aria-expanded', 'false')
+      $parent.find('#unsupportedVersionsList').hide()
       $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
     })
   }

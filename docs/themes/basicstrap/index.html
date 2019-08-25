@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Welcome to Python Guide’s docs! &mdash; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+    <title>Welcome to Python Guide’s docs! &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
             URL_ROOT:    './',
-            VERSION:     '2018.6.3.1',
+            VERSION:     '0.2.0',
             COLLAPSE_INDEX: false,
             FILE_SUFFIX: '.html',
             HAS_SOURCE:  true
@@ -41,6 +41,7 @@
     <script type="text/javascript" src="_static/js/jquery.min.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
 <script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
 <script type="text/javascript" src="_static/js/basicstrap.js"></script>
@@ -48,7 +49,7 @@
 </script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Python Guide for Practicing Wizards 2018.6.3.1 documentation" href="#" />
+    <link rel="top" title="&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation" href="#" />
     <link rel="next" title="Install Python" href="python_best_practices/install_python.html" /> 
   </head>
   <body role="document">
@@ -61,7 +62,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a>
+          <a class="navbar-brand" href="#">&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -87,6 +88,7 @@
 
             
               <li><a href="python_best_practices/install_python.html" title="Install Python" accesskey="N">next </a></li>
+              <li><a href="py-modindex.html" title="Python Module Index" >modules </a></li>
               <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
             
             <li class="visible-xs"><a href="_sources/index.rst.txt" rel="nofollow">Show Source</a></li>
@@ -121,7 +123,7 @@
          
 <div class="col-md-3 hidden-xs" id="sidebar-wrapper">
   <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="#">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Welcome to Python Guide’s docs!</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
@@ -176,12 +178,16 @@ to setup where possible.</p>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_python.html">Install Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_pycharm.html">Install PyCharm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_structure.html">Python Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_documentation_code.html">Generate Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_documentation_matters.html">Project Documentation Matters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_setup.html">Use setup.py From the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_setup.html">Use setup.py from the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_logging.html">Great Software has Great Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/index.html">Best Practices Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reStructuredText/reStructuredText-style-sample.html">reStructuredText Sample of Stylings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_package_index.html">Python Package Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips and Tricks</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -220,11 +226,12 @@ to setup where possible.</p>
 <div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
   <div class="navbar-inner">
     <ul class="nav navbar-nav ">
-        <li><a href="#">Python Guide for Practicing Wizards 2018.6.3.1 documentation</a></li>
+        <li><a href="#">&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</a></li>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
         <li><a href="python_best_practices/install_python.html" title="Install Python" >next</a></li>
+        <li><a href="py-modindex.html" title="Python Module Index" >modules</a></li>
         <li><a href="genindex.html" title="General Index" >index</a></li>
         <li><a href="#">top</a></li> 
       
@@ -235,8 +242,8 @@ to setup where possible.</p>
 
       <!-- footer -->
       <footer role="contentinfo">
-          &copy; Copyright 2018, Shawn J Burke.
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.5.
+          &copy; Copyright 2019, &#39;Shawn J Burke&#39;.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
       </footer>
       <!-- /footer -->
 

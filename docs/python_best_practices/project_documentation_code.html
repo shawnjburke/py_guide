@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generate Code Documentation &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project Documentation Matters" href="project_documentation_matters.html" />
+    <link rel="prev" title="Python Project Structure" href="project_structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 'Python Guide for Practicing Wizards'
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install_python.html">Install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_pycharm.html">Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_structure.html">Python Project Structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Generate Code Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generate-code-documentation-rst-files-automatically">Generate code documentation RST files Automatically</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation_matters.html">Project Documentation Matters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_setup.html">Use setup.py from the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_logging.html">Great Software has Great Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Best Practices Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-style-sample.html">reStructuredText Sample of Stylings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips and Tricks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rants/index.html">Rants</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">'Python Guide for Practicing Wizards'</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Generate Code Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/python_best_practices/project_documentation_code.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generate-code-documentation">
+<h1>Generate Code Documentation<a class="headerlink" href="#generate-code-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Spinx includes a feature it calls autodoc.  The idea is that if you run the generator a file will be created in
+reStructuredText for each code file found.  In turn, those files, will include directives that generate documentation
+from the code comments.</p>
+<div class="section" id="generate-code-documentation-rst-files-automatically">
+<h2>Generate code documentation RST files Automatically<a class="headerlink" href="#generate-code-documentation-rst-files-automatically" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>There are two parts to the sphinx code documentation engine I want to highlight</dt>
+<dd><ol class="first last arabic simple">
+<li><dl class="first docutils">
+<dt>Directives that go into an RST file to read code files.  The documentation you do in the code is read into</dt>
+<dd>the template and output in a format such as HTML.  You can hand code RST files.</dd>
+</dl>
+</li>
+<li>sphinx-apidoc build engine which will generate RST files based on the structure of your code files.</li>
+</ol>
+</dd>
+</dl>
+<p>In this project there is a make.bat file for Windows, and Makefile for linux, which has been modified to support
+using sphinx-apidoc to generate the RST files.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="project_documentation_matters.html" class="btn btn-neutral float-right" title="Project Documentation Matters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="project_structure.html" class="btn btn-neutral float-left" title="Python Project Structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, &#39;Shawn J Burke&#39;
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>reStructuredText Sample of Stylings &mdash; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+  <title>reStructuredText Sample of Stylings &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</title>
   
 
   
@@ -17,39 +17,40 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python Package Index" href="../python_package_index.html" />
     <link rel="prev" title="Headings Cheat Sheet" href="reStructuredText-CheatSheet-Headings.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../index.html" class="icon icon-home"> Python Guide for Practicing Wizards
+            <a href="../index.html" class="icon icon-home"> 'Python Guide for Practicing Wizards'
           
 
           
@@ -57,6 +58,10 @@
 
           
             
+            
+              <div class="version">
+                0.2.0
+              </div>
             
           
 
@@ -84,55 +89,61 @@
 <li class="toctree-l1"><a class="reference internal" href="../python_best_practices/install_python.html">Install Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python_best_practices/install_pycharm.html">Install PyCharm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_structure.html">Python Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_documentation_code.html">Generate Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_documentation_matters.html">Project Documentation Matters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_setup.html">Use setup.py From the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_setup.html">Use setup.py from the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_logging.html">Great Software has Great Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python_best_practices/index.html">Best Practices Index</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="reStructuredText-CheatSheet-Headings.html">Headings Cheat Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reStructuredText-CheatSheet-Headings.html#with-over-line-for-title">( = ) with over line, for Title</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">reStructuredText Sample of Stylings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#admonitions-docutils-origin">Admonitions (Docutils origin)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#admonitions-sphinx-additional">Admonitions (Sphinx Additional)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#headings">Headings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#sub-heading">Sub-Heading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">reStructuredText Sample of Stylings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#admonitions-docutils-origin">Admonitions (Docutils origin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#admonitions-sphinx-additional">Admonitions (Sphinx Additional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#headings">Headings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sub-heading">Sub-Heading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sub-sub-heading">Sub-Sub-Heading</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#footnotes">Footnotes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#citation">Citation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tables">Tables</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#grid">Grid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#simple">Simple</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mix">Mix</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#structural-elements">Structural Elements</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#section-title">Section Title</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transitions">Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#citation">Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comments">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tables">Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grid">Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple">Simple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mix">Mix</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#body-elements">Body Elements</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#paragraphs">Paragraphs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bullet-lists">Bullet Lists</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enumerated-lists">Enumerated Lists</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#definition-lists">Definition Lists</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#field-lists">Field Lists</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#option-lists">Option Lists</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#block-quotes">Block Quotes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#doctest-blocks">Doctest Blocks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#directives">Directives</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structural-elements">Structural Elements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#section-title">Section Title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transitions">Transitions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#body-elements">Body Elements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#paragraphs">Paragraphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bullet-lists">Bullet Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enumerated-lists">Enumerated Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#definition-lists">Definition Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#field-lists">Field Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#option-lists">Option Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-quotes">Block Quotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#doctest-blocks">Doctest Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directives">Directives</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#topics-sidebars-and-rubrics">Topics, Sidebars, and Rubrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compound-paragraph">Compound Paragraph</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Comments</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips and Tricks</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../rants/index.html">Rants</a></li>
@@ -150,7 +161,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python Guide for Practicing Wizards</a>
+          <a href="../index.html">'Python Guide for Practicing Wizards'</a>
         
       </nav>
 
@@ -180,8 +191,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a> &raquo;</li>
         
       <li>reStructuredText Sample of Stylings</li>
     
@@ -296,6 +305,10 @@
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">This is sample of admonition directive for “SeeAlso”.</p>
+</div>
+<div class="admonition-todo admonition">
+<p class="first admonition-title">TODO:</p>
+<p class="last">Show the user that .. admonition:: Name can be used to create this box</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.3.1: </span>Here is description of specification which added on that version.</p>
@@ -1060,7 +1073,7 @@ with the “compound” directive.</p>
         <a href="../python_package_index.html" class="btn btn-neutral float-right" title="Python Package Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="reStructuredText-CheatSheet-Headings.html" class="btn btn-neutral" title="Headings Cheat Sheet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="reStructuredText-CheatSheet-Headings.html" class="btn btn-neutral float-left" title="Headings Cheat Sheet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1069,7 +1082,7 @@ with the “compound” directive.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Shawn J Burke.
+        &copy; Copyright 2019, &#39;Shawn J Burke&#39;
 
     </p>
   </div>
@@ -1086,35 +1099,16 @@ with the “compound” directive.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2018.6.3.1',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

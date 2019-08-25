@@ -3,10 +3,28 @@
 <html>
   <head>
     <title>Welcome to Python Guide’s docs!</title>
+    <meta name="description" content="Welcome to Python Guide’s docs!" >
+    <script>
+      var notesEnabled =false;
+      var sections = [];
+      var titleNotes = [];
+    </script>
     <meta charset='utf-8'>
+
+    <meta property="og:title" content="Welcome to Python Guide’s docs!">
+    <meta property="og:description" content="Welcome to Python Guide’s docs!">
+
+    <meta name="twitter:title" content="Welcome to Python Guide’s docs!">
+    <meta name="twitter:description" content="Welcome to Python Guide’s docs!">
+    <meta name="twitter:card" content="summary">
+
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/notes.css" type="text/css" />
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+    <script>
+    </script>
   </head>
   <body style='display: none'>
     
@@ -40,12 +58,16 @@ to setup where possible.</p>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_python.html">Install Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/install_pycharm.html">Install PyCharm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_structure.html">Python Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_documentation_code.html">Generate Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_documentation_matters.html">Project Documentation Matters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_setup.html">Use setup.py From the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_setup.html">Use setup.py from the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_best_practices/project_logging.html">Great Software has Great Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_best_practices/index.html">Best Practices Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reStructuredText/reStructuredText-style-sample.html">reStructuredText Sample of Stylings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_package_index.html">Python Package Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips and Tricks</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -70,12 +92,13 @@ to setup where possible.</p>
 </div>
 
 
+  </body>
   <div id="help">
       Use the left and right arrow keys or click the left and right
       edges of the page to navigate between slides.<br>
       (Press 'H' or navigate to hide this message.)
   </div>
-  </body>
-  <script type="text/javascript" src="_static/js/initialize.js"></script>
+  <script type="text/javascript" src="_static/js/init.js"></script>
+  <script type="text/javascript" src="_static/js/notes.js"></script>
   <script type="text/javascript" src="_static/js/slides.js"></script>
 </html>
