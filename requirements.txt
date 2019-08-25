@@ -6,6 +6,6 @@ sphinxjp.themes.basicstrap==0.4.3
 sphinxjp.themes.revealjs==0.3.0
 sphinxjp.themes.gopher==0.1.1
 skuidsphinxtheme==1.0.7
-setuptools==39.1.0
-pip==10.0.1
-wheel==0.33.1
+setuptools>=39.1.0
+pip>=10.0.1
+wheel>=0.33.1
