@@ -1,6 +1,6 @@
-=====================
-FNG's Guide to Python
-=====================
+=======================================
+Python Guide for Practicing Wizards
+=======================================
 
 ########################
 Version History
@@ -10,20 +10,6 @@ Version History
 
 * 0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to
     create a project is in an development state.
-
-########################
-Not bad Python, not bad
-########################
-I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I grew up with camelCase and PascalCase
-in my code as is traditional Microsoft (M$ as many would put it).  There was a time when you never would have convinced
-me I would come to prefer snake_case as is common to Python.  I have.  In fact I'm quite enamored with you Python. You
-are quick with the script, or agile with the program structure.  You take pride in what makes a professional coder,
-appreciation for commenting, code read-ability, and syntactical grace.
-
-.. code-block::python
-    (name_parameters="are cool", use_them="yes", love_them="yes", defaulting_is_powerful=True)
-
-I guess that makes this my ode to Python.
 
 ########################
 Purpose of this Project
@@ -55,9 +41,9 @@ Best practice steps are organized as follows:
 What we have tried to think through
 ************************************
 
-Project Strucutre - as an old programmer having a standard way to do any coding language, is just something I find
+Project Structure - as an old programmer having a standard way to do any coding language, is just something I find
  efficient.  In addition to thinking like a developer I've worked in release management, IT, being the boss, and I
- tend to appraoch things in a wholistic fashion.  It doesn't matter how cool your code is if you can't install and
+ tend to approach things in a wholistic fashion.  It doesn't matter how cool your code is if you can't install and
  maintain it.
 
 Documentation is important - if I have a structure that is already setup for how to document, leveraging in line code
@@ -65,13 +51,26 @@ syntax, then developers are more likely to make use of it.  This is good, becaus
 for the coder left maintaining your app, when you've moved on to your new fancy job (because of this awesome app you
 just made).
 
+Documentation themes - while creating parts of the project on Sphinx, I wanted to compare the themes.  I couldn't find
+one resource for that.  Therefore I created it here in this project.  You can see the same documentation generated
+into several different themes.
+
 Releasing - I have found releasing is an after thought.  This often results in things like finding out your project
 structure isn't conducive to packaging your release.  Or thinking through where you store your version number as it's
 used in several files (normally).
 
+GitHub friendly - we did thins like make docs the html directory of information for compatibility with GitHub.  It is so widely
+used that while Sphinx normally makes docs a source directory, it's configuration allowed for change, where GitHub
+(circa 2018-2019) would not.
+
+Test Inspired Development - I came from the TDD days and I liked it.  When you have a reusable set of tests you get
+build stability, reliability, the ability to come back to your own code and not break it, the ability for other people
+to work on your code (so you can go write something newer and cooler).
+
 ############################
 Installation
 ############################
+
 At this time you can't install this module.  At a later version the installation will provide an interface to create
 the recommended project structure, documented here.
 
@@ -79,91 +78,11 @@ the recommended project structure, documented here.
 
     >>> some_future_time --todo=create_installer
 
-############################
-Sphinx Supports Themes
-############################
-
-One feature I like with the Sphinx engine is the ability to use different themes.  As part of this project I've
-generated a number of different themes you can check out.
-
-
-* `py_guide/themes/agogo`_
-* `py_guide/themes/alabaster`_
-* `py_guide/themes/basicstrap`_
-* `py_guide/themes/bizstyle`_
-* `py_guide/themes/classlic`_
-* `py_guide/themes/gopher`_
-* `py_guide/themes/haiku`_
-* `py_guide/themes/nature`_
-* `py_guide/themes/revealjs`_
-* `py_guide/themes/scrolls`_
-* `py_guide/themes/sphinx_rtd_theme`_
-* `py_guide/themes/sphinxdoc`_
-* `py_guide/themes/traditional`_
-
-..  _py_guide/themes/agogo: https://shawnjburke.github.io/py_guide/themes/agogo
-..  _py_guide/themes/alabaster: https://shawnjburke.github.io/py_guide/themes/alabaster
-..  _py_guide/themes/basicstrap: https://shawnjburke.github.io/py_guide/themes/basicstrap
-..  _py_guide/themes/bizstyle: https://shawnjburke.github.io/py_guide/themes/bizstyle
-..  _py_guide/themes/classlic: https://shawnjburke.github.io/py_guide/themes/classlic
-..  _py_guide/themes/gopher: https://shawnjburke.github.io/py_guide/themes/gopher
-..  _py_guide/themes/haiku: https://shawnjburke.github.io/py_guide/themes/haiku
-..  _py_guide/themes/nature: https://shawnjburke.github.io/py_guide/themes/nature
-..  _py_guide/themes/revealjs: https://shawnjburke.github.io/py_guide/themes/revealjs
-..  _py_guide/themes/scrolls: https://shawnjburke.github.io/py_guide/themes/scrolls
-..  _py_guide/themes/sphinx_rtd_theme: https://shawnjburke.github.io/py_guide/themes/sphinx_rtd_theme
-..  _py_guide/themes/sphinxdoc: https://shawnjburke.github.io/py_guide/themes/sphinxdoc
-..  _py_guide/themes/traditional: https://shawnjburke.github.io/py_guide/themes/traditional
-
 ##################################################
 What makes this different from other frameworks?
 ##################################################
 
 It's my opinion.
+It's not a framework.  It hopes to generate a template project to make being "standard" better.
 It attempts to not be specific to a type of project.  Web projects or console apps can benefit from this.
-It doesn't attempt to be an encompassing framework.  Just a starting point.
-This is not a web framework like django.
 There is no team behind this.  Just me.
-
-##################
-    THANK YOUs !!
-##################
-
-********
-Family
-********
-My wife Stacy.
-My kids, Joe, Sam, and Maggie.
-
-*******************************
-Fellow Passionate Python People
-*******************************
-Sphinx theme author `Tell-K`_
-
-* sphinxjp.themes.basicstrap
-* sphinxjp.themes.revealjs
-
-..  _Tell-K: https://github.com/tell-k/
-
-The Python Project Template from `Chris Warrick`_
-
-..  _Chris Warrick: https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
-
-The `Hitchhiker's guide to Packaging`_ team
-
-.. _Hitchhiker's guide to Packaging: http://the-hitchhikers-guide-to-packaging.readthedocs.io
-
-Websites I referenced for inspiration
-
-* https://codepen.io/patrickhlauke/pen/azbYWZ
-* https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html
-* https://github.com/rtfd/sphinx_rtd_theme/
-* https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
-* http://the-hitchhikers-guide-to-packaging.readthedocs.io
-* http://python-packaging.readthedocs.io/en/latest/minimal.html
-* https://www.geeksforgeeks.org/difference-various-implementations-python/
-* https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package
-* https://packaging.python.org/discussions/wheel-vs-egg/
-* https://github.com/pypa/pip/issues/5243#issuecomment-381513000
-* https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds
-* https://packaging.python.org/guides/single-sourcing-package-version/
