@@ -2,6 +2,7 @@
 Python Guide for Practicing Wizards
 =======================================
 
+
 ########################
 Version History
 ########################
