@@ -12,9 +12,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+print(os.path.abspath('.'))
+# the project/docs_source directory
+sys.path.insert(0, os.path.abspath('.'))
+# the project/ directory
+sys.path.insert(1, os.path.join(os.path.abspath('.'), ".."))
+# the project/project source code directory
+sys.path.insert(1, os.path.join(os.path.abspath('.'), "..", "py_guide"))
 from backports import configparser2
 from datetime import datetime
 
