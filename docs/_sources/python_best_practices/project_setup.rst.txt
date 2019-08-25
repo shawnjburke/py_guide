@@ -12,7 +12,7 @@ TL;DR for page
 
 * As you create your project, use setup.py.  Structure like a pro from the start.
 * Test your distributions on the Test Version of PyPI; don't litter.
-* I use a Calendar Version based approach to version numbers
+* Store build meta data in an ini type of file for build pipeline compatibility
 
 setup.py
 ####################
@@ -93,6 +93,15 @@ it does not need Sphinx.
     * - unittest2
       - Used for testing the code, a development activity, there is no reason
         to require this in the setup distribution
+
+Project Build Metadata
+#######################
+
+Certain information, such as a version number, might be needed in several places in a project.  For instance both
+setup.py and the Sphinx conf.py share this information.  While there are a myriad of approaches to how to solve
+this problem, our best practice is to store them in a configuration file (.cfg) which is structured like an ini
+file with [section] and key = value pairs.   This is done for the maximum portability across a build environment;
+all build tools can write to an ini style file, and most languages have some sort of importable code to do it.
 
 Version Numbering
 #######################

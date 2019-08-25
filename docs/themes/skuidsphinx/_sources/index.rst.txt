@@ -54,8 +54,10 @@ Table of Contents
     python_best_practices/project_logging
     python_best_practices/index
     reStructuredText/reStructuredText-CheatSheet
+    reStructuredText/reStructuredText-style-sample
     python_package_index
     readme
+    tips
 
 ..  toctree::
     :hidden:

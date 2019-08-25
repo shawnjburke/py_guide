@@ -3,10 +3,28 @@
 <html>
   <head>
     <title>README</title>
+    <meta name="description" content="README" >
+    <script>
+      var notesEnabled =false;
+      var sections = [];
+      var titleNotes = [];
+    </script>
     <meta charset='utf-8'>
+
+    <meta property="og:title" content="README">
+    <meta property="og:description" content="README">
+
+    <meta name="twitter:title" content="README">
+    <meta name="twitter:description" content="README">
+    <meta name="twitter:card" content="summary">
+
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/notes.css" type="text/css" />
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+    <script>
+    </script>
   </head>
   <body style='display: none'>
     
@@ -14,6 +32,17 @@
 <h1>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fng-s-guide-to-python">
 <h2>FNG’s Guide to Python<a class="headerlink" href="#fng-s-guide-to-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-history">
+<h3>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.</li>
+<li><dl class="first docutils">
+<dt>0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to</dt>
+<dd>create a project is in an development state.</dd>
+</dl>
+</li>
+</ul>
+</div>
 <div class="section" id="not-bad-python-not-bad">
 <h3>Not bad Python, not bad<a class="headerlink" href="#not-bad-python-not-bad" title="Permalink to this headline">¶</a></h3>
 <p>I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I grew up with camelCase and PascalCase
@@ -39,6 +68,22 @@ data-source folder.  You can get to the root at <cite>py_quide</cite>.</p>
 <li>Step 4 - <a class="reference external" href="`py_guide/python_best_practices/project_documentation_matters.html">Documentation Matters</a></li>
 <li>Step 5 - <a class="reference external" href="`py_guide/python_best_practices/project_setup.html">setup.py</a> for success early in your project</li>
 </ul>
+<div class="section" id="what-we-have-tried-to-think-through">
+<h4>What we have tried to think through<a class="headerlink" href="#what-we-have-tried-to-think-through" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>Project Strucutre - as an old programmer having a standard way to do any coding language, is just something I find</dt>
+<dd>efficient.  In addition to thinking like a developer I’ve worked in release management, IT, being the boss, and I
+tend to appraoch things in a wholistic fashion.  It doesn’t matter how cool your code is if you can’t install and
+maintain it.</dd>
+</dl>
+<p>Documentation is important - if I have a structure that is already setup for how to document, leveraging in line code
+syntax, then developers are more likely to make use of it.  This is good, because documentation is not for you, but
+for the coder left maintaining your app, when you’ve moved on to your new fancy job (because of this awesome app you
+just made).</p>
+<p>Releasing - I have found releasing is an after thought.  This often results in things like finding out your project
+structure isn’t conducive to packaging your release.  Or thinking through where you store your version number as it’s
+used in several files (normally).</p>
+</div>
 </div>
 <div class="section" id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
@@ -104,6 +149,8 @@ My kids, Joe, Sam, and Maggie.</p>
 <li><a class="reference external" href="https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package">https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package</a></li>
 <li><a class="reference external" href="https://packaging.python.org/discussions/wheel-vs-egg/">https://packaging.python.org/discussions/wheel-vs-egg/</a></li>
 <li><a class="reference external" href="https://github.com/pypa/pip/issues/5243#issuecomment-381513000">https://github.com/pypa/pip/issues/5243#issuecomment-381513000</a></li>
+<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds">https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds</a></li>
+<li><a class="reference external" href="https://packaging.python.org/guides/single-sourcing-package-version/">https://packaging.python.org/guides/single-sourcing-package-version/</a></li>
 </ul>
 </div>
 </div>
@@ -111,12 +158,13 @@ My kids, Joe, Sam, and Maggie.</p>
 </div>
 
 
+  </body>
   <div id="help">
       Use the left and right arrow keys or click the left and right
       edges of the page to navigate between slides.<br>
       (Press 'H' or navigate to hide this message.)
   </div>
-  </body>
-  <script type="text/javascript" src="_static/js/initialize.js"></script>
+  <script type="text/javascript" src="_static/js/init.js"></script>
+  <script type="text/javascript" src="_static/js/notes.js"></script>
   <script type="text/javascript" src="_static/js/slides.js"></script>
 </html>

@@ -36,6 +36,6 @@ $(window).resize(function(){
         $("li.nav-item-0 a").text("Top");
     }
     else {
-        $("li.nav-item-0 a").text("Python Guide for Practicing Wizards 2018.6.3.1 documentation");
+        $("li.nav-item-0 a").text("&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation");
     }
 });

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Use setup.py from the Start &mdash; Python Guide for Practicing Wizards 2018.6.3.1 documentation</title>
+  <title>Use setup.py from the Start &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</title>
   
 
   
@@ -17,39 +17,40 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Great Software has Great Logging" href="project_logging.html" />
     <link rel="prev" title="Project Documentation Matters" href="project_documentation_matters.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../index.html" class="icon icon-home"> Python Guide for Practicing Wizards
+            <a href="../index.html" class="icon icon-home"> 'Python Guide for Practicing Wizards'
           
 
           
@@ -57,6 +58,10 @@
 
           
             
+            
+              <div class="version">
+                0.2.0
+              </div>
             
           
 
@@ -92,6 +97,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#setup-py-versus-requirements-txt">setup.py versus requirements.txt</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#project-build-metadata">Project Build Metadata</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#version-numbering">Version Numbering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#python-wheels">Python Wheels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pypi-package-management">pypi Package Management</a></li>
@@ -123,7 +129,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python Guide for Practicing Wizards</a>
+          <a href="../index.html">'Python Guide for Practicing Wizards'</a>
         
       </nav>
 
@@ -184,7 +190,7 @@ start, than backport later.  That’s an opinion, I get it, that’s why I wrote
 <ul class="simple">
 <li>As you create your project, use setup.py.  Structure like a pro from the start.</li>
 <li>Test your distributions on the Test Version of PyPI; don’t litter.</li>
-<li>I use a Calendar Version based approach to version numbers</li>
+<li>Store build meta data in an ini type of file for build pipeline compatibility</li>
 </ul>
 <div class="section" id="setup-py">
 <h3>setup.py<a class="headerlink" href="#setup-py" title="Permalink to this headline">¶</a></h3>
@@ -273,6 +279,14 @@ to require this in the setup distribution</td>
 </table>
 </div>
 </div>
+<div class="section" id="project-build-metadata">
+<h3>Project Build Metadata<a class="headerlink" href="#project-build-metadata" title="Permalink to this headline">¶</a></h3>
+<p>Certain information, such as a version number, might be needed in several places in a project.  For instance both
+setup.py and the Sphinx conf.py share this information.  While there are a myriad of approaches to how to solve
+this problem, our best practice is to store them in a configuration file (.cfg) which is structured like an ini
+file with [section] and key = value pairs.   This is done for the maximum portability across a build environment;
+all build tools can write to an ini style file, and most languages have some sort of importable code to do it.</p>
+</div>
 <div class="section" id="version-numbering">
 <h3>Version Numbering<a class="headerlink" href="#version-numbering" title="Permalink to this headline">¶</a></h3>
 <p>How to give your application a version number can be a topic of some debate.   When creating them I live by</p>
@@ -347,7 +361,7 @@ it faster than compiling the egg at it’s destination.</p>
         <a href="project_logging.html" class="btn btn-neutral float-right" title="Great Software has Great Logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="project_documentation_matters.html" class="btn btn-neutral" title="Project Documentation Matters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="project_documentation_matters.html" class="btn btn-neutral float-left" title="Project Documentation Matters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -356,7 +370,7 @@ it faster than compiling the egg at it’s destination.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Shawn J Burke.
+        &copy; Copyright 2019, &#39;Shawn J Burke&#39;
 
     </p>
   </div>
@@ -373,35 +387,16 @@ it faster than compiling the egg at it’s destination.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'2018.6.3.1',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

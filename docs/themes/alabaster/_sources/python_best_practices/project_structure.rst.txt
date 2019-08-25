@@ -39,12 +39,12 @@ Throughout this guide we'll build a program structure for best practices that wi
     ├── project_name/
     │   ├── tests/
     │   ├── __init__.py
-    │   ├── __main__.py
-    |   └── setup.py
+    │   └── __main__.py
     ├── venv/
     ├── LICENSE
     ├── README.rst
-    └── requirements.txt
+    ├── requirements.txt
+    └── setup.py
 
 ..  admonition:: Sphinx users
 

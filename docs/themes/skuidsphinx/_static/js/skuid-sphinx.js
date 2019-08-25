@@ -1,7 +1,16 @@
 var searchHighlight;
+var docs = {}
 var latestVer;
 var desktopSize = true;
 var mobileGlobal = false;
+
+// Determine environment
+if (window.location.origin.indexOf('https://docs.skuid.com') > -1) {
+  docs.env = "web"
+} else {
+  docs.env = "local"
+}
+
 // Mobile global TOC functions
 var expandGlobalTOC = function() {
   $('.mobile-global-toc').addClass('expand');
@@ -15,16 +24,16 @@ var collapseGlobalTOC = function() {
   $('#g-closedMenu').hide()
   $('#g-openMenu').show()
 }
-var elemsToShiftForMobileNav = '#landing-main, #docs-and-search-bar, #docs-and-search-bar h1, #landing-search h3, #main,.navbar-brand, .navbar-search-form, .breadcrumb-nav, #mobile-global'
+var elemsToShiftForMobileNav = '#landing-main, #docs-and-search-bar, #docs-and-search-bar h1, #landing-search h3, #main,.navbar-brand, .navbar-search-form, .breadcrumb-nav, #mobile-global, .sidebar-local'
 var openMobileNav = function() {
-  $('.navbar-nav').addClass('mobile-nav')
+  $('#docs-site-nav').addClass('mobile-nav')
   $(elemsToShiftForMobileNav).addClass('mobile-nav-active')
   $('#openmobilenav').attr('style','display:none;cursor:pointer').attr('aria-hidden','true')
   $('#closemobilenav').attr('style','display:block;cursor:pointer').attr('aria-hidden','false')
 }
 var closeMobileNav = function(){
   collapseGlobalTOC()
-  $('.navbar-nav').removeClass('mobile-nav')
+  $('#docs-site-nav').removeClass('mobile-nav')
   $(elemsToShiftForMobileNav).removeClass('mobile-nav-active')
   $('#closemobilenav').attr('style','display:none;cursor:pointer').attr('aria-hidden','true')
   $('#openmobilenav').attr('style','display:block;cursor:pointer').attr('aria-hidden','false')
@@ -77,15 +86,24 @@ $( document ).ready(function() {
   scriptElem.type = 'text/javascript';
   scriptElem.src = scriptSource;
   document.head.appendChild(scriptElem);
+  
+
   // Replace any fa-icon roles
   $('.fa-icon').each(function(){
     $(this).html('<i class="fa ' + $(this).html() + '" aria-hidden="true"></i>')
   })
+  // Replace any ink-icon roles
+  $('.ink-icon').each(function(){
+    $(this).show()
+    $(this).html('<i class="ink-icon-' + $(this).html() + '" aria-hidden="true"></i>')
+  })
 
-  // Temp index fix
+ // Temp index fix
   $('a').each( function(a) {
-    var minusIndex = this.href.replace(/index.html/i, '')
-    $(this).attr('href', minusIndex)
+    if (this.href.indexOf('index.html') > 0) {
+      var minusIndex = this.href.replace(/index.html/i, '')
+      $(this).attr('href', minusIndex)
+    }
   })
   // Lightbox
   // Show proper cursor only if img
@@ -115,7 +133,10 @@ $( document ).ready(function() {
     window.location=$(this).find('a').attr('href');
     return false;
   })
+
+  // Build version lists
   getVersions()
+  getApiVersions($('#verNum')[0].innerText)
 
   // IMG style
   document.querySelectorAll('img').forEach(function(e) {e.removeAttribute('style');})
@@ -162,13 +183,13 @@ $( document ).ready(function() {
       if (!desktopSize) {
         desktopSize = true;
         closeMobileNav()
-        moveSearchBar()
+        // moveSearchBar()
       }
     }
     if ($(window).width() < 768) {
       if (desktopSize) {
         desktopSize = false;
-        moveSearchBar()
+        // moveSearchBar()
       }
     }
   })
@@ -294,28 +315,14 @@ $( document ).ready(function() {
   // Unhide section if user is referred its anchor
   function unhideCollapsed()
   {
-    try {
     var anchorName = document.location.hash.substring(1);
-    var collapsedAnchor = $("[id=" + anchorName + "]").children(".collapsed");
-    $(collapsedAnchor).removeClass('collapsed');
-    $(collapsedAnchor).attr('aria-expanded','true');
-    $(collapsedAnchor).siblings().slideToggle(300);
-    $("span[id]").attr('style','display: none;');
-    $(collapsedAnchor).siblings().wrapAll('<div class="colsection"></div>');
-    $(collapsedAnchor).after($(collapsedAnchor).siblings(".colsection"));
-    } catch (e) {}
     try {
-      var anchorName = document.location.hash.substring(1);
-      var collapsedAnchor = $("[id=" + anchorName + "]").siblings(".collapsed");
-      $(collapsedAnchor).removeClass('collapsed');
-      $(collapsedAnchor).attr('aria-expanded','true');
-      $(collapsedAnchor).siblings().slideToggle(300);
-      $("span[id]").attr('style','display: none;');
-      $(collapsedAnchor).siblings().wrapAll('<div class="colsection"></div>');
-      $(collapsedAnchor).after($(collapsedAnchor).siblings(".colsection"));
+      var collapsedAnchor = $("[id=" + anchorName + "]")
+      expandAll(collapsedAnchor)
     } catch (e) {}
   }
   unhideCollapsed();
+
   // Unhide section if user changes hash in page
   $(window).on('hashchange', function(e){
    unhideCollapsed();
@@ -328,20 +335,43 @@ $( document ).ready(function() {
   $(".nav-dropdown").on("keydown", function(e){
     if(e.which === 13){
       $(this).toggleClass("showdrop");
-      $('.nav-sub-menu').attr("aria-hidden", function(index, attr) {return attr == "true" ? "false" : "true"});
-      $('.nav-sub-menu', this).toggle();
+      $(this).find('.nav-sub-menu').attr("aria-hidden", function(index, attr) {return attr == "true" ? "false" : "true"});
+      $(this).find('.nav-sub-menu', this).toggle();
     }
   });
+
+
   // Guides dropdown
-  $("li.nav-dropdown").hover(function() {
+
+  var closeNavDropdown = function(nSM) {
+    nSM.find('.nav-sub-menu').attr("aria-hidden", "true")
+    nSM.find(".nav-sub-menu").fadeOut(400)
+    nSM.removeClass("showdrop");
+  }
+
+  $(".nav-dropdown").click(function() {
     $(this).addClass("showdrop")
-    $('.nav-sub-menu').attr("aria-hidden", "false")
-    $(".nav-sub-menu").show();
-  }, function() {
-    $('.nav-sub-menu').attr("aria-hidden", "true")
-    $(this).removeClass("showdrop");
-    $(".nav-sub-menu").hide()
+    $(this).find('.nav-sub-menu').attr("aria-hidden", "false")
+    $(this).find(".nav-sub-menu").fadeIn(200);
   });
+  
+  var navDropdown = $('.nav-dropdown')
+  var navSubMenu = navDropdown.find(".nav-sub-menu")
+
+  // Hide sub-menu if user ignores it
+  navSubMenu.mouseenter(function(){ 
+    clearTimeout(navSubMenu.data('timeout')); 
+  }).mouseleave(function(){   
+      var timeout = setTimeout(function(){closeNavDropdown(navDropdown)}, 650);
+      navSubMenu.data('timeout', timeout); 
+  });
+  navDropdown.mouseenter(function(){
+    clearTimeout(navSubMenu.data('timeout'));
+  }).mouseleave(function(){
+      var timeout = setTimeout(function(){closeNavDropdown(navDropdown)}, 650);
+      navSubMenu.data('timeout', timeout); 
+  });
+
   // toc Nav
   function tocCollapse() {
     $(tocTarget).addClass('collapsed');
@@ -416,11 +446,11 @@ $( document ).ready(function() {
     $('#mobile-local').insertAfter('#main h1 .headerlink').removeClass('hide')
     if ($(window).width() >= 768) {
       desktopSize = true
-      moveSearchBar()
+      // moveSearchBar()
     }
     if ($(window).width() < 768) {
       desktopSize = false
-      moveSearchBar()
+      // moveSearchBar()
     }});
   })
 // Additional functions
@@ -441,37 +471,117 @@ function toggleChildSections(event){
   }
 function expandAll(target){
   if (!target) {var target = '#main'}
-  $(target).find('.collapsible').siblings('.colsection').children().unwrap();
-  $(target).find('.collapsible').siblings().slideDown(300);
-  $(target).find('.collapsible').removeClass('collapsed');
-  $(target).find('.collapsible').attr('aria-expanded','true')
-  $(target).find('.collapsible').each(function addColSecAll(){$(this).siblings().wrapAll('<div class="colsection"></div>')});
+  $(target).find('.collapsible').not('.toc-collapsible-btn').siblings('.colsection').children().unwrap();
+  $(target).find('.collapsible').not('.toc-collapsible-btn').siblings().slideDown(300);
+  $(target).find('.collapsible').not('.toc-collapsible-btn').removeClass('collapsed');
+  $(target).find('.collapsible').not('.toc-collapsible-btn').attr('aria-expanded','true')
+  $(target).find('.collapsible').not('.toc-collapsible-btn').each(function addColSecAll(){$(this).siblings().wrapAll('<div class="colsection"></div>')});
   // ifins
-  $(target).find('.collapsible-ifin').removeClass('collapsed');
-  $(target).find('.collapsible-ifin').attr('aria-expanded','true')
-  $(target).find('.collapsible-ifin').next('blockquote').slideDown(300);
+  $(target).find('.collapsible-ifin').not('.toc-collapsible-btn').removeClass('collapsed');
+  $(target).find('.collapsible-ifin').not('.toc-collapsible-btn').attr('aria-expanded','true')
+  $(target).find('.collapsible-ifin').not('.toc-collapsible-btn').next('blockquote').slideDown(300);
 }
 
 function collapseAll(target){
   if (!target) {var target = '#main'}
-  $(target).find('.collapsible').siblings('.colsection').children().slideToggle(300);
-  $(target).find("span[id]").attr('style','display: none;')
-  $(target).find('.collapsible').siblings('.colsection').children().unwrap();
-  $(target).find('.collapsible').addClass('collapsed');
-  $(target).find('.collapsible').attr('aria-expanded','false')
+  $(target).find('.collapsible').not('.toc-collapsible-btn').siblings('.colsection').children().slideToggle(300);
+  $(target).find("span[id]").not('.toc-collapsible-btn').attr('style','display: none;')
+  $(target).find('.collapsible').not('.toc-collapsible-btn').siblings('.colsection').children().unwrap();
+  $(target).find('.collapsible').not('.toc-collapsible-btn').addClass('collapsed');
+  $(target).find('.collapsible').not('.toc-collapsible-btn').attr('aria-expanded','false')
   // ifins
-  $(target).find('.collapsible-ifin').addClass('collapsed');
-  $(target).find('.collapsible-ifin').attr('aria-expanded','false')
-  $(target).find('.collapsible-ifin').next('blockquote').slideUp(300);
+  $(target).find('.collapsible-ifin').not('.toc-collapsible-btn').addClass('collapsed');
+  $(target).find('.collapsible-ifin').not('.toc-collapsible-btn').attr('aria-expanded','false')
+  $(target).find('.collapsible-ifin').not('.toc-collapsible-btn').next('blockquote').slideUp(300);
+}
+function versionPick(p1,whichVal){
+  var clickedVer = p1.textContent;
+  var pathArray = window.location.pathname.substring(1).split('/')
+  var lastApiVer = ""
+  var versionPath
+  var verForUrl
+  var apiForUrl
+  var lastUrlVersion
+  var userPath = ""
+  var newPath = ""
+  var numberOfVersions = 0
+  var languageIndex = pathArray.indexOf('en')
+  // In the future, have an array of supported languages, do forEach until you have an indexOf > -1
+  
+  // Parsing the current URL
+  pathArray.forEach(function(e,i){
+    if(e.search(/(v\d)|latest/) === 0){
+      numberOfVersions ++; 
+      lastUrlVersion = i
+    }
+  })
+  var userPathArr = pathArray.splice(languageIndex+1)
+  if (numberOfVersions === 2) {
+    var versionIndex = languageIndex - 2
+  } else {
+     var versionIndex = languageIndex - 1
+  }
+  var apiIndex = versionIndex+1
+
+   // Assembling the new URL
+  for (i = 0; i < userPathArr.length; i++) {
+      userPath += "/";
+      userPath += userPathArr[i];
+  }
+
+  if (whichVal === "releaseVersion") {
+    // Determine which API version to use
+    // Get latest API version for release
+    Object.entries(docs.allApiVersions).forEach(function(apiV){
+      if (apiV[1].releases.indexOf(clickedVer) > -1) {
+        lastApiVer = apiV[0]
+      }
+    })
+    // If the user already has an API version selected, keep it
+    if (numberOfVersions === 2) {
+      apiForUrl = pathArray[lastUrlVersion]
+    } else {
+      apiForUrl = lastApiVer
+    }
+    if (numberOfVersions === 2) {
+      if (lastApiVer != "") {
+        // add everything together
+        pathArray[versionIndex] = clickedVer
+        pathArray[versionIndex+1] = apiForUrl
+      } else {
+        // If the release doesn't support API versions, remove that URL path
+        pathArray[versionIndex] = clickedVer
+        pathArray.splice(versionIndex+1,1) 
+      }
+    } else {
+      if (lastApiVer != "") {
+        // add everything together
+        pathArray[versionIndex] = clickedVer
+        // add apiForUrl into array
+        pathArray.splice(versionIndex+1,0,"v" + apiForUrl)
+      } else {
+        // If the release doesn't support API versions, only change the version Index
+        pathArray[versionIndex] = clickedVer
+      }
+    }
+  }
+  if (whichVal === "apiVersion") {
+   apiForUrl = clickedVer
+   if (numberOfVersions === 2) {
+      pathArray[apiIndex] = apiForUrl
+    } else {
+      pathArray.splice(apiIndex,0,apiForUrl) 
+    }
+  }
+  
+  for (i = 0; i < pathArray.length; i++) {
+    newPath += "/";
+    newPath += pathArray[i];
+  }
+  var newUrl = window.location.origin + newPath + userPath
+  window.location.href = newUrl
 }
 
-function versionPick(p1){
-  var clickedVer = p1.textContent;
-  var hostAndVer = "docs.skuid.com\/"
-  var fullURL = hostAndVer.concat(clickedVer,"\/")
-  var siteVer = new RegExp("docs.skuid.com\/[^\/]+\/")
-  window.location.href = document.location.href.replace(siteVer, fullURL)
-}
 function goToLatest(){
   var clickedVer = 'latest';
   var hostAndVer = "docs.skuid.com\/"
@@ -482,30 +592,81 @@ function goToLatest(){
 var goToLatestElem = document.getElementById('goToLatest')
 if(goToLatestElem){goToLatestElem.onclick = goToLatest}
 var getVersions = function() {
+    versionMenu = $('.versions-dropdown').siblings('.dropdown-menu')
     try {
-        var versions;
         function reqListener () {
-        versions = (this.responseText.split('\n'));
+          release = JSON.parse(this.responseText);
+          docs.release = release
+          var versionList = []
+          Object.values(release).forEach(
+            function(r) {
+              // Check if the release is currently supported.
+              if (r.supported == true)
+                {
+                  // Add its versions to version list.
+                  r.versions.forEach(function(v){versionList.push(v)})
+                }
+              }
+          )
+          // Reverse list so most recent is first.
+          versionList.reverse()
+          docs.versions = versionList
+          // Do the same for unsupported versions
+          var unsupportedVersions = []
+          Object.values(release).forEach(
+            function(r) {
+              // Check if the release is currently supported.
+              if (r.supported == false)
+                {
+                  // Add its versions to version list.
+                  r.versions.forEach(function(v){unsupportedVersions.push(v)})
+                }
+              }
+          )
+          // Reverse list so most recent is first.
+          unsupportedVersions.reverse()
+          docs.unsupportedVersions = unsupportedVersions
         }
-        var vUrl = "/versions.txt"
+
+        var vUrl = "/versions.json"
         var vReq = new XMLHttpRequest();
         vReq.addEventListener("load", reqListener);
         vReq.open("GET", vUrl);
         vReq.onload = function (e) {
-        if (vReq.readyState === 4) {
+          if (vReq.readyState === 4) {
             if (vReq.status === 200) {
-                latestVer = versions[0]
-                versions.forEach(function(vNum){
+                latestVer = docs.versions[0]
+                docs.versions.forEach(function(vNum){
                   var vItem = document.createElement('a')
                   vItem.className = 'dropdown-item'
                   vItem.setAttribute('href','#')
-                  vItem.setAttribute('onclick','versionPick(this)')
+                  vItem.setAttribute('onclick','versionPick(this, "releaseVersion")')
                   vItem.innerText = vNum
                   try {
-                      $('.dropdown-menu').append(vItem)
+                      versionMenu.not('#unsupportedVersionsList').append(vItem)
                     } catch(e){}
                 })
+              // var unsupportedVElem = document.createElement('a')
+              // unsupportedVElem.className = 'dropdown-item'
+              // unsupportedVElem.id = 'unsupportedMenu'
+              // unsupportedVElem.setAttribute('onmouseover','$("#unsupportedVersionsList").show();$("#unsupportedMenu").attr("aria-expanded","true")')
+              // unsupportedVElem.innerText = "Unsupported Versions"
+              // unsupportedVElem.setAttribute('aria-haspopup',"true" )
+              // unsupportedVElem.setAttribute('aria-expanded',"false")
+              // versionMenu.not('#unsupportedVersionsList').append(unsupportedVElem)
               versionCheck()
+              // Create unsupported versions also
+              // docs.unsupportedVersions.forEach(function(vNum){
+              //     var vItem = document.createElement('a')
+              //     vItem.className = 'dropdown-item'
+              //     vItem.setAttribute('href','#')
+              //     vItem.setAttribute('onclick','versionPick(this,"releaseVersion")')
+              //     vItem.innerText = vNum
+              //     try {
+              //         $('#unsupportedVersionsList').append(vItem)
+              //       } catch(e){}
+              //   })
+              // $('#unsupportedMenu').append($('#unsupportedVersionsList'))
             } else {
               console.error(vReq.statusText);
             }
@@ -516,7 +677,11 @@ var getVersions = function() {
       catch(e){}
 };
 var versionCheck = function() {
-  var verNum = $('#verNum')[0].innerText
+ var verNum = $('#verNum')[0].innerText
+  docs.verNum = $('#verNum')[0].innerText
+  if($('#apiVerNum')){
+    docs.apiVerNum = $('#apiVerNum')[0].innerText
+  }
   if(verNum != latestVer){
     isLatest = false;
     $($('#version-warning')[0].innerHTML).prependTo('#main')
@@ -524,7 +689,58 @@ var versionCheck = function() {
   } else {
     isLatest = true;
   }
-}
+  if($('#prerelease')[0].innerText == "True") {
+    $($('#version-prerelease')[0].innerHTML).prependTo('#main')
+    $('.version-warning-box').remove() // Since we're on pre-release, remove version warning
+    } 
+  }
+
+var getApiVersions = function(verNum) {
+    apiVersionMenu = $('.versions-api-dropdown').siblings('.dropdown-menu')
+    try {
+      var versionList = []
+      function reqListener () {
+        docs.allApiVersions = JSON.parse(this.responseText);
+        Object.entries(docs.allApiVersions).forEach(
+          function(r) {
+            // Check if the release is currently supported.
+            if (r[1].releases.includes(verNum) == true)
+              {
+                versionList.push("v" + r[0])
+              }
+            }
+        )
+        versionList.reverse()
+      }
+
+      var vUrl = "/api_versions.json"
+      var vReq = new XMLHttpRequest();
+      vReq.addEventListener("load", reqListener);
+      vReq.open("GET", vUrl);
+      vReq.onload = function (e) {
+        if (vReq.readyState === 4) {
+          if (vReq.status === 200) {
+              versionList.forEach(function(vNum){
+                var vItem = document.createElement('a')
+                vItem.className = 'dropdown-item'
+                vItem.setAttribute('href','#')
+                vItem.setAttribute('onclick','versionPick(this, "apiVersion")')
+                vItem.innerText = vNum
+                try {
+                    apiVersionMenu.append(vItem)
+                  } catch(e){}
+              })
+          } else {
+            console.error(vReq.statusText);
+          }
+        }
+      };
+      vReq.send();
+    }
+    catch(e){}
+};
+ 
+
 var copyText = function(e, attr) {
   var copyBlock = document.createElement('input');
   copyBlock.setAttribute('display','none');
