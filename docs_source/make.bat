@@ -26,6 +26,14 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
+:code_rst_generate
+    rem https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html
+    rem Force creation of files even if they exist with -f options
+    rem        SPHINXBUILD=sphinx-apidoc -f -o .\code ..
+    set SPHINXBUILD=sphinx-apidoc -o .\code ..
+    %SPHINXBUILD%
+    goto end
+
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 

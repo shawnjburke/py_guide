@@ -6,6 +6,7 @@ Spinx includes a feature it calls autodoc.  The idea is that if you run the gene
 reStructuredText for each code file found.  In turn, those files, will include directives that generate documentation
 from the code comments.
 
-##########################################
-Some header for later
-##########################################
+
+Generate code documentation RST files Automatically
+####################################################
+
