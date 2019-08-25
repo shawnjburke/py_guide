@@ -23,4 +23,6 @@ code_rst_generate:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
+    # per https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
+    #    the $@ syntax is everything else on the command line (leftovers)
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

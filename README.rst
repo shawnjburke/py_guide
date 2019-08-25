@@ -3,6 +3,15 @@ FNG's Guide to Python
 =====================
 
 ########################
+Version History
+########################
+
+* 0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.
+
+* 0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to
+    create a project is in an development state.
+
+########################
 Not bad Python, not bad
 ########################
 I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I grew up with camelCase and PascalCase
@@ -41,6 +50,24 @@ Best practice steps are organized as follows:
 ..  _Python Project Structure: `py_guide/python_best_practices/project_structure.html
 ..  _Documentation Matters: `py_guide/python_best_practices/project_documentation_matters.html
 ..  _setup.py: `py_guide/python_best_practices/project_setup.html
+
+************************************
+What we have tried to think through
+************************************
+
+Project Strucutre - as an old programmer having a standard way to do any coding language, is just something I find
+ efficient.  In addition to thinking like a developer I've worked in release management, IT, being the boss, and I
+ tend to appraoch things in a wholistic fashion.  It doesn't matter how cool your code is if you can't install and
+ maintain it.
+
+Documentation is important - if I have a structure that is already setup for how to document, leveraging in line code
+syntax, then developers are more likely to make use of it.  This is good, because documentation is not for you, but
+for the coder left maintaining your app, when you've moved on to your new fancy job (because of this awesome app you
+just made).
+
+Releasing - I have found releasing is an after thought.  This often results in things like finding out your project
+structure isn't conducive to packaging your release.  Or thinking through where you store your version number as it's
+used in several files (normally).
 
 ############################
 Installation

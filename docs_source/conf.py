@@ -15,17 +15,25 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+from backports import configparser2
+from datetime import datetime
+
+# -- Shared Project Information stored in browser_driver.cfg -----------------
+ini_file = configparser2.ConfigParser()
+ini_file_name = "../project.cfg"
+ini_file.read(ini_file_name)
 
 # -- Project information -----------------------------------------------------
 
-project = 'Python Guide for Practicing Wizards'
-copyright = '2018, Shawn J Burke'
-author = 'Shawn J Burke'
+project = ini_file["project"]["name"]
+author = ini_file["project"]["author"]
+copyright = '{0}, {1}'.format(str(datetime.now().year), author)
 
 # The short X.Y version
-version = ''
+version = ini_file["distribution"]["version"]
+# For our purposes, version = release
 # The full version, including alpha/beta/rc tags
-release = '2018.6.3.1'
+release = version
 
 
 # -- General configuration ---------------------------------------------------
@@ -71,7 +79,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'setup.py']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -139,7 +147,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'PythonGuideforPracticingWizards.tex', 'Python Guide for Practicing Wizards Documentation',
-     'Shawn J Burke', 'manual'),
+     author, 'manual'),
 ]
 
 
