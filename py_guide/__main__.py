@@ -1,6 +1,11 @@
 import sys
 import argparse
 from console_menu import ConsoleMenu
+from py_guide import log_4_trees
+
+
+global log
+log = log_4_trees.LoggerOfTrees()
 
 
 def main(args=None):
@@ -8,12 +13,17 @@ def main(args=None):
         should handle parsing arguments and display a usage help message if the package
         was not called as expected.
 
+        Note:
+            Using the main() will help creating deployment packages using setup.py, wheel, and wanting
+            creation of any entry point in the scripts directory of the virtual environment
+
         When an argument is parsed it should be routed to a handler action method.
 
         TODO:
 
             Add standard arg parse and help output for this package.
     """
+
     parser = parser_build()
     route_arguments(parser)
 
@@ -38,7 +48,7 @@ def parser_build():
     multiple_argument_actions = "?"
     argument_action = "store_true"  # If you pass this argument, by default it is true
     argument_type = bool
-    argument_help = "When this parameter is provided, by default it is treated as true.  When true a console menu " \
+    argument_help = "When this parameter is provided the flag is set to true.  When true a console menu " \
                     "will be shown."
     # The type on this argument is implied by the action being store_true.  Adding it will cause an error
     #   https://stackoverflow.com/a/33574535
@@ -60,8 +70,6 @@ def parser_build():
                         action=argument_action, # Treatment of argument. Here append string to list.
                         help=argument_help)
 
-
-
     return parser
 
 
@@ -76,8 +84,7 @@ def route_arguments(cmdline_parser):
         route_action_list_of_strings(args)
 
     if args.show_menu:
-        menu = ConsoleMenu(cmdline_parser)
-        menu.show_menu()
+        route_action_show_menu(cmdline_parser=cmdline_parser)
 
     if not args.show_menu and args.list_of_strings is None:
         # If nothing was passed in, print the help usage
@@ -91,10 +98,11 @@ def route_action_list_of_strings(args):
     print("list_of_strings = {0}".format(args.list_of_strings))
 
 
-def route_action_show_menu(args):
+def route_action_show_menu(cmdline_parser):
     """If ``--show_menu`` is passed as part of calling this module, this method will be triggered by routing, and
     a console menu will be shown."""
-    print("This method needs to be implemented.")
+    menu = ConsoleMenu(cmdline_argument_parser=cmdline_parser, logger=log)
+    menu.show_menu()
 
 
 if __name__ == "__main__":
