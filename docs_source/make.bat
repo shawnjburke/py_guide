@@ -30,7 +30,8 @@ if errorlevel 9009 (
     rem https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html
     rem Force creation of files even if they exist with -f options
     rem        SPHINXBUILD=sphinx-apidoc -f -o .\code ..
-    set SPHINXBUILD=sphinx-apidoc -o .\code ..
+    rem Use the second parameter (if passed, can be blank) to all sphinx-apidoc options like -f[orce]
+    set SPHINXBUILD=sphinx-apidoc %2 -o .\code ..
     %SPHINXBUILD%
     goto end
 
