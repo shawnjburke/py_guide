@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Use setup.py from the Start &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Great Software has Great Logging" href="project_logging.html" />
+    <link rel="prev" title="Project Documentation Matters" href="project_documentation_matters.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="project_documentation_matters.html" title="Project Documentation Matters"
+             accesskey="P">previous</a> |
+          <a href="project_logging.html" title="Great Software has Great Logging"
+             accesskey="N">next</a> |
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="use-setup-py-from-the-start">
+<h1>Use setup.py from the Start<a class="headerlink" href="#use-setup-py-from-the-start" title="Permalink to this headline">¶</a></h1>
+<p>As I’ve said before scalability of teams is more important to me than, for instance, language perfection, because
+there will always be a new language, a new pattern, and another code changing paradigm. Using <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is along
+those lines.  I do it because thinking like your a production application, used by others, is easier to do from the
+start, than backport later.  That’s an opinion, I get it, that’s why I wrote my own public guide.</p>
+<div class="section" id="tl-dr-for-page">
+<h2>TL;DR for page<a class="headerlink" href="#tl-dr-for-page" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>As you create your project, use setup.py.  Structure like a pro from the start.</p></li>
+<li><p>Test your distributions on the Test Version of PyPI; don’t litter.</p></li>
+<li><p>Store build meta data in an ini type of file for build pipeline compatibility</p></li>
+</ul>
+<div class="section" id="setup-py">
+<h3>setup.py<a class="headerlink" href="#setup-py" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="s1">&#39;Shawn J Burke&#39;</span><span class="p">,</span>
+      <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;pypi.python@teamburke.com&#39;</span><span class="p">,</span>
+      <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+          <span class="c1"># Trove classifiers</span>
+          <span class="c1"># Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers</span>
+          <span class="s1">&#39;Development Status :: 4 - Beta&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Intended Audience :: Developers&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;License :: OSI Approved :: MIT License&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Natural Language :: English&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Operating System :: OS Independent&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Programming Language :: Python&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Programming Language :: Python :: 2.7&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Programming Language :: Python :: 3&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Programming Language :: Python :: 3.3&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Programming Language :: Python :: 3.4&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Programming Language :: Python :: 3.5&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Programming Language :: Python :: 3.6&#39;</span><span class="p">,</span>
+          <span class="c1"># https://www.geeksforgeeks.org/difference-various-implementations-python/</span>
+          <span class="s1">&#39;Programming Language :: Python :: Implementation :: CPython&#39;</span><span class="p">,</span>
+          <span class="c1"># Need to test to see if this will run on PyPy.  That&#39;d be cool.</span>
+          <span class="c1"># &#39;Programming Language :: Python :: Implementation :: PyPy&#39;,</span>
+          <span class="s1">&#39;Topic :: Software Development :: Quality Assurance&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Topic :: Software Development :: Testing&#39;</span>
+        <span class="p">],</span>
+      <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Python Project &amp; Coding Standards for Practicing Wizards&#39;</span><span class="p">,</span>
+      <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+          <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+      <span class="n">keywords</span><span class="o">=</span><span class="s2">&quot;python standards best practice&quot;</span><span class="p">,</span>
+      <span class="n">license</span><span class="o">=</span><span class="s1">&#39;MIT&#39;</span><span class="p">,</span>
+      <span class="c1"># newline separates Description: header in PKG-INFO from readme content. Can&#39;t use extensions like seealso::</span>
+      <span class="n">long_description</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;README.rst&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span>
+      <span class="n">long_description_content_type</span><span class="o">=</span><span class="s1">&#39;text/x-rst&#39;</span><span class="p">,</span>
+      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.py_guide&#39;</span><span class="p">,</span>
+      <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>
+      <span class="n">project_urls</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Bug Tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/issues/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Documentation&quot;</span><span class="p">:</span> <span class="s2">&quot;https://shawnjburke.github.io/py_guide/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Source Code&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/&quot;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="c1"># test_suite=&quot;browser_driver.tests.browser_tests&quot;,</span>
+      <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/shawnjburke/py_guide&quot;</span><span class="p">,</span>
+      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;2019.4.28&#39;</span><span class="p">,</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="setup-py-versus-requirements-txt">
+<h4>setup.py versus requirements.txt<a class="headerlink" href="#setup-py-versus-requirements-txt" title="Permalink to this headline">¶</a></h4>
+<p>requirements.txt is used during the development phase.  For instance, I need Sphinx in the development phase
+to build the documentation.</p>
+<p>setup.py is used to created a distribution (in Windows terms, an installer).  It may not need all the components
+needed in the development phase. For instance, my installed application does not build documentaiton, therefore
+it does not need Sphinx.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Packages in setup.py are normally in requirements.txt.
+Most packages in requirements.txt are needed in setup.py, but not always all.</p>
+</div>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Examples of requirements.txt but setup.py</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Package</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Spinx</p></td>
+<td><p>Used for generating documentation, the installer would not do this,
+as it just build the generated documentation done as
+part of development</p></td>
+</tr>
+<tr class="row-odd"><td><p>unittest2</p></td>
+<td><p>Used for testing the code, a development activity, there is no reason
+to require this in the setup distribution</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="project-build-metadata">
+<h3>Project Build Metadata<a class="headerlink" href="#project-build-metadata" title="Permalink to this headline">¶</a></h3>
+<p>Certain information, such as a version number, might be needed in several places in a project.  For instance both
+setup.py and the Sphinx conf.py share this information.  While there are a myriad of approaches to how to solve
+this problem, our best practice is to store them in a configuration file (.cfg) which is structured like an ini
+file with [section] and key = value pairs.   This is done for the maximum portability across a build environment;
+all build tools can write to an ini style file, and most languages have some sort of importable code to do it.</p>
+</div>
+<div class="section" id="version-numbering">
+<h3>Version Numbering<a class="headerlink" href="#version-numbering" title="Permalink to this headline">¶</a></h3>
+<p>How to give your application a version number can be a topic of some debate.   When creating them I live by</p>
+<ul class="simple">
+<li><p>Marketing will always call it something else.  Don’t tie the code version to what people refer to it as.</p></li>
+<li><p>Do pick something.  Most any scheme is better than nothing.</p></li>
+</ul>
+<p>As I put these thoughts together I was remined there are some fundamentals in the debate, and existing standards</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://semver.org/">Semantic Versioning</a> - What most people are use to in a form like Major.Minor.Patch - 1.0.1</p></li>
+<li><p><a class="reference external" href="https://calver.org/">Calendar Versioning</a> - Some form of using the date, such as my IDE Pycharm, I am writing this with 2018.2.4</p></li>
+<li><p><a class="reference external" href="https://0ver.org/">Zero Based Versioning</a> - The world’s most important number is zero.  Don’t skip it.</p></li>
+<li><p><a class="reference external" href="https://github.com/exadra37-versioning/explicit-versioning">Explicit Versioning</a> - Add an additional value is used to indicate if this release breaks backwards compatibility</p></li>
+</ul>
+<p>Much of what I say is better summarized by Mahmoud Hashemi who authored the above sites, and a great summary article
+with <a class="reference external" href="https://sedimental.org/designing_a_version.html#case-study-chrome-vs-firefox">Chrome vs FireFox Version Numbering</a>.</p>
+<p>Ultimately I’ve become a fan of a school of thought that version numbers can be based on a date.  I now understand the
+kewl kids would cal this CalVer. There’s something about the date <code class="docutils literal notranslate"><span class="pre">2019.4.10</span></code> <a class="footnote-reference brackets" href="#pad" id="id1">1</a> that human beings relate to,
+over incremental numbers <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.  I also think it works well for patches <code class="docutils literal notranslate"><span class="pre">2019.4.11.1610</span></code> (adding military time).
+I prefer it to avoid the debat of major.minor, or major.minor.revision syntax, <code class="docutils literal notranslate"><span class="pre">1.1</span></code> versus <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code> type of number/
+You could even add a tag if necessary, <code class="docutils literal notranslate"><span class="pre">2019.4.10.dev</span></code>. As seen, this works well in a development environments
+with lots of builds, you just add the time (even more precision), tags, etc. that are needed <code class="docutils literal notranslate"><span class="pre">2019.4.10.dev</span></code>
+or <code class="docutils literal notranslate"><span class="pre">2019.4.10.2306.dev</span></code>.</p>
+<p>There are also things with Semantic Versioning that people have gotten used to.  For instance your 1.0 version won’t
+be that good.   Reading _Chrome vs FireFox Version Numbering I agreed with the sentiment of not making 2.0 is the death
+of your application.  Why?  Developers and Development teams are not all created equal.  While there is good reason
+for people to make 1.0 jokes, there are many devs and teams that made a strong 1.0.  I get some sort of my mom telling
+me not to judge a book by it’s cover, when I think about these things.</p>
+<p>Explicit Versioning was interesting to me for it’s desire to identify a release that breaks backwards compatibility.
+I will also give kudos to <a class="reference external" href="https://medium.com/sapioit/why-having-3-numbers-in-the-version-name-is-bad-92fc1f6bc73c">Release.Breaking.Feature.Fix</a> terminology in an article written by <a class="reference external" href="https://medium.com/&#64;sapioit">Sapioit</a>.  This appears
+to be the Chrome schema.  The idea of identifying a breaking update is especially important in larger corporate
+environments.  In those cases where the amount of software to maintain is vast, knowing a release may break things
+for your users (and cost the company $), is a valuable piece of information.</p>
+</div>
+<div class="section" id="python-wheels">
+<h3>Python Wheels<a class="headerlink" href="#python-wheels" title="Permalink to this headline">¶</a></h3>
+<p>I found it a bit difficult to navigate the waters of Python installation packages when arrived to the scene.  It appears
+to be a side effect of Python having been around for so long, and having various lifetimes as more of a script engine
+(as implemented), then to more of a structured language.  Over time, things change (<a class="reference external" href="https://packaging.python.org/discussions/wheel-vs-egg/">wheel vs egg</a>).  There appeared
+to be version called the <a class="reference external" href="http://setuptools.readthedocs.io/en/latest/formats.html">egg</a> which is now deprecated in lieu of the <a class="reference external" href="https://pypi.org/project/wheel/">Python Wheel</a> and brought to us via <a class="reference external" href="https://www.python.org/dev/peps/pep-0427/#abstract">PEP 0427</a></p>
+<p>There’s even a site tracking the <a class="reference external" href="https://pythonwheels.com/">egg to wheel</a> conversion.</p>
+<p>As I worked through it the clear choice is wheel.  It’s newer and includes distribution specific information that makes
+it faster than compiling the egg at it’s destination.</p>
+</div>
+<div class="section" id="pypi-package-management">
+<h3>pypi Package Management<a class="headerlink" href="#pypi-package-management" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://packaging.python.org/guides/making-a-pypi-friendly-readme/">https://packaging.python.org/guides/making-a-pypi-friendly-readme/</a>
+<a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/">https://packaging.python.org/tutorials/packaging-projects/</a>
+<a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html">https://setuptools.readthedocs.io/en/latest/setuptools.html</a>
+<a class="reference external" href="https://packaging.python.org/discussions/install-requires-vs-requirements/">https://packaging.python.org/discussions/install-requires-vs-requirements/</a>
+<a class="reference external" href="https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package">https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package</a>
+<a class="reference external" href="https://pypi.org/classifiers/">https://pypi.org/classifiers/</a></p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="pad"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Python doesn’t like the month zero padded, therefore, I don’t zero pad the version at all</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table of Contents</h3>
+          <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../code/modules.html">py_guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_python.html">Install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_pycharm.html">Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_structure.html">Python Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation_code.html">Generate Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation_matters.html">Project Documentation Matters</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Use setup.py from the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_logging.html">Great Software has Great Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Best Practices Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-style-sample.html">reStructuredText Sample of Stylings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips and Tricks</a></li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="project_documentation_matters.html" title="Project Documentation Matters"
+              >previous</a> |
+            <a href="project_logging.html" title="Great Software has Great Logging"
+              >next</a> |
+            <a href="../py-modindex.html" title="Python Module Index"
+              >modules</a> |
+            <a href="../genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="../_sources/python_best_practices/project_setup.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

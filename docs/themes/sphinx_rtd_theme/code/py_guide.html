@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>py_guide package &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="setup module" href="setup.html" />
+    <link rel="prev" title="py_guide" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 'Python Guide for Practicing Wizards'
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">py_guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">py_guide package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-py_guide.console_menu">py_guide.console_menu module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-py_guide.log_4_trees">py_guide.log_4_trees module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-py_guide.project_factory">py_guide.project_factory module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-py_guide">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/install_python.html">Install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/install_pycharm.html">Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_structure.html">Python Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_documentation_code.html">Generate Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_documentation_matters.html">Project Documentation Matters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_setup.html">Use setup.py from the Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/project_logging.html">Great Software has Great Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_best_practices/index.html">Best Practices Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-style-sample.html">reStructuredText Sample of Stylings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips and Tricks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rants/index.html">Rants</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">'Python Guide for Practicing Wizards'</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">py_guide</a> &raquo;</li>
+        
+      <li>py_guide package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/code/py_guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="py-guide-package">
+<h1>py_guide package<a class="headerlink" href="#py-guide-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-py_guide.console_menu">
+<span id="py-guide-console-menu-module"></span><h2>py_guide.console_menu module<a class="headerlink" href="#module-py_guide.console_menu" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="py_guide.console_menu.ConsoleMenu">
+<em class="property">class </em><code class="sig-prename descclassname">py_guide.console_menu.</code><code class="sig-name descname">ConsoleMenu</code><span class="sig-paren">(</span><em class="sig-param">cmdline_argument_parser</em>, <em class="sig-param">logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/console_menu.html#ConsoleMenu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="py_guide.console_menu.ConsoleMenu.close_menu">
+<code class="sig-name descname">close_menu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/console_menu.html#ConsoleMenu.close_menu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu.close_menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.console_menu.ConsoleMenu.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.console_menu.ConsoleMenu.make_directory">
+<code class="sig-name descname">make_directory</code><span class="sig-paren">(</span><em class="sig-param">directory_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/console_menu.html#ConsoleMenu.make_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu.make_directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.console_menu.ConsoleMenu.new_project_generator">
+<code class="sig-name descname">new_project_generator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/console_menu.html#ConsoleMenu.new_project_generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu.new_project_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects some information, then generates a project using the best practices of this guide.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_guide.console_menu.ConsoleMenu.pause">
+<em class="property">static </em><code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/console_menu.html#ConsoleMenu.pause"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu.pause" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.console_menu.ConsoleMenu.show_help">
+<code class="sig-name descname">show_help</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/console_menu.html#ConsoleMenu.show_help"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu.show_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.console_menu.ConsoleMenu.show_menu">
+<code class="sig-name descname">show_menu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/console_menu.html#ConsoleMenu.show_menu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.console_menu.ConsoleMenu.show_menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_guide.log_4_trees">
+<span id="py-guide-log-4-trees-module"></span><h2>py_guide.log_4_trees module<a class="headerlink" href="#module-py_guide.log_4_trees" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="py_guide.log_4_trees.LoggerOfTrees">
+<em class="property">class </em><code class="sig-prename descclassname">py_guide.log_4_trees.</code><code class="sig-name descname">LoggerOfTrees</code><span class="sig-paren">(</span><em class="sig-param">allow_log_file=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/log_4_trees.html#LoggerOfTrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.log_4_trees.LoggerOfTrees" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Logger</span></code></p>
+<p>Great Software has Great Logging.</p>
+<p><a class="reference external" href="https://www.google.com/search?q=logging">https://www.google.com/search?q=logging</a></p>
+<blockquote>
+<div><p>log·ging     noun
+/ˈlôɡiNG,ˈläɡiNG/</p>
+<p>the activity or business of felling trees and cutting and preparing the timber.
+“measures to counter illegal logging of the country’s tropical rainforests”</p>
+</div></blockquote>
+<p>Originally created to deal with writing log files to directories (and creating that directory etc), I
+encapsulated the Python standard logging into my logging_of_trees project.  By default this class can
+create the logging file and add the handler to direct logs to it.  In addition we set logging to the
+stdout so that it can be used instead of print statements.</p>
+<dl class="method">
+<dt id="py_guide.log_4_trees.LoggerOfTrees.add_handler_file">
+<code class="sig-name descname">add_handler_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/log_4_trees.html#LoggerOfTrees.add_handler_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.log_4_trees.LoggerOfTrees.add_handler_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method could have been called create log file.  It will create a logging “handler” which is the
+Python term for where to write the log.  It’s cool because logging can have more than one handler.  Such as
+by default with this class, there is all a handler to put things to stdout like a print() statement.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_guide.log_4_trees.LoggerOfTrees.add_handler_stdout">
+<code class="sig-name descname">add_handler_stdout</code><span class="sig-paren">(</span><em class="sig-param">msg_format='%(levelname)s | %(message)s'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/log_4_trees.html#LoggerOfTrees.add_handler_stdout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.log_4_trees.LoggerOfTrees.add_handler_stdout" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method could have been called send logs to stdout like a print() statement.  It will create a logging
+“handler” which is the Python term for where to write the log.  It’s cool because logging can have
+more than one handler.  Such as by default with this class, there is all a handler to write logs to a
+file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_guide.log_4_trees.LoggerOfTrees.allow_log_file">
+<em class="property">property </em><code class="sig-name descname">allow_log_file</code><a class="headerlink" href="#py_guide.log_4_trees.LoggerOfTrees.allow_log_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property create_log_file is True if we want to write a log file.  Originally for containers this flag was
+add for those cases where we don’t want a file log.  Normally we still log to standard out.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_guide.log_4_trees.LoggerOfTrees.log_directory">
+<em class="property">property </em><code class="sig-name descname">log_directory</code><a class="headerlink" href="#py_guide.log_4_trees.LoggerOfTrees.log_directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.log_4_trees.LoggerOfTrees.make_directory_log_file">
+<em class="property">static </em><code class="sig-name descname">make_directory_log_file</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">directory=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/log_4_trees.html#LoggerOfTrees.make_directory_log_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.log_4_trees.LoggerOfTrees.make_directory_log_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create directory on the local file system for the log file</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_guide.project_factory">
+<span id="py-guide-project-factory-module"></span><h2>py_guide.project_factory module<a class="headerlink" href="#module-py_guide.project_factory" title="Permalink to this headline">¶</a></h2>
+<p>This file will create an instance of a new project with default settings</p>
+<dl class="class">
+<dt id="py_guide.project_factory.PyProject">
+<em class="property">class </em><code class="sig-prename descclassname">py_guide.project_factory.</code><code class="sig-name descname">PyProject</code><span class="sig-paren">(</span><em class="sig-param">logger=None</em>, <em class="sig-param">project_name='python_project'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/project_factory.html#PyProject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.project_factory.PyProject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="py_guide.project_factory.PyProject.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/project_factory.html#PyProject.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.project_factory.PyProject.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a template project on disck from the information in the object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_guide.project_factory.PyProject.create_project_directories">
+<code class="sig-name descname">create_project_directories</code><span class="sig-paren">(</span><em class="sig-param">project_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/project_factory.html#PyProject.create_project_directories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.project_factory.PyProject.create_project_directories" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.project_factory.PyProject.find_project_base_directory">
+<code class="sig-name descname">find_project_base_directory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_guide/project_factory.html#PyProject.find_project_base_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_guide.project_factory.PyProject.find_project_base_directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.project_factory.PyProject.log">
+<em class="property">property </em><code class="sig-name descname">log</code><a class="headerlink" href="#py_guide.project_factory.PyProject.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.project_factory.PyProject.project_absolute_path">
+<em class="property">property </em><code class="sig-name descname">project_absolute_path</code><a class="headerlink" href="#py_guide.project_factory.PyProject.project_absolute_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The abspath() of this file.  The absolute path will be the full file on path on disk for the operating
+system you are on.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="py_guide.project_factory.PyProject.project_directory">
+<em class="property">property </em><code class="sig-name descname">project_directory</code><a class="headerlink" href="#py_guide.project_factory.PyProject.project_directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="py_guide.project_factory.PyProject.project_name">
+<em class="property">property </em><code class="sig-name descname">project_name</code><a class="headerlink" href="#py_guide.project_factory.PyProject.project_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-py_guide">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-py_guide" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup.html" class="btn btn-neutral float-right" title="setup module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="py_guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, &#39;Shawn J Burke&#39;
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

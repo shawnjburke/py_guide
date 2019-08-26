@@ -1,0 +1,952 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>reStructuredText Sample of Stylings &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <link rel="stylesheet" href="../_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Package Index" href="../python_package_index.html" />
+    <link rel="prev" title="Headings Cheat Sheet" href="reStructuredText-CheatSheet-Headings.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../python_package_index.html" title="Python Package Index"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reStructuredText-CheatSheet-Headings.html" title="Headings Cheat Sheet"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="restructuredtext-sample-of-stylings">
+<h1>reStructuredText Sample of Stylings<a class="headerlink" href="#restructuredtext-sample-of-stylings" title="Permalink to this headline">¶</a></h1>
+<p>Originally taken from a <a class="reference external" href="https://pythonhosted.org/sphinxjp.themes.basicstrap/_sources/sample.txt">Sphinx Bootstrap theme</a>.  Thanks to author <a class="reference external" href="mailto://ffk2005&#37;&#52;&#48;gmail&#46;com">tell-K</a>.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#admonitions-docutils-origin" id="id16">Admonitions (Docutils origin)</a></p></li>
+<li><p><a class="reference internal" href="#admonitions-sphinx-additional" id="id17">Admonitions (Sphinx Additional)</a></p></li>
+<li><p><a class="reference internal" href="#headings" id="id18">Headings</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sub-heading" id="id19">Sub-Heading</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sub-sub-heading" id="id20">Sub-Sub-Heading</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#code" id="id21">Code</a></p></li>
+<li><p><a class="reference internal" href="#footnotes" id="id22">Footnotes</a></p></li>
+<li><p><a class="reference internal" href="#citation" id="id23">Citation</a></p></li>
+<li><p><a class="reference internal" href="#comments" id="id24">Comments</a></p></li>
+<li><p><a class="reference internal" href="#tables" id="id25">Tables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#grid" id="id26">Grid</a></p></li>
+<li><p><a class="reference internal" href="#simple" id="id27">Simple</a></p></li>
+<li><p><a class="reference internal" href="#mix" id="id28">Mix</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#structural-elements" id="id29">Structural Elements</a></p>
+<ul>
+<li><p><a class="reference internal" href="#section-title" id="id30">Section Title</a></p></li>
+<li><p><a class="reference internal" href="#transitions" id="id31">Transitions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#body-elements" id="id32">Body Elements</a></p>
+<ul>
+<li><p><a class="reference internal" href="#paragraphs" id="id33">Paragraphs</a></p></li>
+<li><p><a class="reference internal" href="#bullet-lists" id="id34">Bullet Lists</a></p></li>
+<li><p><a class="reference internal" href="#enumerated-lists" id="id35">Enumerated Lists</a></p></li>
+<li><p><a class="reference internal" href="#definition-lists" id="id36">Definition Lists</a></p></li>
+<li><p><a class="reference internal" href="#field-lists" id="id37">Field Lists</a></p></li>
+<li><p><a class="reference internal" href="#option-lists" id="id38">Option Lists</a></p></li>
+<li><p><a class="reference internal" href="#literal-blocks" id="id39">Literal Blocks</a></p></li>
+<li><p><a class="reference internal" href="#line-blocks" id="id40">Line Blocks</a></p></li>
+<li><p><a class="reference internal" href="#block-quotes" id="id41">Block Quotes</a></p></li>
+<li><p><a class="reference internal" href="#doctest-blocks" id="id42">Doctest Blocks</a></p></li>
+<li><p><a class="reference internal" href="#directives" id="id43">Directives</a></p>
+<ul>
+<li><p><a class="reference internal" href="#topics-sidebars-and-rubrics" id="id44">Topics, Sidebars, and Rubrics</a></p></li>
+<li><p><a class="reference internal" href="#compound-paragraph" id="id45">Compound Paragraph</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id13" id="id46">Comments</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="admonitions-docutils-origin">
+<h2><a class="toc-backref" href="#id16">Admonitions (Docutils origin)</a><a class="headerlink" href="#admonitions-docutils-origin" title="Permalink to this headline">¶</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is sample of admonition directive for “Danger”.</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>This is sample of admonition directive for “Error”.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is sample of admonition directive for “Warning”.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This is sample of admonition directive for “Caution”.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This is sample of admonition directive for “Attention”.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is sample of admonition directive for “Important”.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is sample of admonition directive for “Note”.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>This is sample of admonition directive for “Hint”.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is sample of admonition directive for “Tip”.</p>
+</div>
+</div>
+<div class="section" id="admonitions-sphinx-additional">
+<h2><a class="toc-backref" href="#id17">Admonitions (Sphinx Additional)</a><a class="headerlink" href="#admonitions-sphinx-additional" title="Permalink to this headline">¶</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This is sample of admonition directive for “SeeAlso”.</p>
+</div>
+<div class="admonition-todo admonition">
+<p class="admonition-title">TODO:</p>
+<p>Show the user that .. admonition:: Name can be used to create this box</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.3.1: </span>Here is description of specification which added on that version.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.8: </span>Here is description of specification which changed on that version.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fibo</span> <span class="kn">import</span> <span class="n">fib</span><span class="p">,</span> <span class="n">fib2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="go">1 1 2 3 5 8 13 21 34 55 89 144 233 377</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="headings">
+<h2><a class="toc-backref" href="#id18">Headings</a><a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>This is a first level heading (<code class="docutils literal notranslate"><span class="pre">h1</span></code>).</p>
+<div class="section" id="sub-heading">
+<h3><a class="toc-backref" href="#id19">Sub-Heading</a><a class="headerlink" href="#sub-heading" title="Permalink to this headline">¶</a></h3>
+<p>This is a second level heading (<code class="docutils literal notranslate"><span class="pre">h2</span></code>).</p>
+<div class="section" id="sub-sub-heading">
+<h4><a class="toc-backref" href="#id20">Sub-Sub-Heading</a><a class="headerlink" href="#sub-sub-heading" title="Permalink to this headline">¶</a></h4>
+<p>This is a third level heading (<code class="docutils literal notranslate"><span class="pre">h3</span></code>).</p>
+</div>
+</div>
+</div>
+<div class="section" id="code">
+<h2><a class="toc-backref" href="#id21">Code</a><a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>The Sphinx Bootstrap Theme uses Bootstrap styling for <code class="docutils literal notranslate"><span class="pre">inline</span> <span class="pre">code</span> <span class="pre">text</span></code> and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">multiline</span>
+<span class="n">code</span> <span class="n">text</span>
+</pre></div>
+</div>
+<p>It also works with existing Sphinx highlighting:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>Hello World<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Greet.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello World&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Greet.</span>
+<span class="cm"> **/</span>
+<span class="kd">function</span> <span class="nx">hello</span><span class="p">()</span><span class="o">:</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="footnotes">
+<h2><a class="toc-backref" href="#id22">Footnotes</a><a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<p>I have footnoted a first item <a class="footnote-reference brackets" href="#f3" id="id1">2</a> and second item <a class="footnote-reference brackets" href="#f4" id="id2">3</a>.</p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f3"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>My first footnote.</p>
+</dd>
+<dt class="label" id="f4"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
+<dd><p>My second footnote.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>A footnote contains body elements, consistently indented by at
+least 3 spaces.</p>
+<p>This is the footnote’s second paragraph.</p>
+</dd>
+<dt class="label" id="label"><span class="brackets"><a class="fn-backref" href="#id5">4</a></span></dt>
+<dd><p>Footnotes may be numbered, either manually (as in <a class="footnote-reference brackets" href="#id3" id="id4">1</a>) or
+automatically using a “#”-prefixed label.  This footnote has a
+label so it can be referred to from multiple places, both as a
+footnote reference (<a class="footnote-reference brackets" href="#label" id="id5">4</a>).</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">5</span></dt>
+<dd><p>This footnote is numbered automatically and anonymously using a
+label of “#” only.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id8">*</a></span></dt>
+<dd><p>Footnotes may also use symbols, specified with a “*” label.
+Here’s a reference to the next footnote: <a class="footnote-reference brackets" href="#id7" id="id8">*</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">†</span></dt>
+<dd><p>This footnote shows the next symbol in the sequence.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="citation">
+<h2><a class="toc-backref" href="#id23">Citation</a><a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>Citation references, like <a class="reference internal" href="#cit2002" id="id10"><span>[CIT2002]</span></a>.
+Note that citations may get
+rearranged, e.g., to the bottom of
+the “page”.</p>
+<p>Citation labels contain alphanumerics,
+underlines, hyphens and fullstops.
+Case is not significant.</p>
+<p>Given a citation like <a class="reference internal" href="#this" id="id11"><span>[this]</span></a>, one
+can also refer to it like <a class="reference internal" href="#this">this</a>.</p>
+<dl class="citation">
+<dt class="label" id="cit2002"><span class="brackets"><a class="fn-backref" href="#id10">CIT2002</a></span></dt>
+<dd><p>A citation
+(as often used in journals).</p>
+</dd>
+<dt class="label" id="this"><span class="brackets"><a class="fn-backref" href="#id11">this</a></span></dt>
+<dd><p>here.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="comments">
+<h2><a class="toc-backref" href="#id24">Comments</a><a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>An “empty comment” does not
+consume following blocks.
+(An empty comment is “..” with
+blank lines before and after.)
+..</p>
+<blockquote>
+<div><p>So this block is not “lost”,
+despite its indentation.</p>
+</div></blockquote>
+</div>
+<div class="section" id="tables">
+<h2><a class="toc-backref" href="#id25">Tables</a><a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 21%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header row, column 1
+(header rows optional)</p></th>
+<th class="head"><p>Header 2</p></th>
+<th class="head"><p>Header 3</p></th>
+<th class="head"><p>Header 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>body row 1, column 1</p></td>
+<td><p>column 2</p></td>
+<td><p>column 3</p></td>
+<td><p>column 4</p></td>
+</tr>
+<tr class="row-odd"><td><p>body row 2</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+------------------------+------------+----------+----------+</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">Header</span> <span class="mi">4</span> <span class="o">|</span>
+<span class="o">|</span> <span class="p">(</span><span class="n">header</span> <span class="n">rows</span> <span class="n">optional</span><span class="p">)</span> <span class="o">|</span>            <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>
+<span class="o">+========================+============+==========+==========+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">1</span><span class="p">,</span> <span class="n">column</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">column</span> <span class="mi">4</span> <span class="o">|</span>
+<span class="o">+------------------------+------------+----------+----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">2</span>             <span class="o">|</span> <span class="o">...</span>        <span class="o">|</span> <span class="o">...</span>      <span class="o">|</span>          <span class="o">|</span>
+<span class="o">+------------------------+------------+----------+----------+</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A and B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+<span class="n">A</span>      <span class="n">B</span>      <span class="n">A</span> <span class="ow">and</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">False</span>  <span class="kc">True</span>   <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">True</span>   <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">CSV Table</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 18%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Treat</p></th>
+<th class="head"><p>Quantity</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Albatross</p></td>
+<td><p>2.99</p></td>
+<td><p>On a stick!</p></td>
+</tr>
+<tr class="row-odd"><td><p>Crunchy Frog</p></td>
+<td><p>1.49</p></td>
+<td><p>If we took the bones out, it wouldn’t be
+crunchy, now would it?</p></td>
+</tr>
+<tr class="row-even"><td><p>Gannet Ripple</p></td>
+<td><p>1.99</p></td>
+<td><p>On a stick!</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. csv-table:: CSV Table
+   :header: &quot;Treat&quot;, &quot;Quantity&quot;, &quot;Description&quot;
+   :widths: 15, 10, 30
+
+   &quot;Albatross&quot;, 2.99, &quot;On a stick!&quot;
+   &quot;Crunchy Frog&quot;, 1.49, &quot;If we took the bones out, it wouldn&#39;t be
+   crunchy, now would it?&quot;
+   &quot;Gannet Ripple&quot;, 1.99, &quot;On a stick!&quot;
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id15">
+<caption><span class="caption-text">List Table</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 18%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Treat</p></th>
+<th class="head"><p>Quantity</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Albatross</p></td>
+<td><p>2.99</p></td>
+<td><p>On a stick!</p></td>
+</tr>
+<tr class="row-odd"><td><p>Crunchy Frog</p></td>
+<td><p>1.49</p></td>
+<td><p>If we took the bones out, it wouldn’t be
+crunchy, now would it?</p></td>
+</tr>
+<tr class="row-even"><td><p>Gannet Ripple</p></td>
+<td><p>1.99</p></td>
+<td><p>On a stick!</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. list-table:: List Table
+   :widths: 15 10 30
+   :header-rows: 1
+
+   * - Treat
+     - Quantity
+     - Description
+   * - Albatross
+     - 2.99
+     - On a stick!
+   * - Crunchy Frog
+     - 1.49
+     - If we took the bones out, it wouldn&#39;t be
+       crunchy, now would it?
+   * - Gannet Ripple
+     - 1.99
+       - On a stick!
+</pre></div>
+</div>
+<div class="section" id="grid">
+<h3><a class="toc-backref" href="#id26">Grid</a><a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h3>
+<p>A “<strong>bordered</strong>” grid table:</p>
+<table class="table-bordered docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 21%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header1</p></th>
+<th class="head"><p>Header2</p></th>
+<th class="head"><p>Header3</p></th>
+<th class="head"><p>Header4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>row1, cell1</p></td>
+<td><p>cell2</p></td>
+<td><p>cell3</p></td>
+<td><p>cell4</p></td>
+</tr>
+<tr class="row-odd"><td><p>row2 …</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>which uses the directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">cssclass</span><span class="p">::</span> <span class="n">table</span><span class="o">-</span><span class="n">bordered</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="simple">
+<h3><a class="toc-backref" href="#id27">Simple</a><a class="headerlink" href="#simple" title="Permalink to this headline">¶</a></h3>
+<p>A simple “<strong>striped</strong>” table:</p>
+<table class="table-striped docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>H1</p></th>
+<th class="head"><p>H2</p></th>
+<th class="head"><p>H3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cell1</p></td>
+<td><p>cell2</p></td>
+<td><p>cell3</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>which uses the directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">cssclass</span><span class="p">::</span> <span class="n">table</span><span class="o">-</span><span class="n">striped</span>
+</pre></div>
+</div>
+<p>And a “<strong>hoverable</strong>” table:</p>
+<table class="table-hover docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>H1</p></th>
+<th class="head"><p>H2</p></th>
+<th class="head"><p>H3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cell1</p></td>
+<td><p>cell2</p></td>
+<td><p>cell3</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>which uses the directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">cssclass</span><span class="p">::</span> <span class="n">table</span><span class="o">-</span><span class="n">hover</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mix">
+<h3><a class="toc-backref" href="#id28">Mix</a><a class="headerlink" href="#mix" title="Permalink to this headline">¶</a></h3>
+<table class="table-bordered table-striped table-hover docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 21%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header1</p></th>
+<th class="head"><p>Header2</p></th>
+<th class="head"><p>Header3</p></th>
+<th class="head"><p>Header4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>row1, cell1</p></td>
+<td><p>cell2</p></td>
+<td><p>cell3</p></td>
+<td><p>cell4</p></td>
+</tr>
+<tr class="row-odd"><td><p>row2 …</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>which uses the directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">cssclass</span><span class="p">::</span> <span class="n">table</span><span class="o">-</span><span class="n">bordered</span> <span class="n">table</span><span class="o">-</span><span class="n">striped</span> <span class="n">table</span><span class="o">-</span><span class="n">hover</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="structural-elements">
+<h2><a class="toc-backref" href="#id29">Structural Elements</a><a class="headerlink" href="#structural-elements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="section-title">
+<h3><a class="toc-backref" href="#id30">Section Title</a><a class="headerlink" href="#section-title" title="Permalink to this headline">¶</a></h3>
+<p>That’s it, the text just above this line.</p>
+</div>
+<div class="section" id="transitions">
+<h3><a class="toc-backref" href="#id31">Transitions</a><a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h3>
+<p>Here’s a transition:</p>
+<hr class="docutils" />
+<p>It divides the section.</p>
+</div>
+</div>
+<div class="section" id="body-elements">
+<h2><a class="toc-backref" href="#id32">Body Elements</a><a class="headerlink" href="#body-elements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="paragraphs">
+<h3><a class="toc-backref" href="#id33">Paragraphs</a><a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h3>
+<p>A paragraph.</p>
+</div>
+<div class="section" id="bullet-lists">
+<h3><a class="toc-backref" href="#id34">Bullet Lists</a><a class="headerlink" href="#bullet-lists" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>A bullet list</p>
+<ul class="simple">
+<li><p>Nested bullet list.</p></li>
+<li><p>Nested item 2.</p></li>
+</ul>
+</li>
+<li><p>Item 2.</p>
+<p>Paragraph 2 of item 2.</p>
+<ul class="simple">
+<li><p>Nested bullet list.</p></li>
+<li><p>Nested item 2.</p>
+<ul>
+<li><p>Third level.</p></li>
+<li><p>Item 2.</p></li>
+</ul>
+</li>
+<li><p>Nested item 3.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="enumerated-lists">
+<h3><a class="toc-backref" href="#id35">Enumerated Lists</a><a class="headerlink" href="#enumerated-lists" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Arabic numerals.</p>
+<ol class="loweralpha simple">
+<li><p>lower alpha)</p>
+<ol class="lowerroman simple">
+<li><p>(lower roman)</p>
+<ol class="upperalpha simple">
+<li><p>upper alpha.</p>
+<ol class="upperroman simple">
+<li><p>upper roman)</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Lists that don’t start at 1:</p>
+<ol class="arabic simple" start="3">
+<li><p>Three</p></li>
+<li><p>Four</p></li>
+</ol>
+<ol class="upperalpha simple" start="3">
+<li><p>C</p></li>
+<li><p>D</p></li>
+</ol>
+<ol class="lowerroman simple" start="3">
+<li><p>iii</p></li>
+<li><p>iv</p></li>
+</ol>
+</li>
+<li><p>List items may also be auto-enumerated.</p></li>
+</ol>
+</div>
+<div class="section" id="definition-lists">
+<h3><a class="toc-backref" href="#id36">Definition Lists</a><a class="headerlink" href="#definition-lists" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>Term</dt><dd><p>Definition</p>
+</dd>
+<dt>Term<span class="classifier">classifier</span></dt><dd><p>Definition paragraph 1.</p>
+<p>Definition paragraph 2.</p>
+</dd>
+<dt>Term</dt><dd><p>Definition</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="field-lists">
+<h3><a class="toc-backref" href="#id37">Field Lists</a><a class="headerlink" href="#field-lists" title="Permalink to this headline">¶</a></h3>
+<dl class="field-list">
+<dt class="field-odd">what</dt>
+<dd class="field-odd"><p>Field lists map field names to field bodies, like database
+records.  They are often part of an extension syntax.  They are
+an unambiguous variant of RFC 2822 fields.</p>
+</dd>
+<dt class="field-even">how arg1 arg2</dt>
+<dd class="field-even"><p>The field marker is a colon, the field name, and a colon.</p>
+<p>The field body may contain one or more body elements, indented
+relative to the field marker.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="option-lists">
+<h3><a class="toc-backref" href="#id38">Option Lists</a><a class="headerlink" href="#option-lists" title="Permalink to this headline">¶</a></h3>
+<p>For listing command-line options:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-a</span></kbd></dt>
+<dd><p>command-line option “a”</p>
+</dd>
+<dt><kbd><span class="option">-b <var>file</var></span></kbd></dt>
+<dd><p>options can have arguments
+and long descriptions</p>
+</dd>
+<dt><kbd><span class="option">--long</span></kbd></dt>
+<dd><p>options can be long also</p>
+</dd>
+<dt><kbd><span class="option">--input=<var>file</var></span></kbd></dt>
+<dd><p>long options can also have
+arguments</p>
+</dd>
+<dt><kbd><span class="option">--very-long-option</span></kbd></dt>
+<dd><p>The description can also start on the next line.</p>
+<p>The description may contain multiple body elements,
+regardless of where it starts.</p>
+</dd>
+<dt><kbd><span class="option">-x</span>, <span class="option">-y</span>, <span class="option">-z</span></kbd></dt>
+<dd><p>Multiple options are an “option group”.</p>
+</dd>
+<dt><kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></dt>
+<dd><p>Commonly-seen: short &amp; long options.</p>
+</dd>
+<dt><kbd><span class="option">-1 <var>file</var></span>, <span class="option">--one=<var>file</var></span>, <span class="option">--two <var>file</var></span></kbd></dt>
+<dd><p>Multiple options with arguments.</p>
+</dd>
+<dt><kbd><span class="option">/V</span></kbd></dt>
+<dd><p>DOS/VMS-style options too</p>
+</dd>
+</dl>
+<p>There must be at least two spaces between the option and the
+description.</p>
+</div>
+<div class="section" id="literal-blocks">
+<h3><a class="toc-backref" href="#id39">Literal Blocks</a><a class="headerlink" href="#literal-blocks" title="Permalink to this headline">¶</a></h3>
+<p>Literal blocks are indicated with a double-colon (“::”) at the end of
+the preceding paragraph (over there <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code>).  They can be indented:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">literal_block</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;is left as-is&#39;</span>
+    <span class="n">spaces_and_linebreaks</span> <span class="o">=</span> <span class="s1">&#39;are preserved&#39;</span>
+    <span class="n">markup_processing</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Or they can be quoted without indentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt; Great idea!
+&gt;
+&gt; Why didn&#39;t I think of that?
+</pre></div>
+</div>
+</div>
+<div class="section" id="line-blocks">
+<h3><a class="toc-backref" href="#id40">Line Blocks</a><a class="headerlink" href="#line-blocks" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">This is a line block.  It ends with a blank line.</div>
+<div class="line-block">
+<div class="line">Each new line begins with a vertical bar (“|”).</div>
+<div class="line">Line breaks and initial indents are preserved.</div>
+</div>
+<div class="line">Continuation lines are wrapped portions of long lines;
+they begin with a space in place of the vertical bar.</div>
+<div class="line-block">
+<div class="line">The left edge of a continuation line need not be aligned with
+the left edge of the text above it.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">This is a second line block.</div>
+<div class="line"><br /></div>
+<div class="line">Blank lines are permitted internally, but they must begin with a “|”.</div>
+</div>
+<p>Take it away, Eric the Orchestra Leader!</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">A one, two, a one two three four</div>
+<div class="line"><br /></div>
+<div class="line">Half a bee, philosophically,</div>
+<div class="line-block">
+<div class="line">must, <em>ipso facto</em>, half not be.</div>
+</div>
+<div class="line">But half the bee has got to be,</div>
+<div class="line-block">
+<div class="line"><em>vis a vis</em> its entity.  D’you see?</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">But can a bee be said to be</div>
+<div class="line-block">
+<div class="line">or not to be an entire bee,</div>
+<div class="line-block">
+<div class="line">when half the bee is not a bee,</div>
+<div class="line-block">
+<div class="line">due to some ancient injury?</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="line">Singing…</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="block-quotes">
+<h3><a class="toc-backref" href="#id41">Block Quotes</a><a class="headerlink" href="#block-quotes" title="Permalink to this headline">¶</a></h3>
+<p>Block quotes consist of indented body elements:</p>
+<blockquote>
+<div><p>My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+as follows and begins now.  All brontosauruses are thin at one
+end, much much thicker in the middle and then thin again at the
+far end.  That is my theory, it is mine, and belongs to me and I
+own it, and what it is too.</p>
+<p class="attribution">—Anne Elk (Miss)</p>
+</div></blockquote>
+</div>
+<div class="section" id="doctest-blocks">
+<h3><a class="toc-backref" href="#id42">Doctest Blocks</a><a class="headerlink" href="#doctest-blocks" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s1">&#39;Python-specific usage examples; begun with &quot;&gt;&gt;&gt;&quot;&#39;</span>
+<span class="go">Python-specific usage examples; begun with &quot;&gt;&gt;&gt;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s1">&#39;(cut and pasted from interactive Python sessions)&#39;</span>
+<span class="go">(cut and pasted from interactive Python sessions)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="directives">
+<h3><a class="toc-backref" href="#id43">Directives</a><a class="headerlink" href="#directives" title="Permalink to this headline">¶</a></h3>
+<div class="contents local topic" id="id12">
+<ul class="simple">
+<li><p><a class="reference internal" href="#topics-sidebars-and-rubrics" id="id47">Topics, Sidebars, and Rubrics</a></p></li>
+<li><p><a class="reference internal" href="#compound-paragraph" id="id48">Compound Paragraph</a></p></li>
+</ul>
+</div>
+<p>These are just a sample of the many reStructuredText Directives.  For
+others, please see
+<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">http://docutils.sourceforge.net/docs/ref/rst/directives.html</a>.</p>
+<div class="section" id="topics-sidebars-and-rubrics">
+<h4><a class="toc-backref" href="#id47">Topics, Sidebars, and Rubrics</a><a class="headerlink" href="#topics-sidebars-and-rubrics" title="Permalink to this headline">¶</a></h4>
+<div class="sidebar">
+<p class="sidebar-title">Sidebar Title</p>
+<p class="sidebar-subtitle">Optional Subtitle</p>
+<p>This is a sidebar.  It is for text outside the flow of the main
+text.</p>
+<p class="rubric">This is a rubric inside a sidebar</p>
+<p>Sidebars often appears beside the main text with a border and
+background color.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Topic Title</p>
+<p>This is a topic.</p>
+</div>
+<p class="rubric">This is a rubric</p>
+</div>
+<div class="section" id="compound-paragraph">
+<h4><a class="toc-backref" href="#id48">Compound Paragraph</a><a class="headerlink" href="#compound-paragraph" title="Permalink to this headline">¶</a></h4>
+<div class="compound">
+<p class="compound-first">This paragraph contains a literal block:</p>
+<div class="compound-middle highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connecting</span><span class="o">...</span> <span class="n">OK</span>
+<span class="n">Transmitting</span> <span class="n">data</span><span class="o">...</span> <span class="n">OK</span>
+<span class="n">Disconnecting</span><span class="o">...</span> <span class="n">OK</span>
+</pre></div>
+</div>
+<p class="compound-last">and thus consists of a simple paragraph, a literal block, and
+another simple paragraph.  Nonetheless it is semantically <em>one</em>
+paragraph.</p>
+</div>
+<p>This construct is called a <em>compound paragraph</em> and can be produced
+with the “compound” directive.</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h3><a class="toc-backref" href="#id46">Comments</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Here’s one:</p>
+<p>(View the HTML source to see the comment.)</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">reStructuredText Sample of Stylings</a><ul>
+<li><a class="reference internal" href="#admonitions-docutils-origin">Admonitions (Docutils origin)</a></li>
+<li><a class="reference internal" href="#admonitions-sphinx-additional">Admonitions (Sphinx Additional)</a></li>
+<li><a class="reference internal" href="#headings">Headings</a><ul>
+<li><a class="reference internal" href="#sub-heading">Sub-Heading</a><ul>
+<li><a class="reference internal" href="#sub-sub-heading">Sub-Sub-Heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li><a class="reference internal" href="#citation">Citation</a></li>
+<li><a class="reference internal" href="#comments">Comments</a></li>
+<li><a class="reference internal" href="#tables">Tables</a><ul>
+<li><a class="reference internal" href="#grid">Grid</a></li>
+<li><a class="reference internal" href="#simple">Simple</a></li>
+<li><a class="reference internal" href="#mix">Mix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#structural-elements">Structural Elements</a><ul>
+<li><a class="reference internal" href="#section-title">Section Title</a></li>
+<li><a class="reference internal" href="#transitions">Transitions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#body-elements">Body Elements</a><ul>
+<li><a class="reference internal" href="#paragraphs">Paragraphs</a></li>
+<li><a class="reference internal" href="#bullet-lists">Bullet Lists</a></li>
+<li><a class="reference internal" href="#enumerated-lists">Enumerated Lists</a></li>
+<li><a class="reference internal" href="#definition-lists">Definition Lists</a></li>
+<li><a class="reference internal" href="#field-lists">Field Lists</a></li>
+<li><a class="reference internal" href="#option-lists">Option Lists</a></li>
+<li><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
+<li><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
+<li><a class="reference internal" href="#block-quotes">Block Quotes</a></li>
+<li><a class="reference internal" href="#doctest-blocks">Doctest Blocks</a></li>
+<li><a class="reference internal" href="#directives">Directives</a><ul>
+<li><a class="reference internal" href="#topics-sidebars-and-rubrics">Topics, Sidebars, and Rubrics</a></li>
+<li><a class="reference internal" href="#compound-paragraph">Compound Paragraph</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id13">Comments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../python_package_index.html" title="Python Package Index"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reStructuredText-CheatSheet-Headings.html" title="Headings Cheat Sheet"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>
