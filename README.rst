@@ -2,6 +2,11 @@
 Python Guide for Practicing Wizards
 =======================================
 
+########################
+Documentation
+########################
+
+https://shawnjburke.github.io/py_guide/
 
 ########################
 Version History
