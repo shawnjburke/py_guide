@@ -24,7 +24,8 @@ sys.path.insert(1, os.path.join(os.path.abspath('.'), "..", "py_guide"))
 from backports import configparser2
 from datetime import datetime
 
-# -- Shared Project Information stored in browser_driver.cfg -----------------
+
+# -- Shared Project Information stored in project.cfg -----------------
 ini_file = configparser2.ConfigParser()
 ini_file_name = "../project.cfg"
 ini_file.read(ini_file_name)
@@ -58,7 +59,6 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
     'sphinxjp.themes.basicstrap',
-    'sphinxjp.themes.revealjs',
     'sphinxjp.themes.gopher',
 ]
 
