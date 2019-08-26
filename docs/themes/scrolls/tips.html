@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tips and Tricks &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/scrolls.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Rants" href="rants/index.html" />
+    <link rel="prev" title="README" href="readme.html" /> 
+  </head><body>
+    <div id="content">
+      <div class="header">
+        <h1 class="heading"><a href="index.html"
+          title="back to the documentation overview"><span>Tips and Tricks</span></a></h1>
+      </div>
+      <div class="relnav" role="navigation" aria-label="related navigation">
+        <a href="readme.html">&laquo; README</a> |
+        <a href="#">Tips and Tricks</a>
+        | <a href="rants/index.html">Rants &raquo;</a>
+      </div>
+      <div id="contentwrapper">
+        <div id="toc" role="navigation" aria-label="table of contents navigation">
+          <h3>Table of Contents</h3>
+          <ul>
+<li><a class="reference internal" href="#">Tips and Tricks</a><ul>
+<li><a class="reference internal" href="#listing-packages">Listing Packages</a></li>
+<li><a class="reference internal" href="#project-packaging">Project Packaging</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <div role="main">
+        
+  <div class="section" id="tips-and-tricks">
+<h1>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h1>
+<p>Useful things while building this project.</p>
+<div class="section" id="listing-packages">
+<h2>Listing Packages<a class="headerlink" href="#listing-packages" title="Permalink to this headline">¶</a></h2>
+<p>Using pip</p>
+<p>pip list</p>
+<p>pip show -f [package name]</p>
+<p>From your code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
+
+<span class="c1"># https://github.com/pypa/pip/issues/5243#issuecomment-381513000</span>
+<span class="n">dists</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">working_set</span><span class="p">]</span>
+<span class="c1"># Filter out distributions you don&#39;t care about and use.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="project-packaging">
+<h2>Project Packaging<a class="headerlink" href="#project-packaging" title="Permalink to this headline">¶</a></h2>
+<p>While testing my package on test.pypi.org I couldn’t get my readme file to render as reStructuredText.  Turns out it
+only supports core RST, not extensions.  To find this out you can use twine to check the project before uploading.
+Remember that twine is checking the distribution files; if you changed   the source to fix a problem don’t forget to
+rebuild the distribution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">py_guide</span><span class="o">&gt;</span> <span class="n">venv</span>\<span class="n">scripts</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">m</span> <span class="n">twine</span> <span class="n">check</span> <span class="n">dist</span><span class="o">/</span><span class="n">sjb</span><span class="o">.</span><span class="n">browserdriver</span><span class="o">-</span><span class="mf">2019.4</span><span class="o">.</span><span class="mi">28</span><span class="o">-</span><span class="n">py2</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<span class="n">Checking</span> <span class="n">distribution</span> <span class="n">dist</span><span class="o">/</span><span class="n">sjb</span><span class="o">.</span><span class="n">browserdriver</span><span class="o">-</span><span class="mf">2019.4</span><span class="o">.</span><span class="mi">28</span><span class="o">-</span><span class="n">py2</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span><span class="p">:</span> <span class="n">Passed</span>
+</pre></div>
+</div>
+<p>If you want to programatically get the version of a <em>built</em> distribution the following <a class="footnote-reference brackets" href="#version" id="id1">1</a> is useful.  Please realize this
+version may be different than what is in setup.py, if you have updated the value there, but not built the package yet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;py_guide&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;unknown&#39;</span>
+</pre></div>
+</div>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="version"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Found at <a class="reference external" href="https://github.com/pypa/setuptools/blob/master/setuptools/version.py">https://github.com/pypa/setuptools/blob/master/setuptools/version.py</a> via
+<a class="reference external" href="https://packaging.python.org/guides/single-sourcing-package-version/">https://packaging.python.org/guides/single-sourcing-package-version/</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

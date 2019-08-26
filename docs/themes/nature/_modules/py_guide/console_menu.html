@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>py_guide.console_menu &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for py_guide.console_menu</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">menu</span> <span class="k">import</span> <span class="n">menu</span>
+<span class="kn">from</span> <span class="nn">py_guide</span> <span class="k">import</span> <span class="n">project_factory</span>
+
+<div class="viewcode-block" id="ConsoleMenu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu">[docs]</a><span class="k">class</span> <span class="nc">ConsoleMenu</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmdline_argument_parser</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="o">=</span> <span class="n">logger</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cmdline_parser</span> <span class="o">=</span> <span class="n">cmdline_argument_parser</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">Menu</span><span class="p">()</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">******************************************</span>
+<span class="s2">    Python Guide for Practicing Wizards</span>
+<span class="s2">*******************************************</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span><span class="o">.</span><span class="n">set_options</span><span class="p">([</span>
+                                    <span class="p">(</span><span class="s2">&quot;Generate new project&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_project_generator</span><span class="p">),</span>
+                                    <span class="p">(</span><span class="s2">&quot;py_guide help&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_help</span><span class="p">),</span>
+                                    <span class="p">(</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">close_menu</span><span class="p">)</span>
+                                   <span class="p">])</span>
+
+<div class="viewcode-block" id="ConsoleMenu.new_project_generator"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.new_project_generator">[docs]</a>    <span class="k">def</span> <span class="nf">new_project_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Collects some information, then generates a project using the best practices of this guide.&quot;&quot;&quot;</span>
+        <span class="n">project_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the name of your project?&quot;</span><span class="p">)</span>
+        <span class="n">py</span> <span class="o">=</span> <span class="n">project_factory</span><span class="o">.</span><span class="n">PyProject</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Your project was created at </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">find_project_base_directory</span><span class="p">()))</span></div>
+
+<div class="viewcode-block" id="ConsoleMenu.show_menu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.show_menu">[docs]</a>    <span class="k">def</span> <span class="nf">show_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span><span class="o">.</span><span class="n">open</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ConsoleMenu.close_menu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.close_menu">[docs]</a>    <span class="k">def</span> <span class="nf">close_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ConsoleMenu.show_help"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.show_help">[docs]</a>    <span class="k">def</span> <span class="nf">show_help</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cmdline_parser</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ConsoleMenu.pause"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.pause">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">pause</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press enter key to continue...&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConsoleMenu.make_directory"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.make_directory">[docs]</a>    <span class="k">def</span> <span class="nf">make_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory_name</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">directory_name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Created directory </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory_name</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Failed to create log directory </span><span class="si">{0}</span><span class="s2"> due to </span><span class="si">{1}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">directory_name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">strerror</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="n">e</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log</span>
+
+    <span class="nd">@log</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;No logger provided. Initialised logger </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="vm">__name__</span><span class="p">))</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

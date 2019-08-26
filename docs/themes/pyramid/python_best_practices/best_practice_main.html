@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Best Practice for __main__ method &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="reStructuredText Cheat Sheet" href="../reStructuredText/reStructuredText-CheatSheet.html" />
+    <link rel="prev" title="Best Practices Index" href="index.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../reStructuredText/reStructuredText-CheatSheet.html" title="reStructuredText Cheat Sheet"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Best Practices Index"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Best Practices Index</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="best-practice-for-main-method">
+<h1>Best Practice for __main__ method<a class="headerlink" href="#best-practice-for-main-method" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="console-apps">
+<h2>Console Apps<a class="headerlink" href="#console-apps" title="Permalink to this headline">¶</a></h2>
+<p>How you startup will vary based on the interface.  The following are for console applications.</p>
+<div class="section" id="a-generic-workflow-for-main">
+<h3>A Generic Workflow for __main__()<a class="headerlink" href="#a-generic-workflow-for-main" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="parse-arguments">
+<h4>Parse Arguments<a class="headerlink" href="#parse-arguments" title="Permalink to this headline">¶</a></h4>
+<p>Python provides an arguments parser, <code class="docutils literal notranslate"><span class="pre">argparse</span></code>; use it.  Let a user know how this thing is supposed to work.
+Even if it’s supposed to just start up and run, give it help.  A smart user will call your module with <code class="docutils literal notranslate"><span class="pre">--help</span></code>
+first to see what it does.  Encourage that behavior.</p>
+</div>
+<div class="section" id="route-arguments">
+<h4>Route Arguments<a class="headerlink" href="#route-arguments" title="Permalink to this headline">¶</a></h4>
+<p>I think about a console application, parsing arguments, like routing things at a web server or firewall.  Therefore
+I normally take my parsed arguments and toss to a method which routes them.  The mthod, in turn, normaly tosses them
+to an action method for that route.</p>
+</div>
+<div class="section" id="action-arguments">
+<h4>Action Arguments<a class="headerlink" href="#action-arguments" title="Permalink to this headline">¶</a></h4>
+<p>I don’t know why, action as a result of being routed to, seemed like a good set of terminology.  There’s a million
+ways to name things, this one was mine.  Therefore I create a function to handle the results of a route being called,
+and taking action on that.</p>
+</div>
+</div>
+</div>
+<div class="section" id="web-applications">
+<h2>Web Applications<a class="headerlink" href="#web-applications" title="Permalink to this headline">¶</a></h2>
+<p>In the future, tips for this type of user interface.  Perhaps as simple as use django which seems popular in the space.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Best Practice for __main__ method</a><ul>
+<li><a class="reference internal" href="#console-apps">Console Apps</a><ul>
+<li><a class="reference internal" href="#a-generic-workflow-for-main">A Generic Workflow for __main__()</a><ul>
+<li><a class="reference internal" href="#parse-arguments">Parse Arguments</a></li>
+<li><a class="reference internal" href="#route-arguments">Route Arguments</a></li>
+<li><a class="reference internal" href="#action-arguments">Action Arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#web-applications">Web Applications</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../reStructuredText/reStructuredText-CheatSheet.html" title="reStructuredText Cheat Sheet"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Best Practices Index"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Best Practices Index</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

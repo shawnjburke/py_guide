@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Code Documentation</title>
+    <meta name="description" content="Generate Code Documentation" >
+    <script>
+      var notesEnabled =false;
+      var sections = [];
+      var titleNotes = [];
+    </script>
+    <meta charset='utf-8'>
+
+    <meta property="og:title" content="Generate Code Documentation">
+    <meta property="og:description" content="Generate Code Documentation">
+
+    <meta name="twitter:title" content="Generate Code Documentation">
+    <meta name="twitter:description" content="Generate Code Documentation">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/notes.css" type="text/css" />
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script>
+    </script>
+  </head>
+  <body style='display: none'>
+    
+  <div class="section" id="generate-code-documentation">
+<h1>Generate Code Documentation<a class="headerlink" href="#generate-code-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Spinx includes a feature it calls autodoc.  The idea is that if you run the generator a file will be created in
+reStructuredText for each code file found.  In turn, those files, will include directives that generate documentation
+from the code comments.</p>
+<div class="section" id="generate-code-documentation-rst-files-automatically">
+<h2>Generate code documentation RST files Automatically<a class="headerlink" href="#generate-code-documentation-rst-files-automatically" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>There are two parts to the sphinx code documentation engine I want to highlight</dt><dd><ol class="arabic simple">
+<li><dl class="simple">
+<dt>Directives that go into an RST file to read code files.  The documentation you do in the code is read into</dt><dd><p>the template and output in a format such as HTML.  You can hand code RST files.</p>
+</dd>
+</dl>
+</li>
+<li><p>sphinx-apidoc build engine which will generate RST files based on the structure of your code files.</p></li>
+</ol>
+</dd>
+</dl>
+<p>In this project there is a make.bat file for Windows, and Makefile for linux, which has been modified to support
+using sphinx-apidoc to generate the RST files.</p>
+</div>
+</div>
+
+
+  </body>
+  <div id="help">
+      Use the left and right arrow keys or click the left and right
+      edges of the page to navigate between slides.<br>
+      (Press 'H' or navigate to hide this message.)
+  </div>
+  <script type="text/javascript" src="../_static/js/init.js"></script>
+  <script type="text/javascript" src="../_static/js/notes.js"></script>
+  <script type="text/javascript" src="../_static/js/slides.js"></script>
+</html>

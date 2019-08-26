@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>setup &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="../_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="../_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="../_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="../_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../',
+            VERSION:     '0.2.1',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="../_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="../_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            
+              <li><a href="../py-modindex.html" title="Python Module Index" >modules </a></li>
+              <li><a href="../genindex.html" title="General Index" accesskey="I">index </a></li>
+              <li><a href="index.html" accesskey="U">Module code</a></li>
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="../search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <h1>Source code for setup</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Original guidance from http://go.chriswarrick.com/entry_points</span>
+<span class="c1"># Also thanks to http://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html</span>
+<span class="c1"># https://setuptools.readthedocs.io/en/latest/setuptools.html</span>
+
+<span class="kn">from</span> <span class="nn">backports</span> <span class="k">import</span> <span class="n">configparser2</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">packaging</span> <span class="k">import</span> <span class="n">version</span>
+<span class="kn">from</span> <span class="nn">setuptools</span> <span class="k">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+
+<div class="viewcode-block" id="find_and_list_packages"><a class="viewcode-back" href="../code/setup.html#setup.find_and_list_packages">[docs]</a><span class="k">def</span> <span class="nf">find_and_list_packages</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This wrapper adds the display of packages found by setuptools.find_packages() during the build process.  This</span>
+<span class="sd">    is useful when troubleshooting issues, such as when creating package_data entries for setup.py</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">packages</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Packages found during build:</span><span class="se">\r\n\t</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">packages</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">packages</span></div>
+
+
+<div class="viewcode-block" id="version_builder"><a class="viewcode-back" href="../code/setup.html#setup.version_builder">[docs]</a><span class="k">def</span> <span class="nf">version_builder</span><span class="p">(</span><span class="n">write_new_version</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ini_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This method determines the next version number.  The assumption is the version numbering scheme is relying on</span>
+<span class="sd">    a timestamp based version, in contrast to Major.Minor.Revision type of structure.  THAT IS A NON-STANDARD SCHEME.&quot;&quot;&quot;</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="c1"># read the Semantic Version.  To update it, go changein the file</span>
+    <span class="n">semantic_version</span> <span class="o">=</span> <span class="n">ini_file</span><span class="p">[</span><span class="s2">&quot;distribution&quot;</span><span class="p">][</span><span class="s2">&quot;version&quot;</span><span class="p">]</span>
+    <span class="c1"># Build an ISO timestamp of when the build was done</span>
+    <span class="n">military_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{:02d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">minute</span><span class="p">))</span>
+    <span class="n">build_timestamp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">.</span><span class="si">{1}</span><span class="s2">.</span><span class="si">{2}</span><span class="s2">.</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">military_time</span><span class="p">))</span>
+    <span class="n">build_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ini_file</span><span class="p">[</span><span class="s2">&quot;distribution&quot;</span><span class="p">][</span><span class="s2">&quot;build_number&quot;</span><span class="p">])</span>
+    <span class="n">build_number</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Update the some version information in the cfg file</span>
+    <span class="k">if</span> <span class="n">write_new_version</span><span class="p">:</span>
+        <span class="c1"># Timestamp and build number will increment each time, independent of version updating</span>
+        <span class="n">ini_file</span><span class="p">[</span><span class="s2">&quot;distribution&quot;</span><span class="p">][</span><span class="s2">&quot;build_number&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">build_number</span><span class="p">)</span>
+        <span class="n">ini_file</span><span class="p">[</span><span class="s2">&quot;distribution&quot;</span><span class="p">][</span><span class="s2">&quot;build_timestamp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">build_timestamp</span>
+
+        <span class="c1"># Write the file to disk using all the values of the object in memory</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;project.cfg&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ini_disk_file</span><span class="p">:</span>
+            <span class="n">ini_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ini_disk_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">semantic_version</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ini_file_name</span> <span class="o">=</span> <span class="s2">&quot;project.cfg&quot;</span>
+    <span class="n">ini_file</span> <span class="o">=</span> <span class="n">configparser2</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+    <span class="n">ini_file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">ini_file_name</span><span class="p">)</span>
+
+    <span class="n">setup</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">ini_file</span><span class="p">[</span><span class="s2">&quot;project&quot;</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">],</span>
+          <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;pypi.python@teamburke.com&#39;</span><span class="p">,</span>
+          <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+              <span class="c1"># Trove classifiers</span>
+              <span class="c1"># Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers</span>
+              <span class="s1">&#39;Development Status :: 4 - Beta&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Intended Audience :: Developers&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;License :: OSI Approved :: MIT License&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Natural Language :: English&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Operating System :: OS Independent&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Programming Language :: Python&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Programming Language :: Python :: 2.7&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Programming Language :: Python :: 3&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Programming Language :: Python :: 3.3&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Programming Language :: Python :: 3.4&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Programming Language :: Python :: 3.5&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Programming Language :: Python :: 3.6&#39;</span><span class="p">,</span>
+              <span class="c1"># https://www.geeksforgeeks.org/difference-various-implementations-python/</span>
+              <span class="s1">&#39;Programming Language :: Python :: Implementation :: CPython&#39;</span><span class="p">,</span>
+              <span class="c1"># Need to test to see if this will run on PyPy.  That&#39;d be cool.</span>
+              <span class="c1"># &#39;Programming Language :: Python :: Implementation :: PyPy&#39;,</span>
+              <span class="s1">&#39;Topic :: Software Development :: Quality Assurance&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Topic :: Software Development :: Testing&#39;</span>
+          <span class="p">],</span>
+          <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Python Project &amp; Coding Standards for Practicing Wizards&#39;</span><span class="p">,</span>
+          <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+              <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span><span class="p">]</span>
+            <span class="p">},</span>
+          <span class="n">license</span><span class="o">=</span><span class="s1">&#39;GNU GENERAL PUBLIC LICENSE&#39;</span><span class="p">,</span>
+          <span class="c1"># newline separates Description: header in PKG-INFO from readme content</span>
+          <span class="n">long_description</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;README.rst&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span>
+          <span class="n">long_description_content_type</span><span class="o">=</span><span class="s1">&#39;text/x-rst&#39;</span><span class="p">,</span>
+          <span class="c1"># setuptools will change an underscore (_) to a dash (-), in name, so doing it here explicitly</span>
+          <span class="c1"># PEP 8: Python packages should also have short, all-lowercase names, although the use of</span>
+          <span class="c1">#        underscores is discouraged.</span>
+          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.py-guide&#39;</span><span class="p">,</span>
+          <span class="n">packages</span><span class="o">=</span><span class="n">find_and_list_packages</span><span class="p">(),</span>
+          <span class="n">project_urls</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;Bug Tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/issues/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Documentation&quot;</span><span class="p">:</span> <span class="s2">&quot;https://shawnjburke.github.io/py_guide/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Source Code&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/&quot;</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/shawnjburke/py_guide&quot;</span><span class="p">,</span>
+          <span class="n">version</span><span class="o">=</span><span class="n">version_builder</span><span class="p">(</span><span class="n">write_new_version</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ini_file</span><span class="o">=</span><span class="n">ini_file</span><span class="p">),</span>
+          <span class="p">)</span>
+</pre></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="../py-modindex.html" title="Python Module Index" >modules</a></li>
+        <li><a href="../genindex.html" title="General Index" >index</a></li>
+        <li><a href="index.html" >Module code</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2019, &#39;Shawn J Burke&#39;.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

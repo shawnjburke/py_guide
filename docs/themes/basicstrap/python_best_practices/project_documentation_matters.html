@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Project Documentation Matters &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</title>
+    <title>Project Documentation Matters &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
             URL_ROOT:    '../',
-            VERSION:     '0.2.0',
+            VERSION:     '0.2.1',
             COLLAPSE_INDEX: false,
             FILE_SUFFIX: '.html',
             HAS_SOURCE:  true
@@ -49,7 +49,7 @@
 </script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation" href="../index.html" />
+    <link rel="top" title="&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation" href="../index.html" />
     <link rel="next" title="Use setup.py from the Start" href="project_setup.html" />
     <link rel="prev" title="Generate Code Documentation" href="project_documentation_code.html" /> 
   </head>
@@ -63,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</a>
+          <a class="navbar-brand" href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -91,6 +91,7 @@
             
               <li><a href="project_documentation_code.html" title="Generate Code Documentation" accesskey="P">previous </a></li>
               <li><a href="project_setup.html" title="Use setup.py from the Start" accesskey="N">next </a></li>
+              <li><a href="../py-modindex.html" title="Python Module Index" >modules </a></li>
               <li><a href="../genindex.html" title="General Index" accesskey="I">index </a></li>
             
             <li class="visible-xs"><a href="../_sources/python_best_practices/project_documentation_matters.rst.txt" rel="nofollow">Show Source</a></li>
@@ -161,7 +162,7 @@ you are the only one who can read it, or tell me how much time you’ll loose if
 to hear it.  This is an age of auto-generated code documentation, and other tools like that.  Therefore, as with
 any good code documentation, we’ll make sure we carefully document intent, and the why’s of necessity, and write
 the code clearly in a way that documents that structure.   It’s a balance Padawan, chill out and let this documentation
-guide you <a class="footnote-reference" href="#footnote-01" id="id1">[1]</a>.</p>
+guide you <a class="footnote-reference brackets" href="#footnote-01" id="id1">1</a>.</p>
 </div>
 <div class="section" id="setup-documentation-now">
 <h2>Setup Documentation Now<a class="headerlink" href="#setup-documentation-now" title="Permalink to this headline">¶</a></h2>
@@ -180,7 +181,7 @@ language.  Markdown seems to be popular in the github crowd and <a class="refere
 <div class="section" id="create-a-restructuredtext-markup-file">
 <h3>Create a reStructuredText markup file<a class="headerlink" href="#create-a-restructuredtext-markup-file" title="Permalink to this headline">¶</a></h3>
 <p>You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
-instance, create a folder in your project called docs-source <a class="footnote-reference" href="#footnote-02" id="id2">[2]</a>, a sibling of the project_name folder.  Inside that
+instance, create a folder in your project called docs-source <a class="footnote-reference brackets" href="#footnote-02" id="id2">2</a>, a sibling of the project_name folder.  Inside that
 folder add a readme.rst file.</p>
 <p>Inside a template file you can</p>
 <p># Add text and _*markup*_ to style that text
@@ -214,8 +215,8 @@ program will ask a few questions.  When it asks for the path to the documentatio
 previously created.  Answer other questions as you see fit; I would opt for defaults if you don’t have a reason
 to change the answer.  Here are items that I set in the list of questions</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Where possible I try to follow convention.  The convention for sphinx is to put your files for documentation in
+<p class="admonition-title">Note</p>
+<p>Where possible I try to follow convention.  The convention for sphinx is to put your files for documentation in
 a docs/ folder.  I’m going to depart from that and use a docs-source folder instead.  The reason for this is that
 github pages support reading html files from the docs folder.  Therefore I’ll make docs/ an output folder for html
 and put the source markup file (in reStructuredText) in the docs-source/ folder instead.</p>
@@ -250,20 +251,16 @@ PyCharm and these builds.</p>
 </pre></div>
 </div>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="footnote-01" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Yes, like the force.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="footnote-02" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>It is traditional with Sphinx to use a docs folder.  However, with the latest in GitHub pages,
+<dl class="footnote brackets">
+<dt class="label" id="footnote-01"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Yes, like the force.</p>
+</dd>
+<dt class="label" id="footnote-02"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>It is traditional with Sphinx to use a docs folder.  However, with the latest in GitHub pages,
 it’s easy to publish html by putting it in a docs folder.  Therefore we’ll use docs-source as our file for
-reStructuredText and Sphinx configuration and support files.</td></tr>
-</tbody>
-</table>
+reStructuredText and Sphinx configuration and support files.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -284,12 +281,13 @@ reStructuredText and Sphinx configuration and support files.</td></tr>
 <div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
   <div class="navbar-inner">
     <ul class="nav navbar-nav ">
-        <li><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.0 documentation</a></li>
+        <li><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a></li>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
         <li><a href="project_documentation_code.html" title="Generate Code Documentation" >previous</a></li>
         <li><a href="project_setup.html" title="Use setup.py from the Start" >next</a></li>
+        <li><a href="../py-modindex.html" title="Python Module Index" >modules</a></li>
         <li><a href="../genindex.html" title="General Index" >index</a></li>
         <li><a href="#">top</a></li> 
       
@@ -301,7 +299,7 @@ reStructuredText and Sphinx configuration and support files.</td></tr>
       <!-- footer -->
       <footer role="contentinfo">
           &copy; Copyright 2019, &#39;Shawn J Burke&#39;.
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
       </footer>
       <!-- /footer -->
 

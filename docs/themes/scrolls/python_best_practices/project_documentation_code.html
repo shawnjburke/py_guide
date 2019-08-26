@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Generate Code Documentation &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/scrolls.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/theme_extras.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project Documentation Matters" href="project_documentation_matters.html" />
+    <link rel="prev" title="Python Project Structure" href="project_structure.html" /> 
+  </head><body>
+    <div id="content">
+      <div class="header">
+        <h1 class="heading"><a href="../index.html"
+          title="back to the documentation overview"><span>Generate Code Documentation</span></a></h1>
+      </div>
+      <div class="relnav" role="navigation" aria-label="related navigation">
+        <a href="project_structure.html">&laquo; Python Project Structure</a> |
+        <a href="#">Generate Code Documentation</a>
+        | <a href="project_documentation_matters.html">Project Documentation Matters &raquo;</a>
+      </div>
+      <div id="contentwrapper">
+        <div id="toc" role="navigation" aria-label="table of contents navigation">
+          <h3>Table of Contents</h3>
+          <ul>
+<li><a class="reference internal" href="#">Generate Code Documentation</a><ul>
+<li><a class="reference internal" href="#generate-code-documentation-rst-files-automatically">Generate code documentation RST files Automatically</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <div role="main">
+        
+  <div class="section" id="generate-code-documentation">
+<h1>Generate Code Documentation<a class="headerlink" href="#generate-code-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Spinx includes a feature it calls autodoc.  The idea is that if you run the generator a file will be created in
+reStructuredText for each code file found.  In turn, those files, will include directives that generate documentation
+from the code comments.</p>
+<div class="section" id="generate-code-documentation-rst-files-automatically">
+<h2>Generate code documentation RST files Automatically<a class="headerlink" href="#generate-code-documentation-rst-files-automatically" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>There are two parts to the sphinx code documentation engine I want to highlight</dt><dd><ol class="arabic simple">
+<li><dl class="simple">
+<dt>Directives that go into an RST file to read code files.  The documentation you do in the code is read into</dt><dd><p>the template and output in a format such as HTML.  You can hand code RST files.</p>
+</dd>
+</dl>
+</li>
+<li><p>sphinx-apidoc build engine which will generate RST files based on the structure of your code files.</p></li>
+</ol>
+</dd>
+</dl>
+<p>In this project there is a make.bat file for Windows, and Makefile for linux, which has been modified to support
+using sphinx-apidoc to generate the RST files.</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>
