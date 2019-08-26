@@ -67,7 +67,6 @@ generated a number of different themes you can check out.
 * `py_guide/themes/gopher`_
 * `py_guide/themes/haiku`_
 * `py_guide/themes/nature`_
-* `py_guide/themes/revealjs`_
 * `py_guide/themes/scrolls`_
 * `py_guide/themes/sphinx_rtd_theme`_
 * `py_guide/themes/sphinxdoc`_
@@ -81,7 +80,6 @@ generated a number of different themes you can check out.
 ..  _py_guide/themes/gopher: https://shawnjburke.github.io/py_guide/themes/gopher
 ..  _py_guide/themes/haiku: https://shawnjburke.github.io/py_guide/themes/haiku
 ..  _py_guide/themes/nature: https://shawnjburke.github.io/py_guide/themes/nature
-..  _py_guide/themes/revealjs: https://shawnjburke.github.io/py_guide/themes/revealjs
 ..  _py_guide/themes/scrolls: https://shawnjburke.github.io/py_guide/themes/scrolls
 ..  _py_guide/themes/sphinx_rtd_theme: https://shawnjburke.github.io/py_guide/themes/sphinx_rtd_theme
 ..  _py_guide/themes/sphinxdoc: https://shawnjburke.github.io/py_guide/themes/sphinxdoc
@@ -137,7 +135,7 @@ Table of Contents
     :maxdepth: 1
     :caption: Contents:
 
-
+    code/modules
     python_best_practices/install_python
     python_best_practices/install_pycharm
     python_best_practices/project_structure

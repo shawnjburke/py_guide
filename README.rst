@@ -7,6 +7,8 @@ Python Guide for Practicing Wizards
 Version History
 ########################
 
+* 0.2.1 - Remove revealjs theme which is no longer supported and didn't work right anyway.
+
 * 0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.
 
 * 0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to
