@@ -1,6 +1,6 @@
 import sys
 import argparse
-from console_menu import ConsoleMenu
+from py_guide.console_menu import ConsoleMenu
 from py_guide import log_4_trees
 
 

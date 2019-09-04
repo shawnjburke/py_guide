@@ -19,9 +19,9 @@ Version History
 * 0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to
     create a project is in an development state.
 
-########################
+##########################
 Purpose of this Project
-########################
+##########################
 
 This project is intended to be a guide on getting started with Python.  It's intended to establish a best
 practice structure that can be used as a beginning state for a python project.  Stepping through all the steps

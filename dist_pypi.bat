@@ -42,8 +42,13 @@ call :build_command
 
 echo Beginning submission to %env%  ...
 echo File to upload: %dist_file%
+
 call %cmd%
-call :update_version
+if %ERRORLEVEL% == 0 (
+    call :update_version
+) else (
+    echo ERROR: %cmd%
+)
 
 EXIT /B /0
 rem ************************ END OF MAIN SCRIPT *****************************
@@ -126,15 +131,13 @@ EXIT /B /0
 
 rem ***************************************************************************************
 :dist_file
-set dist_file="dist\sjb.browserdriver-0.1.3-py2-none-any.whl"
-EXIT /B /0
 rem Determine which distribution file to upload.
 rem ***************************************************************************************
 rem While examples show uploading the dist\* directory, I prefer a specific filename to upload
 rem Distribute the latest file, sorted on name,to pypi.  See https://ss64.com/nt/dir.html
 for /f %%i in ('dir dist /b /O:D') do set dist_file="dist\%%i"
 rem @echo %dist_file%
-
+EXIT /B /0
 
 rem ***************************************************************************************
 :environment
@@ -157,7 +160,7 @@ rem ****************************************************************************
 rem This method will build the command we need to execute from the variables defined so far in the script
 rem ***************************************************************************************
 rem the caret (^) creates a multiple line string and must be the last character (do not put a space in front of it)
-set cmd=venv_27\scripts\python.exe -m twine upload --verbose^
+set cmd=venv\scripts\python.exe -m twine upload --verbose^
  --repository-url %env%^
  "%dist_file%"^
  --username "%user_name%"^

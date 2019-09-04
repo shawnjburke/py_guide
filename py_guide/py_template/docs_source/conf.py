@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # the project/ directory
 sys.path.insert(1, os.path.join(os.path.abspath('.'), ".."))
 # the project/project source code directory
-sys.path.insert(1, os.path.join(os.path.abspath('.'), "..", "py_guide"))
+sys.path.insert(1, os.path.join(os.path.abspath('.'), "..", "{{ project_name}}"))
 from backports import configparser2
 from datetime import datetime
 
@@ -167,7 +167,6 @@ man_pages = [
     (master_doc, project_no_spaces, '{0} Documentation'.format(project),
      [author], 1)
 ]
-
 
 
 # -- Options for Texinfo output ----------------------------------------------

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Generate docs_source\code RST files for automatic code documentation" type="ShConfigurationType">
+  <configuration default="false" name="Generate docs_source\code RST files, OVERWRITE" type="ShConfigurationType">
     <option name="SCRIPT_PATH" value="$PROJECT_DIR$/docs_source/make.bat" />
-    <option name="SCRIPT_OPTIONS" value="code_rst_generate" />
+    <option name="SCRIPT_OPTIONS" value="code_rst_generate -f" />
     <option name="INTERPRETER_PATH" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <method v="2" />
