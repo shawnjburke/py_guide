@@ -1,10 +1,12 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>Python Project Structure &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Python Project Structure &#8212; Python Guide for Practicing Wizards 0.2.1 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -32,7 +34,7 @@
         <li class="right" >
           <a href="install_pycharm.html" title="Install PyCharm"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 0.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -104,28 +106,28 @@ implementation needs of the language; in this case, Python.</p>
 </pre></div>
 </div>
 <div class="admonition-sphinx-users admonition">
-<p class="admonition-title">Sphinx users</p>
-<p>Sphinx users will note that this is not a typical structure for documentation.  While putting this guide together I
+<p class="first admonition-title">Sphinx users</p>
+<p class="last">Sphinx users will note that this is not a typical structure for documentation.  While putting this guide together I
 found GitHub had a GitHub Pages feature that would display documentation based on html in a <code class="docutils literal notranslate"><span class="pre">docs\</span></code> on the master
 branch.  With the popularity of that system, I figured it make sense to support it.</p>
 </div>
 <div class="admonition-todo admonition">
-<p class="admonition-title">TODO:</p>
+<p class="first admonition-title">TODO:</p>
 <p>Need to make sure this structure works fine on readthedocs.org.  Since the config file for Sphinx is flexible,
 and the conf-generator provides options to change source and build structure, I expect it wll work.  However,
 I’m remiss in not making sure a Python guide works well with readthedocs.org.</p>
-<p>I will note that at time of writing, GitHub Pages were not configurable in terms of the directory used on the
+<p class="last">I will note that at time of writing, GitHub Pages were not configurable in terms of the directory used on the
 master branch.</p>
 </div>
 </div>
 <div class="section" id="choose-a-project-name">
 <h2>Choose a project name<a class="headerlink" href="#choose-a-project-name" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>lower case</p></li>
-<li><p>project_name with underscore over projectname</p></li>
-<li><dl class="simple">
-<dt>because of the pep choose a single name, because we are following google style guide which state</dt><dd><p>package_name lower case + PEP single name = project_name is lower case</p>
-</dd>
+<li>lower case</li>
+<li>project_name with underscore over projectname</li>
+<li><dl class="first docutils">
+<dt>because of the pep choose a single name, because we are following google style guide which state</dt>
+<dd>package_name lower case + PEP single name = project_name is lower case</dd>
 </dl>
 </li>
 </ul>
@@ -134,8 +136,8 @@ master branch.</p>
 <h2>Create a new project<a class="headerlink" href="#create-a-new-project" title="Permalink to this headline">¶</a></h2>
 <p>I am speaking of creating a new project in the conext of using PyCharm.</p>
 <ul class="simple">
-<li><p>of type Python</p></li>
-<li><p>3.x interpreter</p></li>
+<li>of type Python</li>
+<li>3.x interpreter</li>
 </ul>
 <div class="section" id="use-a-virtual-environment">
 <h3>Use a virtual environment<a class="headerlink" href="#use-a-virtual-environment" title="Permalink to this headline">¶</a></h3>
@@ -149,8 +151,8 @@ requirements.txt file for your project with pip, work well in this structure</p>
 <h3>Source code in project_name\project_name<a class="headerlink" href="#source-code-in-project-name-project-name" title="Permalink to this headline">¶</a></h3>
 <p>Add a directory to your project the same name as the project</p>
 <ul class="simple">
-<li><p>trust me.  Yes, I know we now have the structure, project_name\project_name.  It will be okay.</p></li>
-<li><p>It will be okay.</p></li>
+<li>trust me.  Yes, I know we now have the structure, project_name\project_name.  It will be okay.</li>
+<li>It will be okay.</li>
 </ul>
 </div>
 <div class="section" id="readme-rst">
@@ -158,11 +160,11 @@ requirements.txt file for your project with pip, work well in this structure</p>
 <p>Add your first file README.rst</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>PyCharm wants to know what it is.  It’s just a Text File</p></li>
-<li><p>UPPERCASE no extension</p></li>
-<li><p>project_nameREADME.rst <a class="footnote-reference brackets" href="#footnote-01" id="id1">1</a></p></li>
-<li><p>A project should have a document to acclimate a new user, and that’s readme</p></li>
-<li><p>Using the .rst extension will all github to format the contents on the source page</p></li>
+<li>PyCharm wants to know what it is.  It’s just a Text File</li>
+<li>UPPERCASE no extension</li>
+<li>project_nameREADME.rst <a class="footnote-reference" href="#footnote-01" id="id1">[1]</a></li>
+<li>A project should have a document to acclimate a new user, and that’s readme</li>
+<li>Using the .rst extension will all github to format the contents on the source page</li>
 </ul>
 </div></blockquote>
 </div>
@@ -170,10 +172,10 @@ requirements.txt file for your project with pip, work well in this structure</p>
 <h3>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline">¶</a></h3>
 <p>In PyCharm, add a new Python File to your project</p>
 <ul class="simple">
-<li><p>give it the name __init__.py</p></li>
-<li><p>That’s two underscores before init</p></li>
-<li><p>Adding this file makes your module project_name a package</p></li>
-<li><p>All packages are modules, modules are not all packages</p></li>
+<li>give it the name __init__.py</li>
+<li>That’s two underscores before init</li>
+<li>Adding this file makes your module project_name a package</li>
+<li>All packages are modules, modules are not all packages</li>
 </ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project_name/
 ├── project_name/
@@ -183,22 +185,25 @@ requirements.txt file for your project with pip, work well in this structure</p>
 </div>
 <p>Congratulations you’ve created a package.  We’ll explain what that is later.  After we get to modules.</p>
 <ul class="simple">
-<li><p>Adding __init__.py file makes your module project_name a package</p></li>
-<li><p>All packages are modules, modules are not all packages</p></li>
+<li>Adding __init__.py file makes your module project_name a package</li>
+<li>All packages are modules, modules are not all packages</li>
 </ul>
 <p>There’s also a command in PyCharm to create a Python package.  It creates the directory and automatically adds
 the <code class="docutils literal notranslate"><span class="pre">__init.py__</span></code> file.  But we wanted you to get the experience of doing it for your self.</p>
 <p>Add another new Python File to your project</p>
 <ul class="simple">
-<li><p>give it th name __main__.py</p></li>
-<li><p>Let’s use main.py to give our project some output.  What will it do if you run py_guide?</p></li>
-<li><p>Let’s just make it say something.  Add the following code into the file __main__.py</p></li>
+<li>give it th name __main__.py</li>
+<li>Let’s use main.py to give our project some output.  What will it do if you run py_guide?</li>
+<li>Let’s just make it say something.  Add the following code into the file __main__.py</li>
 </ul>
-<dl class="field-list simple">
-<dt class="field-odd">example</dt>
-<dd class="field-odd"><p>print(“Get to the chopper!”)</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">example:</th><td class="field-body">print(“Get to the chopper!”)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="pycharm-run-configuration">
@@ -206,31 +211,32 @@ the <code class="docutils literal notranslate"><span class="pre">__init.py__</sp
 <p>When you build software like a pro, you have an automated build process.  At the local IDE level that often can involve
 using a Run Configuration utility, to use the term PyCharm has adopted.</p>
 <ul class="simple">
-<li><p>Go to the Run menu and choose the Edit Configuration option</p></li>
-<li><p>Click the + symbol (to _add_ a new configuration)</p></li>
-<li><p>Choose the option for Python.  We want to _run_ a python file</p></li>
-<li><p>Change the name from Unnamed to the name of your project.  in this case, py_guide</p></li>
-<li><p>On the script line choose the … browse button on the right.  Choose __main__.py</p></li>
-<li><p>Click OK</p></li>
-<li><p>In the upper right of the PyCharm IDE ou should see a drop_down with text py_guide and a play button</p></li>
-<li><p>Click the play button.  The configuration you just made runs.</p></li>
-<li><p>If you’ve done this successfully then a Python console will appear in the bottom of PyCharm</p></li>
-<li><p>It will print out the path to what it just started</p></li>
-<li><p>It will execute the __main__.py file causing it to print the next line of the console</p></li>
-<li><p>Get to the chopper!</p></li>
-<li><p>Followed by a blank line.  After that a summary of the process run and error number (0 is no error)</p></li>
-<li><p>Process finished with exit code 0</p></li>
+<li>Go to the Run menu and choose the Edit Configuration option</li>
+<li>Click the + symbol (to _add_ a new configuration)</li>
+<li>Choose the option for Python.  We want to _run_ a python file</li>
+<li>Change the name from Unnamed to the name of your project.  in this case, py_guide</li>
+<li>On the script line choose the … browse button on the right.  Choose __main__.py</li>
+<li>Click OK</li>
+<li>In the upper right of the PyCharm IDE ou should see a drop_down with text py_guide and a play button</li>
+<li>Click the play button.  The configuration you just made runs.</li>
+<li>If you’ve done this successfully then a Python console will appear in the bottom of PyCharm</li>
+<li>It will print out the path to what it just started</li>
+<li>It will execute the __main__.py file causing it to print the next line of the console</li>
+<li>Get to the chopper!</li>
+<li>Followed by a blank line.  After that a summary of the process run and error number (0 is no error)</li>
+<li>Process finished with exit code 0</li>
 </ul>
 <p class="rubric">Footnotes</p>
-<dl class="footnote brackets">
-<dt class="label" id="footnote-01"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>I would have previously demanded, in honor of those mighty Unix warriors who came before us,
+<table class="docutils footnote" frame="void" id="footnote-01" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>I would have previously demanded, in honor of those mighty Unix warriors who came before us,
 that README should be capitalized with no extension.  I’d probably make a joke about paying respect to your
 elders.  Practically though, I have found an extension useful in github, as it presents that text on the
 landing page for a topic.  Therefore the page will be README.rst.  With some magic it will also be brought
-into the rest of the documentation structure.</p>
-</dd>
-</dl>
+into the rest of the documentation structure.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -255,12 +261,12 @@ into the rest of the documentation structure.</p>
         <li class="right" >
           <a href="install_pycharm.html" title="Install PyCharm"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 0.2.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, &#39;Shawn J Burke&#39;.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2019, Shawn J Burke.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>

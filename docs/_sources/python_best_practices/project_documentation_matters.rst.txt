@@ -15,9 +15,12 @@ any good code documentation, we'll make sure we carefully document intent, and t
 the code clearly in a way that documents that structure.   It's a balance Padawan, chill out and let this documentation
 guide you [#footnote-01]_.
 
+PS - You, in six months, could very well be the next developer.  Wondering, WTF was I doing in with this code...
+
 #########################
 Setup Documentation Now
 #########################
+
 If you don't setup documentation of your code up front, you won't do it later.  Corollary: Unless you're being paid to
 by something like selling the company; at which time doing this is a soul crushing pia.  Set it up now
 

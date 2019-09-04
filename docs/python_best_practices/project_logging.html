@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Great Software has Great Logging &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+  <title>Great Software has Great Logging &mdash; Python Guide for Practicing Wizards 0.2.1 documentation</title>
   
 
   
@@ -50,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> 'Python Guide for Practicing Wizards'
+            <a href="../index.html" class="icon icon-home"> Python Guide for Practicing Wizards
           
 
           
@@ -125,7 +125,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">'Python Guide for Practicing Wizards'</a>
+          <a href="../index.html">Python Guide for Practicing Wizards</a>
         
       </nav>
 
@@ -183,10 +183,10 @@ their creation.  Many times the logging left by others has saved me.  Great Soft
 <p>From <a class="reference external" href="https://docs.python.org/3.7/library/logging.html?highlight=logging">The Office Python Documentation</a> I thought the following was a good summary of how logging works:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Loggers expose the interface that application code directly uses.</p></li>
-<li><p>Handlers send the log records (created by loggers) to the appropriate destination.</p></li>
-<li><p>Filters provide a finer grained facility for determining which log records to output.</p></li>
-<li><p>Formatters specify the layout of log records in the final output.</p></li>
+<li>Loggers expose the interface that application code directly uses.</li>
+<li>Handlers send the log records (created by loggers) to the appropriate destination.</li>
+<li>Filters provide a finer grained facility for determining which log records to output.</li>
+<li>Formatters specify the layout of log records in the final output.</li>
 </ul>
 </div></blockquote>
 <div class="section" id="python-logging">
@@ -234,8 +234,8 @@ in child class and code, the usage of environmental definition <code class="docu
 the “screen”.  I will advocate for just using a logger and then attaching a certain amount of those logs to stdout
 as what people see on the “screen”.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Understand that the redirection to stdout only needs to occur in classes that are top level and gui facing</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">Understand that the redirection to stdout only needs to occur in classes that are top level and gui facing</p>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using logging to populate standard output with info level log entries</span>
 <span class="n">stdout_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
@@ -271,7 +271,7 @@ as what people see on the “screen”.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, &#39;Shawn J Burke&#39;
+        &copy; Copyright 2019, Shawn J Burke
 
     </p>
   </div>

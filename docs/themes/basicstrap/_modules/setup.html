@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>setup &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <title>setup &mdash; Python Guide for Practicing Wizards 0.2.1 documentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -49,7 +49,7 @@
 </script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation" href="../index.html" />
+    <link rel="top" title="Python Guide for Practicing Wizards 0.2.1 documentation" href="../index.html" />
     <link rel="up" title="Module code" href="index.html" /> 
   </head>
   <body role="document">
@@ -62,7 +62,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a>
+          <a class="navbar-brand" href="../index.html">Python Guide for Practicing Wizards 0.2.1 documentation</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -194,6 +194,10 @@
           <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
               <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span><span class="p">]</span>
             <span class="p">},</span>
+          <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+              <span class="s1">&#39;configparser2==4.0.0&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Menu==3.1.0&#39;</span>
+          <span class="p">],</span>
           <span class="n">license</span><span class="o">=</span><span class="s1">&#39;GNU GENERAL PUBLIC LICENSE&#39;</span><span class="p">,</span>
           <span class="c1"># newline separates Description: header in PKG-INFO from readme content</span>
           <span class="n">long_description</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;README.rst&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span>
@@ -201,7 +205,7 @@
           <span class="c1"># setuptools will change an underscore (_) to a dash (-), in name, so doing it here explicitly</span>
           <span class="c1"># PEP 8: Python packages should also have short, all-lowercase names, although the use of</span>
           <span class="c1">#        underscores is discouraged.</span>
-          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.py-guide&#39;</span><span class="p">,</span>
+          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.pyguide&#39;</span><span class="p">,</span>
           <span class="n">packages</span><span class="o">=</span><span class="n">find_and_list_packages</span><span class="p">(),</span>
           <span class="n">project_urls</span><span class="o">=</span><span class="p">{</span>
             <span class="s2">&quot;Bug Tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/issues/&quot;</span><span class="p">,</span>
@@ -227,7 +231,7 @@
 <div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
   <div class="navbar-inner">
     <ul class="nav navbar-nav ">
-        <li><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a></li>
+        <li><a href="../index.html">Python Guide for Practicing Wizards 0.2.1 documentation</a></li>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
@@ -243,8 +247,8 @@
 
       <!-- footer -->
       <footer role="contentinfo">
-          &copy; Copyright 2019, &#39;Shawn J Burke&#39;.
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+          &copy; Copyright 2019, Shawn J Burke.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
       </footer>
       <!-- /footer -->
 
