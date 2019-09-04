@@ -12,6 +12,9 @@ https://shawnjburke.github.io/py_guide/
 Version History
 ########################
 
+* 0.2.2 - Adding in incomplete changes for project generator on way to v0.3.0.  Will create directory
+    structure and 1/2 dozen files for the project.  Not complete yet.
+
 * 0.2.1 - Remove revealjs theme which is no longer supported and didn't work right anyway.
 
 * 0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.
