@@ -43,6 +43,7 @@ call :build_command
 echo Beginning submission to %env%  ...
 echo File to upload: %dist_file%
 
+echo %cmd%
 call %cmd%
 if %ERRORLEVEL% == 0 (
     call :update_version
@@ -121,11 +122,19 @@ if "%HH:~0,1%"=="0" (
 )
 rem Which variable to update?  Upload to pypi.org or test.pypi.org?
 if "%env%"=="https://upload.pypi.org/legacy/" (
-    call jrepl "^publish_pypi = .*" "publish_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%" /f browser_driver.cfg /o -
-    echo Published to %env%. Updated configuration file publish_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%
+    call jrepl "^publish_pypi = .*" "publish_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%" /f project.cfg /o -
+    if %ERRORLEVEL% == 0 (
+        echo Published to %env%. Updated configuration file publish_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%
+    ) else (
+        echo ERROR: Issue updating the configuration file
+    )
 ) else (
-    call jrepl "^publish_test_pypi = .*" "publish_test_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%" /f browser_driver.cfg /o -
-    echo Published to %env%. Updated configuration file publish_test_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%
+    call jrepl "^publish_test_pypi = .*" "publish_test_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%" /f project.cfg /o -
+    if %ERRORLEVEL% == 0 (
+        echo Published to %env%. Updated configuration file publish_test_pypi = %YYYY%.%M0%.%D0%.%HH%%Min%
+    ) else (
+        echo ERROR: Issue updating the configuration file
+    )
 )
 EXIT /B /0
 
@@ -135,7 +144,7 @@ rem Determine which distribution file to upload.
 rem ***************************************************************************************
 rem While examples show uploading the dist\* directory, I prefer a specific filename to upload
 rem Distribute the latest file, sorted on name,to pypi.  See https://ss64.com/nt/dir.html
-for /f %%i in ('dir dist /b /O:D') do set dist_file="dist\%%i"
+for /f %%i in ('dir dist /b /O:D') do set dist_file=dist\%%i
 rem @echo %dist_file%
 EXIT /B /0
 

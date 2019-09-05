@@ -12,15 +12,13 @@ https://shawnjburke.github.io/py_guide/
 Version History
 ########################
 
-* 0.2.2 - Adding in incomplete changes for project generator on way to v0.3.0.  Will create directory
-    structure and 1/2 dozen files for the project.  Not complete yet.
+* 0.2.2 - Adding in incomplete changes for project generator on way to v0.3.0.  Will create directory structure and 1/2 dozen files for the project.  Not complete yet.
 
 * 0.2.1 - Remove revealjs theme which is no longer supported and didn't work right anyway.
 
 * 0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.
 
-* 0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to
-    create a project is in an development state.
+* 0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to create a project is in an development state.
 
 ##########################
 Purpose of this Project
@@ -53,9 +51,9 @@ What we have tried to think through
 ************************************
 
 Project Structure - as an old programmer having a standard way to do any coding language, is just something I find
- efficient.  In addition to thinking like a developer I've worked in release management, IT, being the boss, and I
- tend to approach things in a wholistic fashion.  It doesn't matter how cool your code is if you can't install and
- maintain it.
+efficient.  In addition to thinking like a developer I've worked in release management, IT, being the boss, and I
+tend to approach things in a wholistic fashion.  It doesn't matter how cool your code is if you can't install and
+maintain it.
 
 Documentation is important - if I have a structure that is already setup for how to document, leveraging in line code
 syntax, then developers are more likely to make use of it.  This is good, because documentation is not for you, but
@@ -87,7 +85,7 @@ the recommended project structure, documented here.
 
 ..  code-block:: Python
 
-    >>> some_future_time --todo=create_installer
+    >>> venv/scripts/pip install sjb.pyguide
 
 ##################################################
 What makes this different from other frameworks?
