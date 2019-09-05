@@ -78,6 +78,10 @@ if __name__ == "__main__":
           entry_points={
               'console_scripts': ['py_guide = py_guide.__main__:main']
             },
+          install_requires=[
+              'configparser2==4.0.0',
+              'Menu==3.1.0'
+          ],
           license='GNU GENERAL PUBLIC LICENSE',
           # newline separates Description: header in PKG-INFO from readme content
           long_description='\n' + open('README.rst').read(),
@@ -85,7 +89,7 @@ if __name__ == "__main__":
           # setuptools will change an underscore (_) to a dash (-), in name, so doing it here explicitly
           # PEP 8: Python packages should also have short, all-lowercase names, although the use of
           #        underscores is discouraged.
-          name='sjb.py-guide',
+          name='sjb.pyguide',
           packages=find_and_list_packages(),
           project_urls={
             "Bug Tracker": "https://github.com/shawnjburke/py_guide/issues/",

@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Generate docs_source\code RST files for automatic code documentation" type="ShConfigurationType">
-    <option name="SCRIPT_PATH" value="Z:\Users\sburke\Dropbox\dev\py_guide\docs_source\make.bat" />
+    <option name="SCRIPT_PATH" value="$PROJECT_DIR$/docs_source/make.bat" />
     <option name="SCRIPT_OPTIONS" value="code_rst_generate" />
     <option name="INTERPRETER_PATH" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />

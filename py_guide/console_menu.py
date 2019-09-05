@@ -25,6 +25,20 @@ class ConsoleMenu:
         """Collects some information, then generates a project using the best practices of this guide."""
         project_name = menu.input("What is the name of your project?")
         py = project_factory.PyProject(project_name=project_name, logger=self.log)
+        py.author = menu.input("What name do you want to use for author, copyright holder?")
+
+        try:
+            py.create()
+        except FileExistsError as e:
+            action = menu.input("Directory {0} already exists. (D)elete or (R)ename?".format(py.project_absolute_path))
+            if action == "D":
+                py.remove_directory(project_name=project_name)
+            else:
+                new_name = menu.input("What is the new name of your project?")
+                project_name = new_name
+            py.project_name = project_name
+            py.create()
+
         self.log.info("Your project was created at {0}".format(py.find_project_base_directory()))
 
     def show_menu(self):

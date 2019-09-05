@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>py_guide.console_menu &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <title>py_guide.console_menu &mdash; Python Guide for Practicing Wizards 0.2.2 documentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
             URL_ROOT:    '../../',
-            VERSION:     '0.2.1',
+            VERSION:     '0.2.2',
             COLLAPSE_INDEX: false,
             FILE_SUFFIX: '.html',
             HAS_SOURCE:  true
@@ -49,7 +49,7 @@
 </script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation" href="../../index.html" />
+    <link rel="top" title="Python Guide for Practicing Wizards 0.2.2 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body role="document">
@@ -62,7 +62,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a>
+          <a class="navbar-brand" href="../../index.html">Python Guide for Practicing Wizards 0.2.2 documentation</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -141,6 +141,20 @@
         <span class="sd">&quot;&quot;&quot;Collects some information, then generates a project using the best practices of this guide.&quot;&quot;&quot;</span>
         <span class="n">project_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the name of your project?&quot;</span><span class="p">)</span>
         <span class="n">py</span> <span class="o">=</span> <span class="n">project_factory</span><span class="o">.</span><span class="n">PyProject</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
+        <span class="n">py</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What name do you want to use for author, copyright holder?&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">FileExistsError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;Directory </span><span class="si">{0}</span><span class="s2"> already exists. (D)elete or (R)ename?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span>
+                <span class="n">py</span><span class="o">.</span><span class="n">remove_directory</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="n">project_name</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the new name of your project?&quot;</span><span class="p">)</span>
+                <span class="n">project_name</span> <span class="o">=</span> <span class="n">new_name</span>
+            <span class="n">py</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">project_name</span>
+            <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Your project was created at </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">find_project_base_directory</span><span class="p">()))</span></div>
 
 <div class="viewcode-block" id="ConsoleMenu.show_menu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.show_menu">[docs]</a>    <span class="k">def</span> <span class="nf">show_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -194,7 +208,7 @@
 <div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
   <div class="navbar-inner">
     <ul class="nav navbar-nav ">
-        <li><a href="../../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a></li>
+        <li><a href="../../index.html">Python Guide for Practicing Wizards 0.2.2 documentation</a></li>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
@@ -210,8 +224,8 @@
 
       <!-- footer -->
       <footer role="contentinfo">
-          &copy; Copyright 2019, &#39;Shawn J Burke&#39;.
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+          &copy; Copyright 2019, Shawn J Burke.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
       </footer>
       <!-- /footer -->
 

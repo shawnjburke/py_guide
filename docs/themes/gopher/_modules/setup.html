@@ -109,6 +109,10 @@
           <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
               <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span><span class="p">]</span>
             <span class="p">},</span>
+          <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+              <span class="s1">&#39;configparser2==4.0.0&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Menu==3.1.0&#39;</span>
+          <span class="p">],</span>
           <span class="n">license</span><span class="o">=</span><span class="s1">&#39;GNU GENERAL PUBLIC LICENSE&#39;</span><span class="p">,</span>
           <span class="c1"># newline separates Description: header in PKG-INFO from readme content</span>
           <span class="n">long_description</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;README.rst&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span>
@@ -116,7 +120,7 @@
           <span class="c1"># setuptools will change an underscore (_) to a dash (-), in name, so doing it here explicitly</span>
           <span class="c1"># PEP 8: Python packages should also have short, all-lowercase names, although the use of</span>
           <span class="c1">#        underscores is discouraged.</span>
-          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.py-guide&#39;</span><span class="p">,</span>
+          <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.pyguide&#39;</span><span class="p">,</span>
           <span class="n">packages</span><span class="o">=</span><span class="n">find_and_list_packages</span><span class="p">(),</span>
           <span class="n">project_urls</span><span class="o">=</span><span class="p">{</span>
             <span class="s2">&quot;Bug Tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/issues/&quot;</span><span class="p">,</span>

@@ -4,6 +4,6 @@ py_guide
 .. toctree::
    :maxdepth: 4
 
-   modules
    py_guide
+   py_guide.py_template
    setup

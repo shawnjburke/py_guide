@@ -56,6 +56,20 @@
         <span class="sd">&quot;&quot;&quot;Collects some information, then generates a project using the best practices of this guide.&quot;&quot;&quot;</span>
         <span class="n">project_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the name of your project?&quot;</span><span class="p">)</span>
         <span class="n">py</span> <span class="o">=</span> <span class="n">project_factory</span><span class="o">.</span><span class="n">PyProject</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
+        <span class="n">py</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What name do you want to use for author, copyright holder?&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">FileExistsError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;Directory </span><span class="si">{0}</span><span class="s2"> already exists. (D)elete or (R)ename?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span>
+                <span class="n">py</span><span class="o">.</span><span class="n">remove_directory</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="n">project_name</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the new name of your project?&quot;</span><span class="p">)</span>
+                <span class="n">project_name</span> <span class="o">=</span> <span class="n">new_name</span>
+            <span class="n">py</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">project_name</span>
+            <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Your project was created at </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">find_project_base_directory</span><span class="p">()))</span></div>
 
 <div class="viewcode-block" id="ConsoleMenu.show_menu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.show_menu">[docs]</a>    <span class="k">def</span> <span class="nf">show_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

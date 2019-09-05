@@ -1,10 +1,12 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>setup module &#8212; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>setup module &#8212; Python Guide for Practicing Wizards 0.2.2 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,7 +17,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Install Python" href="../python_best_practices/install_python.html" />
-    <link rel="prev" title="py_guide package" href="py_guide.html" />
+    <link rel="prev" title="py_guide.py_template package" href="py_guide.py_template.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -36,14 +38,14 @@
 <span id="setup-module"></span><h1>setup module<a class="headerlink" href="#module-setup" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="setup.find_and_list_packages">
-<code class="sig-prename descclassname">setup.</code><code class="sig-name descname">find_and_list_packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/setup.html#find_and_list_packages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setup.find_and_list_packages" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">setup.</code><code class="descname">find_and_list_packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/setup.html#find_and_list_packages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setup.find_and_list_packages" title="Permalink to this definition">¶</a></dt>
 <dd><p>This wrapper adds the display of packages found by setuptools.find_packages() during the build process.  This
 is useful when troubleshooting issues, such as when creating package_data entries for setup.py</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="setup.version_builder">
-<code class="sig-prename descclassname">setup.</code><code class="sig-name descname">version_builder</code><span class="sig-paren">(</span><em class="sig-param">write_new_version=True</em>, <em class="sig-param">ini_file=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/setup.html#version_builder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setup.version_builder" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">setup.</code><code class="descname">version_builder</code><span class="sig-paren">(</span><em>write_new_version=True</em>, <em>ini_file=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/setup.html#version_builder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setup.version_builder" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method determines the next version number.  The assumption is the version numbering scheme is relying on
 a timestamp based version, in contrast to Major.Minor.Revision type of structure.  THAT IS A NON-STANDARD SCHEME.</p>
 </dd></dl>
@@ -62,10 +64,10 @@ a timestamp based version, in contrast to Major.Minor.Revision type of structure
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2019, 'Shawn J Burke'.
+      &copy;2019, Shawn J Burke.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

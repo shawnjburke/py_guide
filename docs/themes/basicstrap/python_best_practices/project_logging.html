@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Great Software has Great Logging &mdash; &#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</title>
+    <title>Great Software has Great Logging &mdash; Python Guide for Practicing Wizards 0.2.2 documentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
             URL_ROOT:    '../',
-            VERSION:     '0.2.1',
+            VERSION:     '0.2.2',
             COLLAPSE_INDEX: false,
             FILE_SUFFIX: '.html',
             HAS_SOURCE:  true
@@ -49,7 +49,7 @@
 </script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation" href="../index.html" />
+    <link rel="top" title="Python Guide for Practicing Wizards 0.2.2 documentation" href="../index.html" />
     <link rel="next" title="Best Practices Index" href="index.html" />
     <link rel="prev" title="Use setup.py from the Start" href="project_setup.html" /> 
   </head>
@@ -63,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a>
+          <a class="navbar-brand" href="../index.html">Python Guide for Practicing Wizards 0.2.2 documentation</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -154,10 +154,10 @@ their creation.  Many times the logging left by others has saved me.  Great Soft
 <p>From <a class="reference external" href="https://docs.python.org/3.7/library/logging.html?highlight=logging">The Office Python Documentation</a> I thought the following was a good summary of how logging works:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Loggers expose the interface that application code directly uses.</p></li>
-<li><p>Handlers send the log records (created by loggers) to the appropriate destination.</p></li>
-<li><p>Filters provide a finer grained facility for determining which log records to output.</p></li>
-<li><p>Formatters specify the layout of log records in the final output.</p></li>
+<li>Loggers expose the interface that application code directly uses.</li>
+<li>Handlers send the log records (created by loggers) to the appropriate destination.</li>
+<li>Filters provide a finer grained facility for determining which log records to output.</li>
+<li>Formatters specify the layout of log records in the final output.</li>
 </ul>
 </div></blockquote>
 <div class="section" id="python-logging">
@@ -205,8 +205,8 @@ in child class and code, the usage of environmental definition <code class="docu
 the “screen”.  I will advocate for just using a logger and then attaching a certain amount of those logs to stdout
 as what people see on the “screen”.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Understand that the redirection to stdout only needs to occur in classes that are top level and gui facing</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">Understand that the redirection to stdout only needs to occur in classes that are top level and gui facing</p>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using logging to populate standard output with info level log entries</span>
 <span class="n">stdout_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
@@ -237,7 +237,7 @@ as what people see on the “screen”.</p>
 <div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
   <div class="navbar-inner">
     <ul class="nav navbar-nav ">
-        <li><a href="../index.html">&#39;Python Guide for Practicing Wizards&#39; 0.2.1 documentation</a></li>
+        <li><a href="../index.html">Python Guide for Practicing Wizards 0.2.2 documentation</a></li>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
@@ -254,8 +254,8 @@ as what people see on the “screen”.</p>
 
       <!-- footer -->
       <footer role="contentinfo">
-          &copy; Copyright 2019, &#39;Shawn J Burke&#39;.
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+          &copy; Copyright 2019, Shawn J Burke.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
       </footer>
       <!-- /footer -->
 

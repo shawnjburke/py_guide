@@ -12,6 +12,9 @@ https://shawnjburke.github.io/py_guide/
 Version History
 ########################
 
+* 0.2.2 - Adding in incomplete changes for project generator on way to v0.3.0.  Will create directory
+    structure and 1/2 dozen files for the project.  Not complete yet.
+
 * 0.2.1 - Remove revealjs theme which is no longer supported and didn't work right anyway.
 
 * 0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.
@@ -19,9 +22,9 @@ Version History
 * 0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to
     create a project is in an development state.
 
-########################
+##########################
 Purpose of this Project
-########################
+##########################
 
 This project is intended to be a guide on getting started with Python.  It's intended to establish a best
 practice structure that can be used as a beginning state for a python project.  Stepping through all the steps

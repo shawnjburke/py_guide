@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Generate docs_source\code RST files, TEST, no write" type="ShConfigurationType">
+    <option name="SCRIPT_PATH" value="$PROJECT_DIR$/docs_source/make.bat" />
+    <option name="SCRIPT_OPTIONS" value="code_rst_generate -force --dry-run" />
+    <option name="INTERPRETER_PATH" value="" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <method v="2" />
+  </configuration>
+</component>

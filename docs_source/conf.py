@@ -33,7 +33,9 @@ ini_file.read(ini_file_name)
 # -- Project information -----------------------------------------------------
 
 project = ini_file["project"]["name"]
+project_no_spaces = project.strip()
 author = ini_file["project"]["author"]
+description = ini_file["project"]["description"]
 copyright = '{0}, {1}'.format(str(datetime.now().year), author)
 
 # The short X.Y version
@@ -125,7 +127,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PythonGuideforPracticingWizardsdoc'
+htmlhelp_basename = '{0}doc'.format(project_no_spaces)
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -152,7 +154,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PythonGuideforPracticingWizards.tex', 'Python Guide for Practicing Wizards Documentation',
+    (master_doc, '{0}.tex'.format(project_no_spaces), '{0} Documentation'.format(project),
      author, 'manual'),
 ]
 
@@ -162,9 +164,10 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pythonguideforpracticingwizards', 'Python Guide for Practicing Wizards Documentation',
+    (master_doc, project_no_spaces, '{0} Documentation'.format(project),
      [author], 1)
 ]
+
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -173,8 +176,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PythonGuideforPracticingWizards', 'Python Guide for Practicing Wizards Documentation',
-     author, 'PythonGuideforPracticingWizards', 'One line description of project.',
+    (master_doc, project_no_spaces, '{0} Documentation'.format(project),
+     author, project_no_spaces, description,
      'Miscellaneous'),
 ]
 
