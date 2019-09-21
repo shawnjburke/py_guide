@@ -43,20 +43,22 @@ language.  Markdown seems to be popular in the github crowd and `sphinx can supp
 Create a reStructuredText markup file
 **************************************
 You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
-instance, create a folder in your project called docs-source [#footnote-02]_, a sibling of the project_name folder.  Inside that
+instance, create a folder in your project called docs_source [#footnote-02]_, a sibling of the project_name folder.  Inside that
 folder add a readme.rst file.
 
 Inside a template file you can
 
-# Add text and _*markup*_ to style that text
-# Use directives to style the text
-# Use directives to automatically generate or include other files
+* Add text and _*markup*_ to style that text
+
+* Use directives to style the text
+
+* Use directives to automatically generate or include other files
 
 .. code-block:: text
 
     project_name/
     ├- docs/
-    ├- docs-source/
+    ├- docs_source/
     │  └- readme.rst
     ├- project_name/
     │  └- tests/
@@ -71,7 +73,7 @@ right?  It will make some sense after a while.
 
 In the docs\\readme.rst file add the following contents:
 
-.. code-block::text
+.. code-block:: text
 
     README
     =================
@@ -92,14 +94,14 @@ previously created.  Answer other questions as you see fit; I would opt for defa
 to change the answer.  Here are items that I set in the list of questions
 
 ..  note::
-    Where possible I try to follow convention.  The convention for sphinx is to put your files for documentation in
-    a docs/ folder.  I'm going to depart from that and use a docs-source folder instead.  The reason for this is that
+    Where possible I try to follow convention.  The convention for sphinx is to put your source files for documentation
+    in a docs/ folder.  I'm going to depart from that and use a docs_source folder instead.  The reason for this is that
     github pages support reading html files from the docs folder.  Therefore I'll make docs/ an output folder for html
-    and put the source markup file (in reStructuredText) in the docs-source/ folder instead.
+    and put the source markup file (in reStructuredText) in the docs_source/ folder instead.
 
 ..  code-block:: Python
 
-    > Root path for the documentation [.]: docs-source
+    > Root path for the documentation [.]: docs_source
     > Separate source and build directories (y/n) [n]: n
     > autodoc: automatically insert docstrings from modules (y/n) [n]: y
     > todo: write "todo" entries that can be shown or hidden on build (y/n) [n]: y
@@ -112,14 +114,14 @@ If you are using PyCharm (and why wouldn't you) under the tools menu, there's an
 
 If you are on Linux without PyCharm, then you need to execute the
 
-.. code-block::text
+.. code-block:: text
 
     $ sphinx-quickstart
 
 If you are on Windows without PyCharm, then you need an executable (on my first run I thought sphinx-quickstart was
 a command in the Python console)
 
-.. code-block::text
+.. code-block:: text
 
     C:\Python36\Scripts\sphinx-quickstart.exe
 
@@ -145,6 +147,6 @@ For things such as adding additional theme support to sphinx builds
 
 ..  rubric:: Footnotes
 ..  [#footnote-01] Yes, like the force.
-..  [#footnote-02] It is traditional with Sphinx to use a docs folder.  However, with the latest in GitHub pages,
-    it's easy to publish html by putting it in a docs folder.  Therefore we'll use docs-source as our file for
-    reStructuredText and Sphinx configuration and support files.
+..  [#footnote-02] It is traditional with Sphinx to use a docs folder for source .rst files.  However, with the latest
+    in GitHub pages, it's easy to publish html by putting it in a docs folder.  Therefore we'll use docs_source as
+    our file for reStructuredText and Sphinx configuration and support files.

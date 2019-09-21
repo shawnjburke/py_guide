@@ -1,7 +1,19 @@
+# PEP8: Group imports
+# 1) Standard library imports.
 import logging
 import os
+import getpass
+# import virtualenv
+import venv
+import pip
+from pip._internal import main
+import subprocess
+import sys
+# 2) Related third party imports.
 from menu import menu
+# 3) Local application/library specific imports.
 from py_guide import project_factory
+from py_guide import get_pip
 
 class ConsoleMenu:
     def __init__(self, cmdline_argument_parser, logger=None):
@@ -9,11 +21,9 @@ class ConsoleMenu:
         self.cmdline_parser = cmdline_argument_parser
 
         self.menu_main = menu.Menu()
-        title = """
-******************************************
-    Python Guide for Practicing Wizards
-*******************************************
-        """
+        title = "******************************************\n" \
+                "\tPython Guide for Practicing Wizards\n" \
+                "*******************************************"
         self.menu_main.title = title
         self.menu_main.set_options([
                                     ("Generate new project", self.new_project_generator),
@@ -23,23 +33,58 @@ class ConsoleMenu:
 
     def new_project_generator(self):
         """Collects some information, then generates a project using the best practices of this guide."""
-        project_name = menu.input("What is the name of your project?")
-        py = project_factory.PyProject(project_name=project_name, logger=self.log)
-        py.author = menu.input("What name do you want to use for author, copyright holder?")
+        py = project_factory.PyProject(project_name="", logger=self.log)
+        username = getpass.getuser()
+        # Set the py author.  Showing as a default [name] if enter is hit with nothing else, you get the default value
+        py.author = username
+        py.author = menu.input("What name do you want to use for author, copyright holder? [{0}]".format(username))
 
-        try:
-            py.create()
-        except FileExistsError as e:
-            action = menu.input("Directory {0} already exists. (D)elete or (R)ename?".format(py.project_absolute_path))
-            if action == "D":
-                py.remove_directory(project_name=project_name)
-            else:
-                new_name = menu.input("What is the new name of your project?")
-                project_name = new_name
-            py.project_name = project_name
-            py.create()
+        # new_name will be used if the current project_name exists
+        new_name = None
+        while new_name is None:
+            py.project_name = menu.input("What is the name of your project?")
 
-        self.log.info("Your project was created at {0}".format(py.find_project_base_directory()))
+            try:
+                new_name = py.project_name
+                py.create()
+            except FileExistsError as e:
+                action = menu.input("Directory {0} already exists. (D)elete or (R)ename?".format(py.project_absolute_path))
+
+                if action.upper() == "D":
+                    try:
+                        py.remove_directory()
+                    except FileNotFoundError as e:
+                        # the file was already removed.  Move on
+                        pass
+
+                    py.project_name = new_name
+                else:
+                    new_name = menu.input("What is the new name of your project?")
+                    py.project_name = new_name
+
+                py.create()
+
+            self.log.info("Your project was created at {0}".format(py.find_project_base_directory()))
+
+        sys_prefix = sys.prefix
+        venv_path = os.path.join(py.project_absolute_path, "venv")
+        sys.prefix = venv_path
+        self.log.info("Creating Virtual environment...")
+        venv.create(venv_path)
+        # exec(os.path.join(venv_path, "Scripts", "activate"))
+        self.log.info("Activating Python Virtual Environment (venv)")
+        os.system(os.path.join(venv_path, "Scripts", "activate"))
+        self.log.info("Downloading pip installation file...")
+        pip_stream = get_pip.GetPip(venv_path)
+        pip_stream.get_pip()
+        self.log.info("Installing pip ...")
+        subprocess.call([os.path.join(venv_path, "scripts", "python"), os.path.join(venv_path, "get_pip.py")])
+        pip_file = os.path.join(venv_path, "scripts", "pip")
+        self.log.info("Installing requirements using pip...")
+        requirements_file = os.path.join(py.project_absolute_path, "requirements.txt")
+        subprocess.call([pip_file, "install", "-r", requirements_file])
+        # Restore previous values after creating new virtual environment and activating it
+        sys.prefix = sys_prefix
 
     def show_menu(self):
         self.menu_main.open()

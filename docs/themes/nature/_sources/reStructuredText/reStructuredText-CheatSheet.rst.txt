@@ -6,10 +6,14 @@ reStructuredText is a markup language for documentation.  This markup is process
 an output.  HTML is one type of output.  What makes this combination powerful is you can create PDF output with the same
 source material, written in restructured text [#foot-note-1]_.
 
+When creating a code-block leave a space after the double colon, or it won't render
 
+.. code-block:: text
+
+    ..code-block:: text
 
 ..  toctree::
-    :maxdepth: 1
+    :maxdepth: 9
     :caption: Contents:
 
     reStructuredText-CheatSheet-Headings

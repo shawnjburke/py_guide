@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>py_guide.console_menu &mdash; Python Guide for Practicing Wizards 0.2.2 documentation</title>
+    <title>py_guide.console_menu &mdash; Python Guide for Practicing Wizards 0.2.3 documentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
             URL_ROOT:    '../../',
-            VERSION:     '0.2.2',
+            VERSION:     '0.2.3',
             COLLAPSE_INDEX: false,
             FILE_SUFFIX: '.html',
             HAS_SOURCE:  true
@@ -49,7 +49,7 @@
 </script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="Python Guide for Practicing Wizards 0.2.2 documentation" href="../../index.html" />
+    <link rel="top" title="Python Guide for Practicing Wizards 0.2.3 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body role="document">
@@ -62,7 +62,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../../index.html">Python Guide for Practicing Wizards 0.2.2 documentation</a>
+          <a class="navbar-brand" href="../../index.html">Python Guide for Practicing Wizards 0.2.3 documentation</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -114,10 +114,22 @@
                 <div class="body">
                   
   <h1>Source code for py_guide.console_menu</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span></span><span class="c1"># PEP8: Group imports</span>
+<span class="c1"># 1) Standard library imports.</span>
+<span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
+<span class="c1"># import virtualenv</span>
+<span class="kn">import</span> <span class="nn">venv</span>
+<span class="kn">import</span> <span class="nn">pip</span>
+<span class="kn">from</span> <span class="nn">pip._internal</span> <span class="k">import</span> <span class="n">main</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c1"># 2) Related third party imports.</span>
 <span class="kn">from</span> <span class="nn">menu</span> <span class="k">import</span> <span class="n">menu</span>
+<span class="c1"># 3) Local application/library specific imports.</span>
 <span class="kn">from</span> <span class="nn">py_guide</span> <span class="k">import</span> <span class="n">project_factory</span>
+<span class="kn">from</span> <span class="nn">py_guide</span> <span class="k">import</span> <span class="n">get_pip</span>
 
 <div class="viewcode-block" id="ConsoleMenu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu">[docs]</a><span class="k">class</span> <span class="nc">ConsoleMenu</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmdline_argument_parser</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -125,11 +137,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cmdline_parser</span> <span class="o">=</span> <span class="n">cmdline_argument_parser</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">Menu</span><span class="p">()</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">******************************************</span>
-<span class="s2">    Python Guide for Practicing Wizards</span>
-<span class="s2">*******************************************</span>
-<span class="s2">        &quot;&quot;&quot;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;******************************************</span><span class="se">\n</span><span class="s2">&quot;</span> \
+                <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Python Guide for Practicing Wizards</span><span class="se">\n</span><span class="s2">&quot;</span> \
+                <span class="s2">&quot;*******************************************&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span><span class="o">.</span><span class="n">set_options</span><span class="p">([</span>
                                     <span class="p">(</span><span class="s2">&quot;Generate new project&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_project_generator</span><span class="p">),</span>
@@ -139,23 +149,58 @@
 
 <div class="viewcode-block" id="ConsoleMenu.new_project_generator"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.new_project_generator">[docs]</a>    <span class="k">def</span> <span class="nf">new_project_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Collects some information, then generates a project using the best practices of this guide.&quot;&quot;&quot;</span>
-        <span class="n">project_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the name of your project?&quot;</span><span class="p">)</span>
-        <span class="n">py</span> <span class="o">=</span> <span class="n">project_factory</span><span class="o">.</span><span class="n">PyProject</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
-        <span class="n">py</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What name do you want to use for author, copyright holder?&quot;</span><span class="p">)</span>
+        <span class="n">py</span> <span class="o">=</span> <span class="n">project_factory</span><span class="o">.</span><span class="n">PyProject</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span>
+        <span class="c1"># Set the py author.  Showing as a default [name] if enter is hit with nothing else, you get the default value</span>
+        <span class="n">py</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">username</span>
+        <span class="n">py</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What name do you want to use for author, copyright holder? [</span><span class="si">{0}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">))</span>
 
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-        <span class="k">except</span> <span class="ne">FileExistsError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">action</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;Directory </span><span class="si">{0}</span><span class="s2"> already exists. (D)elete or (R)ename?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">))</span>
-            <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span>
-                <span class="n">py</span><span class="o">.</span><span class="n">remove_directory</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="n">project_name</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">new_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the new name of your project?&quot;</span><span class="p">)</span>
-                <span class="n">project_name</span> <span class="o">=</span> <span class="n">new_name</span>
-            <span class="n">py</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">project_name</span>
-            <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+        <span class="c1"># new_name will be used if the current project_name exists</span>
+        <span class="n">new_name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">while</span> <span class="n">new_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">py</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the name of your project?&quot;</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Your project was created at </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">find_project_base_directory</span><span class="p">()))</span></div>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">new_name</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">project_name</span>
+                <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">FileExistsError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">action</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;Directory </span><span class="si">{0}</span><span class="s2"> already exists. (D)elete or (R)ename?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">))</span>
+
+                <span class="k">if</span> <span class="n">action</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">py</span><span class="o">.</span><span class="n">remove_directory</span><span class="p">()</span>
+                    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="c1"># the file was already removed.  Move on</span>
+                        <span class="k">pass</span>
+
+                    <span class="n">py</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">new_name</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">new_name</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;What is the new name of your project?&quot;</span><span class="p">)</span>
+                    <span class="n">py</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">new_name</span>
+
+                <span class="n">py</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Your project was created at </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">find_project_base_directory</span><span class="p">()))</span>
+
+        <span class="n">sys_prefix</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span>
+        <span class="n">venv_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">,</span> <span class="s2">&quot;venv&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">venv_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Creating Virtual environment...&quot;</span><span class="p">)</span>
+        <span class="n">venv</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">venv_path</span><span class="p">)</span>
+        <span class="c1"># exec(os.path.join(venv_path, &quot;Scripts&quot;, &quot;activate&quot;))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Activating Python Virtual Environment (venv)&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;activate&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading pip installation file...&quot;</span><span class="p">)</span>
+        <span class="n">pip_stream</span> <span class="o">=</span> <span class="n">get_pip</span><span class="o">.</span><span class="n">GetPip</span><span class="p">(</span><span class="n">venv_path</span><span class="p">)</span>
+        <span class="n">pip_stream</span><span class="o">.</span><span class="n">get_pip</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Installing pip ...&quot;</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;get_pip.py&quot;</span><span class="p">)])</span>
+        <span class="n">pip_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;pip&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Installing requirements using pip...&quot;</span><span class="p">)</span>
+        <span class="n">requirements_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">,</span> <span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="n">pip_file</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="s2">&quot;-r&quot;</span><span class="p">,</span> <span class="n">requirements_file</span><span class="p">])</span>
+        <span class="c1"># Restore previous values after creating new virtual environment and activating it</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">sys_prefix</span></div>
 
 <div class="viewcode-block" id="ConsoleMenu.show_menu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.show_menu">[docs]</a>    <span class="k">def</span> <span class="nf">show_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">menu_main</span><span class="o">.</span><span class="n">open</span><span class="p">()</span></div>
@@ -208,7 +253,7 @@
 <div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
   <div class="navbar-inner">
     <ul class="nav navbar-nav ">
-        <li><a href="../../index.html">Python Guide for Practicing Wizards 0.2.2 documentation</a></li>
+        <li><a href="../../index.html">Python Guide for Practicing Wizards 0.2.3 documentation</a></li>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
