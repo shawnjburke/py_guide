@@ -1,6 +1,26 @@
+=================
 py\_guide package
 =================
 
+---------------
+Module contents
+---------------
+
+.. automodule:: py_guide
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :private-members:
+    :special-members:
+
+.. automodule:: py_guide.__main__
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :private-members:
+    :special-members:
+
+----------
 Submodules
 ----------
 
@@ -15,7 +35,7 @@ py\_guide.console\_menu module
 py\_guide.log\_4\_trees module
 ------------------------------
 
-.. automodule:: py_guide.log_4_trees
+.. automodule:: py_guide.logging_trees
     :members:
     :undoc-members:
     :show-inheritance:
@@ -29,10 +49,4 @@ py\_guide.project\_factory module
     :show-inheritance:
 
 
-Module contents
----------------
 
-.. automodule:: py_guide
-    :members:
-    :undoc-members:
-    :show-inheritance:
