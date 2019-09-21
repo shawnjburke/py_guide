@@ -15,12 +15,13 @@ class LoggerOfTrees(logging.Logger):
             /ˈlôɡiNG,ˈläɡiNG/
 
             the activity or business of felling trees and cutting and preparing the timber.
-            \"measures to counter illegal logging of the country's tropical rainforests\"
 
         Originally created to deal with writing log files to directories (and creating that directory etc), I
-        encapsulated the Python standard logging into my logging_of_trees project.  By default this class can
-        create the logging file and add the handler to direct logs to it.  In addition we set logging to the
+        encapsulated the Python standard logging into my logging_trees project.  By default this class can
+        create the logging file and add the handler to direct logs to it.  The file logger will be set to write
+        all logs to the file.  In addition we the logger will take Info level logs and above, and also write them to
         stdout so that it can be used instead of print statements."""
+
     def __init__(self, allow_log_file=True):
         super(LoggerOfTrees, self).__init__(name=__name__)
 
