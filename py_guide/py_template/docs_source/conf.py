@@ -14,7 +14,7 @@
 #
 import os
 import sys
-print(os.path.abspath('.'))
+
 # the project/docs_source directory
 sys.path.insert(0, os.path.abspath('.'))
 # the project/ directory
@@ -60,8 +60,6 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    'sphinxjp.themes.basicstrap',
-    'sphinxjp.themes.gopher',
 ]
 
 
