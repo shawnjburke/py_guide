@@ -8,9 +8,9 @@ Overview
 
 {{project_name}} is [#f1]_ built using  Python best practices.
 
-##################
-    THANK YOUs !!
-##################
+#######################
+Acknowledgements
+#######################
 
 Websites I referenced for inspiration
 
