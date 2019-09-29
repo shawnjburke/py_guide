@@ -5,8 +5,6 @@ import os
 import getpass
 # import virtualenv
 import venv
-import pip
-from pip._internal import main
 import subprocess
 import sys
 # 2) Related third party imports.
@@ -14,6 +12,7 @@ from menu import menu
 # 3) Local application/library specific imports.
 from py_guide import project_factory
 from py_guide import get_pip
+
 
 class ConsoleMenu:
     def __init__(self, cmdline_argument_parser, logger=None):
