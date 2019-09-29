@@ -56,9 +56,17 @@ class PyProject(object):
         # Files in the source folder; named the same as the project per PEP
         self.create_init(environment=env, directory=self.project_name)
         self.create_main(environment=env)
+        self.create_console_menu(environment=env)
+        self.create_logging(environment=env)
 
         # PyCharm files
         self.create_run_configurations(environment=env)
+
+    def create_console_menu(self, environment=None):
+        console_t = environment.get_template('src/console_menu.py')
+        console_d = {u'project_name': self.project_name}
+        destination = os.path.join(self.project_name, "console_menu.py")
+        self.write_file(destination, console_t, console_d)
 
     def create_dist_pypi(self, environment=None):
         """Creates the distribute to PyPi bat files for Windows machines.
@@ -109,7 +117,7 @@ class PyProject(object):
             environment(Jinja2.environment): Context for the template engine Jinja2
             directory(str): A string that can be treated like a PathLike object
         """
-        init_t = environment.get_template('__init__.py')
+        init_t = environment.get_template('src/__init__.py')
         if directory is None:
             # Write to the default directory
             self.write_file("__init__.py", init_t)
@@ -137,6 +145,10 @@ class PyProject(object):
 
         self.write_file("LICENSE", license_t, license_d)
 
+    def create_logging(self, environment=None):
+        log_t = environment.get_template('src/logging_trees.py')
+        self.write_file(os.path.join(self.project_name, "logging_trees.py"), log_t)
+
     def create_main(self, environment=None):
         """Method creates the __main__ file for the project.  As part of our best practices standard the __main__ is
         important for creating a standard handling of arguments with argparse, a standard way to route those arguments
@@ -144,7 +156,7 @@ class PyProject(object):
         application to have a Scripts/ directory start command.  For instance, when this project is installed, there
         is a venv/scripts/py_guide command that can be executed."""
         main_d = {u'project_name': self.project_name}
-        main_t = environment.get_template('__main__.py')
+        main_t = environment.get_template('src/__main__.py')
         destination = os.path.join(self.project_name, "__main__.py")
         self.write_file(destination, main_t, main_d)
 
@@ -290,8 +302,13 @@ class PyProject(object):
         existing project folder.  It takes the name we pass (or wnated to create) and finds it in the project directory
         path.  This allows the calling user interface to not have to understand the full path to the directory."""
         directory = os.path.join(self.find_project_base_directory(), self.project_name)
-        shutil.rmtree(directory)
-        self.log.info("Removed directory {0}".format(directory))
+        try:
+            shutil.rmtree(directory)
+            self.log.info("Removed directory {0}".format(directory))
+        except OSError as e:
+            if e.errno == 145:
+                self.log.error("[WinError 145] The directory is not empty.  Could it be open in another "
+                               "application? Error Message: {0}".format(e.strerror))
 
     def write_file(self, file_name=None, template=None, template_data={}):
         """Wrapper method for successive file creation.  Assumes all files want to be written

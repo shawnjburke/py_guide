@@ -88,7 +88,8 @@ echo.
 echo optional arguments:
 echo   --help   show this help message and exit
 echo   --env    PyPI environment to use.  By default, with no arguments,
-echo            will upload to test.pypi.org.
+echo            will upload to test.pypi.org.  Pass   --env pypi   to upload to
+echo            the production Python Package Index.
 EXIT /B /0
 
 rem ***************************************************************************************

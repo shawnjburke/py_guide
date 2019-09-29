@@ -12,6 +12,8 @@ https://shawnjburke.github.io/py_guide/
 Version History
 ########################
 
+* 0.2.4 - Fix issues with generated project, wheel installation file, not working.  Add several files missing from generated project.
+
 * 0.2.3 - Beta version of project generator.  Creates a Python 3.x project with best practices, including initialized virtual environment.
 
 * 0.2.2 - Adding in incomplete changes for project generator on way to v0.3.0.  Will create directory structure and 1/2 dozen files for the project.  Not complete yet.
