@@ -5,8 +5,6 @@ import os
 import getpass
 # import virtualenv
 import venv
-import pip
-from pip._internal import main
 import subprocess
 import sys
 # 2) Related third party imports.
@@ -14,6 +12,7 @@ from menu import menu
 # 3) Local application/library specific imports.
 from py_guide import project_factory
 from py_guide import get_pip
+
 
 class ConsoleMenu:
     def __init__(self, cmdline_argument_parser, logger=None):
@@ -66,13 +65,20 @@ class ConsoleMenu:
 
             self.log.info("Your project was created at {0}".format(py.find_project_base_directory()))
 
-        sys_prefix = sys.prefix
         venv_path = os.path.join(py.project_absolute_path, "venv")
+        self.create_virtual_environment(venv_path=venv_path)
+
+    def create_virtual_environment(self, venv_path):
+        # Store the current environment so we an re-activate it
+        sys_prefix = sys.prefix
+        # Deactivate the current virtual environment
+        self.log.info("Deactivating Python Virtual Environment ({0})".format(sys_prefix))
+        os.system(os.path.join(sys.prefix, "Scripts", "deactivate"))
+
         sys.prefix = venv_path
         self.log.info("Creating Virtual environment...")
         venv.create(venv_path)
-        # exec(os.path.join(venv_path, "Scripts", "activate"))
-        self.log.info("Activating Python Virtual Environment (venv)")
+        self.log.info("Activating Python Virtual Environment ({0})".format(venv_path))
         os.system(os.path.join(venv_path, "Scripts", "activate"))
         self.log.info("Downloading pip installation file...")
         pip_stream = get_pip.GetPip(venv_path)
@@ -81,8 +87,14 @@ class ConsoleMenu:
         subprocess.call([os.path.join(venv_path, "scripts", "python"), os.path.join(venv_path, "get_pip.py")])
         pip_file = os.path.join(venv_path, "scripts", "pip")
         self.log.info("Installing requirements using pip...")
-        requirements_file = os.path.join(py.project_absolute_path, "requirements.txt")
+        requirements_file = os.path.join(venv_path, "..", "requirements.txt")
         subprocess.call([pip_file, "install", "-r", requirements_file])
+        # Deactivate the virtual environment
+        self.log.info("Deactivating Python Virtual Environment ({0})".format(venv_path))
+        os.system(os.path.join(venv_path, "Scripts", "deactivate"))
+        # Reactivate the current virtual environment
+        self.log.info("Activating Python Virtual Environment ({0})".format(sys_prefix))
+        os.system(os.path.join(sys_prefix, "Scripts", "activate"))
         # Restore previous values after creating new virtual environment and activating it
         sys.prefix = sys_prefix
 

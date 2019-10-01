@@ -1,4 +1,4 @@
-requests
+requests==2.22.0
 configparser2==4.0.0
 docutils==0.14
 Jinja2==2.10.1

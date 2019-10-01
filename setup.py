@@ -77,10 +77,13 @@ if __name__ == "__main__":
           description='Python Project & Coding Standards for Practicing Wizards',
           entry_points={
               'console_scripts': ['py_guide = py_guide.__main__:main']
-            },
+          },
           install_requires=[
               'configparser2==4.0.0',
-              'Menu==3.1.0'
+              'Menu==3.1.0',
+              'Jinja2==2.10.1',
+              'requests',
+              'twine==1.13.0'
           ],
           license='GNU GENERAL PUBLIC LICENSE',
           # newline separates Description: header in PKG-INFO from readme content
@@ -91,10 +94,22 @@ if __name__ == "__main__":
           #        underscores is discouraged.
           name='sjb.pyguide',
           packages=find_and_list_packages(),
+          # Package data details: https://setuptools.readthedocs.io/en/latest/setuptools.html#basic-use
+          # Include any license files, batch scripts, any default version of files, reStructured Text files
+          #   and other text files like requirements.txt
+          package_data={'py_guide.py_template': ['LICENSE-*', '*.bat', '*.default', '*.rst',
+                                                 '*.txt', '.gitignore', 'project.cfg',
+                                                 # Only py files in the direct package get included.  .idea and
+                                                 # docs_source are not packages because they don'thave __init__
+                                                 # files.  Have to include their files specifically.  We could
+                                                 # have added init files, but this route seemed more accurate.
+                                                 '.idea/runConfigurations/*.xml',
+                                                 'docs_source/*.py', 'docs_source/*.rst'],
+                        },
           project_urls={
-            "Bug Tracker": "https://github.com/shawnjburke/py_guide/issues/",
-            "Documentation": "https://shawnjburke.github.io/py_guide/",
-            "Source Code": "https://github.com/shawnjburke/py_guide/",
+              "Bug Tracker": "https://github.com/shawnjburke/py_guide/issues/",
+              "Documentation": "https://shawnjburke.github.io/py_guide/",
+              "Source Code": "https://github.com/shawnjburke/py_guide/",
           },
           url="https://github.com/shawnjburke/py_guide",
           version=version_builder(write_new_version=True, ini_file=ini_file),
