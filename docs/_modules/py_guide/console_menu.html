@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>py_guide.console_menu &mdash; Python Guide for Practicing Wizards 0.2.3 documentation</title>
+  <title>py_guide.console_menu &mdash; Python Guide for Practicing Wizards 0.2.5 documentation</title>
   
 
   
@@ -58,7 +58,7 @@
             
             
               <div class="version">
-                0.2.3
+                0.2.5
               </div>
             
           
@@ -82,11 +82,12 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../code/modules.html">py_guide code doc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/install_python.html">Install Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/install_pycharm.html">Install PyCharm</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tldr.html">Too Long; Didn’t Read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/install_python.html">Step 1: Install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/install_pycharm.html">Step 2: Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/install_pyguide.html">Step 3: Install sjb.pyguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/generate_project.html">Step 4: Generate Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/project_structure.html">Python Project Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/project_documentation_code.html">Generate Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../python_best_practices/project_documentation_matters.html">Project Documentation Matters</a></li>
@@ -98,9 +99,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../python_package_index.html">Python Package Index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../readme.html">README</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips and Tricks</a></li>
-</ul>
-<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgments.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rants/index.html">Rants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/modules.html">py_guide code doc</a></li>
 </ul>
 
             
@@ -171,8 +172,6 @@
 <span class="kn">import</span> <span class="nn">getpass</span>
 <span class="c1"># import virtualenv</span>
 <span class="kn">import</span> <span class="nn">venv</span>
-<span class="kn">import</span> <span class="nn">pip</span>
-<span class="kn">from</span> <span class="nn">pip._internal</span> <span class="k">import</span> <span class="n">main</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="c1"># 2) Related third party imports.</span>
@@ -180,6 +179,7 @@
 <span class="c1"># 3) Local application/library specific imports.</span>
 <span class="kn">from</span> <span class="nn">py_guide</span> <span class="k">import</span> <span class="n">project_factory</span>
 <span class="kn">from</span> <span class="nn">py_guide</span> <span class="k">import</span> <span class="n">get_pip</span>
+
 
 <div class="viewcode-block" id="ConsoleMenu"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu">[docs]</a><span class="k">class</span> <span class="nc">ConsoleMenu</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmdline_argument_parser</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -232,13 +232,20 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Your project was created at </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">find_project_base_directory</span><span class="p">()))</span>
 
-        <span class="n">sys_prefix</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span>
         <span class="n">venv_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">,</span> <span class="s2">&quot;venv&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_virtual_environment</span><span class="p">(</span><span class="n">venv_path</span><span class="o">=</span><span class="n">venv_path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConsoleMenu.create_virtual_environment"><a class="viewcode-back" href="../../code/py_guide.html#py_guide.console_menu.ConsoleMenu.create_virtual_environment">[docs]</a>    <span class="k">def</span> <span class="nf">create_virtual_environment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">venv_path</span><span class="p">):</span>
+        <span class="c1"># Store the current environment so we an re-activate it</span>
+        <span class="n">sys_prefix</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span>
+        <span class="c1"># Deactivate the current virtual environment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Deactivating Python Virtual Environment (</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys_prefix</span><span class="p">))</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">prefix</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;deactivate&quot;</span><span class="p">))</span>
+
         <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">venv_path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Creating Virtual environment...&quot;</span><span class="p">)</span>
         <span class="n">venv</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">venv_path</span><span class="p">)</span>
-        <span class="c1"># exec(os.path.join(venv_path, &quot;Scripts&quot;, &quot;activate&quot;))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Activating Python Virtual Environment (venv)&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Activating Python Virtual Environment (</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">venv_path</span><span class="p">))</span>
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;activate&quot;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading pip installation file...&quot;</span><span class="p">)</span>
         <span class="n">pip_stream</span> <span class="o">=</span> <span class="n">get_pip</span><span class="o">.</span><span class="n">GetPip</span><span class="p">(</span><span class="n">venv_path</span><span class="p">)</span>
@@ -247,8 +254,14 @@
         <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;get_pip.py&quot;</span><span class="p">)])</span>
         <span class="n">pip_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;pip&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Installing requirements using pip...&quot;</span><span class="p">)</span>
-        <span class="n">requirements_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">project_absolute_path</span><span class="p">,</span> <span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span>
+        <span class="n">requirements_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span>
         <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="n">pip_file</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="s2">&quot;-r&quot;</span><span class="p">,</span> <span class="n">requirements_file</span><span class="p">])</span>
+        <span class="c1"># Deactivate the virtual environment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Deactivating Python Virtual Environment (</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">venv_path</span><span class="p">))</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">venv_path</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;deactivate&quot;</span><span class="p">))</span>
+        <span class="c1"># Reactivate the current virtual environment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Activating Python Virtual Environment (</span><span class="si">{0}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys_prefix</span><span class="p">))</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys_prefix</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;activate&quot;</span><span class="p">))</span>
         <span class="c1"># Restore previous values after creating new virtual environment and activating it</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">sys_prefix</span></div>
 

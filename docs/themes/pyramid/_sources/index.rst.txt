@@ -63,7 +63,7 @@ generated a number of different themes you can check out.
 * `py_guide/themes/alabaster`_
 * `py_guide/themes/basicstrap`_
 * `py_guide/themes/bizstyle`_
-* `py_guide/themes/classlic`_
+* `py_guide/themes/classic`_
 * `py_guide/themes/gopher`_
 * `py_guide/themes/haiku`_
 * `py_guide/themes/nature`_
@@ -76,7 +76,7 @@ generated a number of different themes you can check out.
 ..  _py_guide/themes/alabaster: https://shawnjburke.github.io/py_guide/themes/alabaster
 ..  _py_guide/themes/basicstrap: https://shawnjburke.github.io/py_guide/themes/basicstrap
 ..  _py_guide/themes/bizstyle: https://shawnjburke.github.io/py_guide/themes/bizstyle
-..  _py_guide/themes/classlic: https://shawnjburke.github.io/py_guide/themes/classlic
+..  _py_guide/themes/classic: https://shawnjburke.github.io/py_guide/themes/classic
 ..  _py_guide/themes/gopher: https://shawnjburke.github.io/py_guide/themes/gopher
 ..  _py_guide/themes/haiku: https://shawnjburke.github.io/py_guide/themes/haiku
 ..  _py_guide/themes/nature: https://shawnjburke.github.io/py_guide/themes/nature
