@@ -7,9 +7,10 @@ Documentation
 ########################
 
 https://shawnjburke.github.io/py_guide/
+https://py-guide.readthedocs.io/en/latest/
 
 The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
-data-source folder.  You can get to the root at `py_quide`.
+data-source folder.  You can get to the root at `py_quide`.  They are also mirrored on Read the Docs.
 
 ##########################
 Purpose of this Project
