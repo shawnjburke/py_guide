@@ -1,9 +1,6 @@
-===============================
-Best Practices Index
-===============================
+==================================
+Generator Provided Best Practices
+==================================
 
-..  toctree::
-    :maxdepth: 1
-    :caption: Contents:
 
-    best_practice_main
+

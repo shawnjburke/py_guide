@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>setup &mdash; Python Guide for Practicing Wizards 0.2.4 documentation</title>
+    <title>setup &mdash; Python Guide for Practicing Wizards 0.2.5 documentation</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -32,7 +32,7 @@
 <script type="text/javascript">
   var DOCUMENTATION_OPTIONS = {
             URL_ROOT:    '../',
-            VERSION:     '0.2.4',
+            VERSION:     '0.2.5',
             COLLAPSE_INDEX: false,
             FILE_SUFFIX: '.html',
             HAS_SOURCE:  true
@@ -49,7 +49,7 @@
 </script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Python Guide for Practicing Wizards 0.2.4 documentation" href="../index.html" />
+    <link rel="top" title="Python Guide for Practicing Wizards 0.2.5 documentation" href="../index.html" />
     <link rel="up" title="Module code" href="index.html" /> 
   </head>
   <body role="document">
@@ -62,7 +62,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Python Guide for Practicing Wizards 0.2.4 documentation</a>
+          <a class="navbar-brand" href="../index.html">Python Guide for Practicing Wizards 0.2.5 documentation</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -193,10 +193,13 @@
           <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Python Project &amp; Coding Standards for Practicing Wizards&#39;</span><span class="p">,</span>
           <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
               <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;py_guide = py_guide.__main__:main&#39;</span><span class="p">]</span>
-            <span class="p">},</span>
+          <span class="p">},</span>
           <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
               <span class="s1">&#39;configparser2==4.0.0&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;Menu==3.1.0&#39;</span>
+              <span class="s1">&#39;Menu==3.1.0&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Jinja2==2.10.1&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;requests&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;twine==1.13.0&#39;</span>
           <span class="p">],</span>
           <span class="n">license</span><span class="o">=</span><span class="s1">&#39;GNU GENERAL PUBLIC LICENSE&#39;</span><span class="p">,</span>
           <span class="c1"># newline separates Description: header in PKG-INFO from readme content</span>
@@ -207,10 +210,22 @@
           <span class="c1">#        underscores is discouraged.</span>
           <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sjb.pyguide&#39;</span><span class="p">,</span>
           <span class="n">packages</span><span class="o">=</span><span class="n">find_and_list_packages</span><span class="p">(),</span>
+          <span class="c1"># Package data details: https://setuptools.readthedocs.io/en/latest/setuptools.html#basic-use</span>
+          <span class="c1"># Include any license files, batch scripts, any default version of files, reStructured Text files</span>
+          <span class="c1">#   and other text files like requirements.txt</span>
+          <span class="n">package_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;py_guide.py_template&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;LICENSE-*&#39;</span><span class="p">,</span> <span class="s1">&#39;*.bat&#39;</span><span class="p">,</span> <span class="s1">&#39;*.default&#39;</span><span class="p">,</span> <span class="s1">&#39;*.rst&#39;</span><span class="p">,</span>
+                                                 <span class="s1">&#39;*.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;.gitignore&#39;</span><span class="p">,</span> <span class="s1">&#39;project.cfg&#39;</span><span class="p">,</span>
+                                                 <span class="c1"># Only py files in the direct package get included.  .idea and</span>
+                                                 <span class="c1"># docs_source are not packages because they don&#39;thave __init__</span>
+                                                 <span class="c1"># files.  Have to include their files specifically.  We could</span>
+                                                 <span class="c1"># have added init files, but this route seemed more accurate.</span>
+                                                 <span class="s1">&#39;.idea/runConfigurations/*.xml&#39;</span><span class="p">,</span>
+                                                 <span class="s1">&#39;docs_source/*.py&#39;</span><span class="p">,</span> <span class="s1">&#39;docs_source/*.rst&#39;</span><span class="p">],</span>
+                        <span class="p">},</span>
           <span class="n">project_urls</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;Bug Tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/issues/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Documentation&quot;</span><span class="p">:</span> <span class="s2">&quot;https://shawnjburke.github.io/py_guide/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Source Code&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Bug Tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/issues/&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Documentation&quot;</span><span class="p">:</span> <span class="s2">&quot;https://shawnjburke.github.io/py_guide/&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Source Code&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/shawnjburke/py_guide/&quot;</span><span class="p">,</span>
           <span class="p">},</span>
           <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/shawnjburke/py_guide&quot;</span><span class="p">,</span>
           <span class="n">version</span><span class="o">=</span><span class="n">version_builder</span><span class="p">(</span><span class="n">write_new_version</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ini_file</span><span class="o">=</span><span class="n">ini_file</span><span class="p">),</span>
@@ -231,7 +246,7 @@
 <div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
   <div class="navbar-inner">
     <ul class="nav navbar-nav ">
-        <li><a href="../index.html">Python Guide for Practicing Wizards 0.2.4 documentation</a></li>
+        <li><a href="../index.html">Python Guide for Practicing Wizards 0.2.5 documentation</a></li>
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       

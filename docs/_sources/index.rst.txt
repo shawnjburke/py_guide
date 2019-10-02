@@ -50,20 +50,19 @@ was written.  Documentation is good; at very least necessary.  This guild will m
 to setup where possible.
 
 ################
-Best Practices
+Get Started
 ################
 
-Steps to maintain a best practice Python project
+Here are the three simple steps to create a new project with best practices
 
-#. `Install Python`_
-#. `Install PyCharm`_
-#. `Python Project Structure`_
-#. `Documentation matters, please don't skip, start now`_
+#. `Install Python`_ and `Install PyCharm`_
+#. `Install sjb.pyguide`_
+#. `Generate project`_
 
+..  _Generate project: python_best_practices/generate_project.html
 ..  _Install Python: python_best_practices/install_python.html
 ..  _Install Pycharm: python_best_practices/install_Pycharm.html
-..  _Python Project Structure: python_best_practices/project_structure.html
-..  _Documentation matters, please don't skip, start now: python_best_practices/project_documentation_matters.html
+..  _Install sjb.pyguide: python_best_practices/install_pyguide.html
 
 
 ####################################
@@ -113,28 +112,54 @@ I guess that makes this my ode to Python.
 
 ..  toctree::
       :hidden:
-      :maxdepth: 9
 
       tldr
+
+..  toctree::
+      :hidden:
+      :caption: Getting Started
+      :maxdepth: 2
+
       python_best_practices/install_python
       python_best_practices/install_pycharm
       python_best_practices/install_pyguide
       python_best_practices/generate_project
+
+..  toctree::
+      :hidden:
+      :maxdepth: 2
+      :caption: Best Practices:
+
       python_best_practices/project_structure
       python_best_practices/project_documentation_code
       python_best_practices/project_documentation_matters
       python_best_practices/project_setup
       python_best_practices/project_logging
-      python_best_practices/index
+      python_best_practices/best_practice_main
+
+.. toctree::
+      :hidden:
+      :caption: reStructuredtext (rst)
+
       reStructuredText/reStructuredText-CheatSheet
       reStructuredText/reStructuredText-style-sample
-      python_package_index
+
+.. toctree::
+      :hidden:
+      :caption: Code Documentation
+      :name: code
+
+      code/modules
       readme
+
+.. toctree::
+      :hidden:
+      :caption: Being Pythonic
+
+      python_package_index
       tips
       acknowledgments
-      rants/index
-      code/modules
-
+      rants/no_shame_in_windows
 
 Indices and tables
 ==================

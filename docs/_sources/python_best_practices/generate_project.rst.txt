@@ -1,17 +1,19 @@
-================================
+===================================
 Step 4: Generate Project
-================================
-
+===================================
 
 The project generator is run somewhat like venv.  That is, I usually go to my Python 3.x installation, and
 from there run ``venv`` to create the virtual environment.  Therefore, in this guide I take the approach
 of installing sjb.pyguide to the default Python 3.x directory.
 
-It is assumed you have installed pyguide.  If not see `Install Python`_
+It is assumed you have installed Python.  If not see `Install Python`_
 
+It is assumed you have installed pyguide.  If not see `Install pyguide`_
+
+..  _Install pyguide: python_best_practices/install_pyguide.html
 ..  _Install Python: python_best_practices/install_python.html
 
-At this point the console menu for the Python Guide generator will be displayed.
+Launch the console menu for the Python Guide generator and the will be displayed:
 
 .. code-block:: text
 

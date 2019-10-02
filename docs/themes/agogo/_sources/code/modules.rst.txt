@@ -2,8 +2,9 @@ py\_guide code doc
 ==================
 
 .. toctree::
-   :maxdepth: 4
+      :name: code_detail
+      :maxdepth: 6
 
-   py_guide
-   py_guide.py_template
-   setup
+      py_guide
+      py_guide.py_template
+      setup.rst

@@ -7,12 +7,40 @@
 Welcome to Python Guide's docs!
 ===============================
 
-#############
-Overview
-#############
+.. sidebar:: Sphinx Supports Themes
+   :subtitle: see these Docs with various themes
+
+   One feature I like with the Sphinx engine is the ability to use different themes.  As part of this project I've
+   generated a number of different themes you can check out.
+
+   * `agogo`_
+   * `alabaster`_
+   * `basicstrap`_
+   * `bizstyle`_
+   * `classic`_
+   * `gopher`_
+   * `haiku`_
+   * `nature`_
+   * `scrolls`_
+   * `sphinx_rtd_theme`_
+   * `sphinxdoc`_
+   * `traditional`_
+
+..  _agogo: https://shawnjburke.github.io/py_guide/themes/agogo
+..  _alabaster: https://shawnjburke.github.io/py_guide/themes/alabaster
+..  _basicstrap: https://shawnjburke.github.io/py_guide/themes/basicstrap
+..  _bizstyle: https://shawnjburke.github.io/py_guide/themes/bizstyle
+..  _classic: https://shawnjburke.github.io/py_guide/themes/classic
+..  _gopher: https://shawnjburke.github.io/py_guide/themes/gopher
+..  _haiku: https://shawnjburke.github.io/py_guide/themes/haiku
+..  _nature: https://shawnjburke.github.io/py_guide/themes/nature
+..  _scrolls: https://shawnjburke.github.io/py_guide/themes/scrolls
+..  _sphinx_rtd_theme: https://shawnjburke.github.io/py_guide/themes/sphinx_rtd_theme
+..  _sphinxdoc: https://shawnjburke.github.io/py_guide/themes/sphinxdoc
+..  _traditional: https://shawnjburke.github.io/py_guide/themes/traditional
 
 Python Guide is one humble [#f1]_ tech warriors opinions on the best way to get going with Python.  In addition, this
-guide tries to highlight anything specific to Python and Windows, as python does are often linux leaning.
+guide tries to highlight anything specific to Python and Windows, as python docs are often linux leaning.
 
 While the guide is setup to provide a best practice of how to develop in Python, it reflects development practices
 I believe are good in any language and are implemented here with Python.  Things such as writing documentation are
@@ -21,9 +49,55 @@ who have to lead companies and need to be able to do crazy things, like maintain
 was written.  Documentation is good; at very least necessary.  This guild will make things like that straight forward
 to setup where possible.
 
-**************************
+################
+Get Started
+################
+
+Here are the three simple steps to create a new project with best practices
+
+#. `Install Python`_ and `Install PyCharm`_
+#. `Install sjb.pyguide`_
+#. `Generate project`_
+
+..  _Generate project: python_best_practices/generate_project.html
+..  _Install Python: python_best_practices/install_python.html
+..  _Install Pycharm: python_best_practices/install_Pycharm.html
+..  _Install sjb.pyguide: python_best_practices/install_pyguide.html
+
+
+####################################
+What we have tried to think through
+####################################
+
+**Project Structure** - as an old programmer having a standard way to do any coding language, is just something I find
+efficient.  In addition to thinking like a developer I've worked in release management, IT, being the boss, and I
+tend to approach things in a wholistic fashion.  It doesn't matter how cool your code is if you can't install and
+maintain it.
+
+**Documentation is important** - if I have a structure that is already setup for how to document, leveraging in line code
+syntax, then developers are more likely to make use of it.  This is good, because documentation is not for you, but
+for the coder left maintaining your app, when you've moved on to your new fancy job (because of this awesome app you
+just made).
+
+**Documentation themes** - while creating parts of the project on Sphinx, I wanted to compare the themes.  I couldn't find
+one resource for that.  Therefore I created it here in this project.  You can see the same documentation generated
+into several different themes.
+
+**Releasing** - I have found releasing is an after thought.  This often results in things like finding out your project
+structure isn't conducive to packaging your release.  Or thinking through where you store your version number as it's
+used in several files (normally).
+
+**GitHub friendly** - we did thins like make docs the html directory of information for compatibility with GitHub.  It is so widely
+used that while Sphinx normally makes docs a source directory, it's configuration allowed for change, where GitHub
+(circa 2018-2019) would not.
+
+**Test Inspired Development** - I came from the TDD days and I liked it.  When you have a reusable set of tests you get
+build stability, reliability, the ability to come back to your own code and not break it, the ability for other people
+to work on your code (so you can go write something newer and cooler).
+
+##########################
 Ode to Python?
-**************************
+##########################
 
 I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I grew up with camelCase and PascalCase
 in my code as is traditional Microsoft (M$ as many would put it).  There was a time when you never would have convinced
@@ -36,124 +110,56 @@ appreciation for commenting, code read-ability, and syntactical grace.
 
 I guess that makes this my ode to Python.
 
-################
-Best Practices
-################
+..  toctree::
+      :hidden:
 
-Steps to maintain a best practice Python project
-
-#. `Install Python`_
-#. `Install PyCharm`_
-#. `Python Project Structure`_
-#. `Documentation matters, please don't skip, start now`_
-
-..  _Install Python: python_best_practices/install_python.html
-..  _Install Pycharm: python_best_practices/install_Pycharm.html
-..  _Python Project Structure: python_best_practices/project_structure.html
-..  _Documentation matters, please don't skip, start now: python_best_practices/project_documentation_matters.html
-
-########################################################
-Sphinx Supports Themes, see these Docs with Them
-########################################################
-
-One feature I like with the Sphinx engine is the ability to use different themes.  As part of this project I've
-generated a number of different themes you can check out.
-
-* `py_guide/themes/agogo`_
-* `py_guide/themes/alabaster`_
-* `py_guide/themes/basicstrap`_
-* `py_guide/themes/bizstyle`_
-* `py_guide/themes/classic`_
-* `py_guide/themes/gopher`_
-* `py_guide/themes/haiku`_
-* `py_guide/themes/nature`_
-* `py_guide/themes/scrolls`_
-* `py_guide/themes/sphinx_rtd_theme`_
-* `py_guide/themes/sphinxdoc`_
-* `py_guide/themes/traditional`_
-
-..  _py_guide/themes/agogo: https://shawnjburke.github.io/py_guide/themes/agogo
-..  _py_guide/themes/alabaster: https://shawnjburke.github.io/py_guide/themes/alabaster
-..  _py_guide/themes/basicstrap: https://shawnjburke.github.io/py_guide/themes/basicstrap
-..  _py_guide/themes/bizstyle: https://shawnjburke.github.io/py_guide/themes/bizstyle
-..  _py_guide/themes/classic: https://shawnjburke.github.io/py_guide/themes/classic
-..  _py_guide/themes/gopher: https://shawnjburke.github.io/py_guide/themes/gopher
-..  _py_guide/themes/haiku: https://shawnjburke.github.io/py_guide/themes/haiku
-..  _py_guide/themes/nature: https://shawnjburke.github.io/py_guide/themes/nature
-..  _py_guide/themes/scrolls: https://shawnjburke.github.io/py_guide/themes/scrolls
-..  _py_guide/themes/sphinx_rtd_theme: https://shawnjburke.github.io/py_guide/themes/sphinx_rtd_theme
-..  _py_guide/themes/sphinxdoc: https://shawnjburke.github.io/py_guide/themes/sphinxdoc
-..  _py_guide/themes/traditional: https://shawnjburke.github.io/py_guide/themes/traditional
-
-##################
-    THANK YOUs !!
-##################
-
-********
-Family
-********
-My wife Stacy.
-My kids, Joe, Sam, and Maggie.
-
-*******************************
-Fellow Passionate Python People
-*******************************
-Sphinx theme author `Tell-K`_
-
-* sphinxjp.themes.basicstrap
-* sphinxjp.themes.revealjs
-
-..  _Tell-K: https://github.com/tell-k/
-
-The Python Project Template from `Chris Warrick`_
-
-..  _Chris Warrick: https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
-
-The `Hitchhiker's guide to Packaging`_ team
-
-.. _Hitchhiker's guide to Packaging: http://the-hitchhikers-guide-to-packaging.readthedocs.io
-
-Websites I referenced for inspiration
-
-* https://codepen.io/patrickhlauke/pen/azbYWZ
-* https://pythonhosted.org/sphinxjp.themes.basicstrap/index.html
-* https://github.com/rtfd/sphinx_rtd_theme/
-* https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
-* http://the-hitchhikers-guide-to-packaging.readthedocs.io
-* http://python-packaging.readthedocs.io/en/latest/minimal.html
-* https://www.geeksforgeeks.org/difference-various-implementations-python/
-* https://stackoverflow.com/questions/50585246/pip-install-creates-only-the-dist-info-not-the-package
-* https://packaging.python.org/discussions/wheel-vs-egg/
-* https://github.com/pypa/pip/issues/5243#issuecomment-381513000
-* https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds
-* https://packaging.python.org/guides/single-sourcing-package-version/
-
-Table of Contents
-==================
+      tldr
 
 ..  toctree::
-    :maxdepth: 9
-    :caption: Contents:
+      :hidden:
+      :caption: Getting Started
+      :maxdepth: 2
 
-    code/modules
-    python_best_practices/install_python
-    python_best_practices/install_pycharm
-    python_best_practices/project_structure
-    python_best_practices/project_documentation_code
-    python_best_practices/project_documentation_matters
-    python_best_practices/project_setup
-    python_best_practices/project_logging
-    python_best_practices/index
-    reStructuredText/reStructuredText-CheatSheet
-    reStructuredText/reStructuredText-style-sample
-    python_package_index
-    readme
-    tips
+      python_best_practices/install_python
+      python_best_practices/install_pycharm
+      python_best_practices/install_pyguide
+      python_best_practices/generate_project
 
 ..  toctree::
-    :hidden:
+      :hidden:
+      :maxdepth: 2
+      :caption: Best Practices:
 
-    rants/index
+      python_best_practices/project_structure
+      python_best_practices/project_documentation_code
+      python_best_practices/project_documentation_matters
+      python_best_practices/project_setup
+      python_best_practices/project_logging
+      python_best_practices/best_practice_main
+
+.. toctree::
+      :hidden:
+      :caption: reStructuredtext (rst)
+
+      reStructuredText/reStructuredText-CheatSheet
+      reStructuredText/reStructuredText-style-sample
+
+.. toctree::
+      :hidden:
+      :caption: Code Documentation
+      :name: code
+
+      code/modules
+      readme
+
+.. toctree::
+      :hidden:
+      :caption: Being Pythonic
+
+      python_package_index
+      tips
+      acknowledgments
+      rants/no_shame_in_windows
 
 Indices and tables
 ==================

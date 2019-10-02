@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Install PyCharm &mdash; Python Guide for Practicing Wizards 0.2.4 documentation</title>
+  <title>Step 2: Install PyCharm &mdash; Python Guide for Practicing Wizards 0.2.5 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python Project Structure" href="project_structure.html" />
-    <link rel="prev" title="Install Python" href="install_python.html" /> 
+    <link rel="next" title="Step 3: Install sjb.pyguide" href="install_pyguide.html" />
+    <link rel="prev" title="Step 1: Install Python" href="install_python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.2.4
+                0.2.5
               </div>
             
           
@@ -84,25 +84,41 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tldr.html">Too Long; Didn’t Read (TL;DR)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../code/modules.html">py_guide code doc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_python.html">Install Python</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_python.html">Step 1: Install Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Step 2: Install PyCharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_pyguide.html">Step 3: Install sjb.pyguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generate_project.html">Step 4: Generate Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Best Practices:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="project_structure.html">Python Project Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_documentation_code.html">Generate Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_documentation_matters.html">Project Documentation Matters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_setup.html">Use setup.py from the Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_logging.html">Great Software has Great Logging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Best Practices Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="best_practice_main.html">Best Practice for __main__ method</a></li>
+</ul>
+<p class="caption"><span class="caption-text">reStructuredtext (rst)</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-CheatSheet.html">reStructuredText Cheat Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reStructuredText/reStructuredText-style-sample.html">reStructuredText Sample of Stylings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips and Tricks</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Code Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../rants/index.html">Rants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/modules.html">py_guide code doc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Being Pythonic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python_package_index.html">Python Package Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgments.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rants/no_shame_in_windows.html">There’s no shame in Windows</a></li>
 </ul>
 
             
@@ -148,7 +164,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Install PyCharm</li>
+      <li>Step 2: Install PyCharm</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -167,10 +183,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="install-pycharm">
-<h1>Install PyCharm<a class="headerlink" href="#install-pycharm" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="step-2-install-pycharm">
+<h1>Step 2: Install PyCharm<a class="headerlink" href="#step-2-install-pycharm" title="Permalink to this headline">¶</a></h1>
+<p>Python code can be written with any text editor.  There are so many editors I won’t even try to list them.
+Instead I’ll say that I have become a <em>huge fan</em> of <a class="reference external" href="https://www.jetbrains.com/pycharm/">JetBrain’s PyCharm</a>.  As you get started they are
+cool enough to provide a no cost <a class="reference external" href="https://www.jetbrains.com/pycharm/download/?#section=windows">Community Edition of Pycharm</a>. At very least I suggest you <a class="reference external" href="https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&amp;code=PCC">download it now</a>.</p>
+<p>As you build your repertoire consider <a class="reference external" href="https://www.jetbrains.com/pycharm/buy/#personal?billing=yearly">buying a license</a>.  As an individual you can drop a mere $90 and get
+yearly license.  If you work for a company encourage them to buy.  The additional productivity is worth the
+cost for your company.</p>
 <p>There’s quite a bit of documentation on how to install Pycharm.  I won’t recreate the wheel.  Go Bing it.</p>
-<p>Take a breath.  I was purposely fn’ with you.  Go Google it.</p>
+<p>Take a breath.  I was purposely fn’ with you.  Go Google it.  You’ll find items like the <a class="reference external" href="https://www.jetbrains.com/help/pycharm/installation-guide.html">JetBrains Official
+Installation Guide</a>.</p>
 </div>
 
 
@@ -181,10 +204,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="project_structure.html" class="btn btn-neutral float-right" title="Python Project Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="install_pyguide.html" class="btn btn-neutral float-right" title="Step 3: Install sjb.pyguide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install_python.html" class="btn btn-neutral float-left" title="Install Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install_python.html" class="btn btn-neutral float-left" title="Step 1: Install Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
