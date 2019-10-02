@@ -1,12 +1,11 @@
-==========================
-Too Long; Didn't Read
-==========================
+==============================
+Too Long; Didn't Read (TL;DR)
+==============================
 
 Install this package to generate a new Python project
 
 .. code-block:: doscon
 
-    c:\Python37>python -m venv c:\apps\pyguide\venv
     c:\Python37>scripts\pip install sjb.pyguide
     Successfully installed Menu-3.1.0 configparser2-4.0.0 sjb.pyguide-0.2.5
     c:\Python37>scripts\py_guide --show_menu

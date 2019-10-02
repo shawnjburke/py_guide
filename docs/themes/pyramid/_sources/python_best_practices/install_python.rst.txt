@@ -1,7 +1,8 @@
-Install Python
-================
+================================
+Step 1: Install Python
+================================
 
-Thie guide will recommend that you install Python 3.x and work with it.  There's an older version,
+This guide will recommend that you install Python 3.x and work with it.  There's an older version,
 Python 2.7, which is still in wide use.  In my opinion there's a lot of 2.7 python dedication just
 because so much code exists to that version.  For instance I have a client where 2.7 is used because
 it's on the servers to support a long succssful appllication in Python.  If you can, though, go

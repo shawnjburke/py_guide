@@ -21,17 +21,14 @@ and versioning paradigm in place, and makes it easier for a programmer to do thi
 
 Best practice steps are organized as follows:
 
-* Step 1 - `Install Python`_
-* Step 2 - `Install PyCharm`_
-* Step 3 - `Python Project Structure`_
-* Step 4 - `Documentation Matters`_
-* Step 5 - `setup.py`_ for success early in your project
+#. `Install Python`_ and `Install PyCharm`_
+#. `Install sjb.pyguide`_
+#. `Generate project`_
 
-..  _Install Python: `py_guide/python_best_practices/install_python.html
-..  _Install Pycharm: `py_guide/python_best_practices/install_Pycharm.html
-..  _Python Project Structure: `py_guide/python_best_practices/project_structure.html
-..  _Documentation Matters: `py_guide/python_best_practices/project_documentation_matters.html
-..  _setup.py: `py_guide/python_best_practices/project_setup.html
+..  _Generate project: python_best_practices/generate_project.html
+..  _Install Python: python_best_practices/install_python.html
+..  _Install Pycharm: python_best_practices/install_Pycharm.html
+..  _Install sjb.pyguide: python_best_practices/install_pyguide.html
 
 ############################
 Installation
@@ -42,7 +39,9 @@ the recommended project structure, documented here.
 
 ..  code-block:: Python
 
-    >>> venv/scripts/pip install sjb.pyguide
+    c:\Python37>scripts\pip install sjb.pyguide
+    Successfully installed Menu-3.1.0 configparser2-4.0.0 sjb.pyguide-0.2.5
+    c:\Python37>scripts\py_guide --show_menu
 
 ########################
 Version History

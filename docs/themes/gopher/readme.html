@@ -35,26 +35,14 @@
 <div class="section" id="documentation">
 <h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://shawnjburke.github.io/py_guide/">https://shawnjburke.github.io/py_guide/</a></p>
-</div>
-<div class="section" id="version-history">
-<h3>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>0.2.4 - Fix issues with generated project, wheel installation file, not working.  Add several files missing from generated project.</li>
-<li>0.2.3 - Beta version of project generator.  Creates a Python 3.x project with best practices, including initialized virtual environment.</li>
-<li>0.2.2 - Adding in incomplete changes for project generator on way to v0.3.0.  Will create directory structure and 1/2 dozen files for the project.  Not complete yet.</li>
-<li>0.2.1 - Remove revealjs theme which is no longer supported and didn’t work right anyway.</li>
-<li>0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.</li>
-<li>0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to create a project is in an development state.</li>
-</ul>
+<p>The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
+data-source folder.  You can get to the root at <cite>py_quide</cite>.</p>
 </div>
 <div class="section" id="purpose-of-this-project">
 <h3>Purpose of this Project<a class="headerlink" href="#purpose-of-this-project" title="Permalink to this headline">¶</a></h3>
-<p>This project is intended to be a guide on getting started with Python.  It’s intended to establish a best
-practice structure that can be used as a beginning state for a python project.  Stepping through all the steps
-should yield a new Python project, using a set of best practices and coding standards, which can apply across all
-types of Python projects.</p>
-<p>The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
-data-source folder.  You can get to the root at <cite>py_quide</cite>.</p>
+<p>This project implements a Python Project generator.  It’s aim is to create a standard framework for Python
+projects that includes best practices.  The results should be code that is documented, has an installation
+and versioning paradigm in place, and makes it easier for a programmer to do things that are often tedious.</p>
 <p>Best practice steps are organized as follows:</p>
 <ul class="simple">
 <li>Step 1 - <a class="reference external" href="`py_guide/python_best_practices/install_python.html">Install Python</a></li>
@@ -63,29 +51,6 @@ data-source folder.  You can get to the root at <cite>py_quide</cite>.</p>
 <li>Step 4 - <a class="reference external" href="`py_guide/python_best_practices/project_documentation_matters.html">Documentation Matters</a></li>
 <li>Step 5 - <a class="reference external" href="`py_guide/python_best_practices/project_setup.html">setup.py</a> for success early in your project</li>
 </ul>
-<div class="section" id="what-we-have-tried-to-think-through">
-<h4>What we have tried to think through<a class="headerlink" href="#what-we-have-tried-to-think-through" title="Permalink to this headline">¶</a></h4>
-<p>Project Structure - as an old programmer having a standard way to do any coding language, is just something I find
-efficient.  In addition to thinking like a developer I’ve worked in release management, IT, being the boss, and I
-tend to approach things in a wholistic fashion.  It doesn’t matter how cool your code is if you can’t install and
-maintain it.</p>
-<p>Documentation is important - if I have a structure that is already setup for how to document, leveraging in line code
-syntax, then developers are more likely to make use of it.  This is good, because documentation is not for you, but
-for the coder left maintaining your app, when you’ve moved on to your new fancy job (because of this awesome app you
-just made).</p>
-<p>Documentation themes - while creating parts of the project on Sphinx, I wanted to compare the themes.  I couldn’t find
-one resource for that.  Therefore I created it here in this project.  You can see the same documentation generated
-into several different themes.</p>
-<p>Releasing - I have found releasing is an after thought.  This often results in things like finding out your project
-structure isn’t conducive to packaging your release.  Or thinking through where you store your version number as it’s
-used in several files (normally).</p>
-<p>GitHub friendly - we did thins like make docs the html directory of information for compatibility with GitHub.  It is so widely
-used that while Sphinx normally makes docs a source directory, it’s configuration allowed for change, where GitHub
-(circa 2018-2019) would not.</p>
-<p>Test Inspired Development - I came from the TDD days and I liked it.  When you have a reusable set of tests you get
-build stability, reliability, the ability to come back to your own code and not break it, the ability for other people
-to work on your code (so you can go write something newer and cooler).</p>
-</div>
 </div>
 <div class="section" id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
@@ -95,12 +60,17 @@ the recommended project structure, documented here.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="what-makes-this-different-from-other-frameworks">
-<h3>What makes this different from other frameworks?<a class="headerlink" href="#what-makes-this-different-from-other-frameworks" title="Permalink to this headline">¶</a></h3>
-<p>It’s my opinion.
-It’s not a framework.  It hopes to generate a template project to make being “standard” better.
-It attempts to not be specific to a type of project.  Web projects or console apps can benefit from this.
-There is no team behind this.  Just me.</p>
+<div class="section" id="version-history">
+<h3>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>0.2.5 - Fix missing installation requirements in setup.py such as missing package_data items. Console invoked generator appears functional.</li>
+<li>0.2.4 - Fix issues with generated project, wheel installation file, not working.  Add several files missing from generated project.</li>
+<li>0.2.3 - Beta version of project generator.  Creates a Python 3.x project with best practices, including initialized virtual environment.</li>
+<li>0.2.2 - Adding in incomplete changes for project generator on way to v0.3.0.  Will create directory structure and 1/2 dozen files for the project.  Not complete yet.</li>
+<li>0.2.1 - Remove revealjs theme which is no longer supported and didn’t work right anyway.</li>
+<li>0.2.0 - Updated a number of package requirements such as sphinx themes to meet compatibility requirements.</li>
+<li>0.1.0 - First version with semantic versioning schema.  Most of documentation is strong.  Console script to create a project is in an development state.</li>
+</ul>
 </div>
 </div>
 </div>

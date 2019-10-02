@@ -2,16 +2,16 @@
 Acknowledgements
 =========================
 
-Hopefully, even if programming can be a solitary activity, you don't do this alone.  Rare
-is the person who doesn't google and draw inspiration from another's work.  If you're lucky,
-then you have special people in you life, worthy of thanking, because they are why you do
-it.
-
 .. sidebar:: Thanks to my Family
    :subtitle: You are my happy place
 
    My wife Stacy.
    My kids, Joe, Sam, and Maggie.
+
+Hopefully, even if programming can be a solitary activity, you don't do this alone.  Rare
+is the person who doesn't google and draw inspiration from another's work.  If you're lucky,
+then you have special people in you life, worthy of thanking, because they are why you do
+it.
 
 *******************************
 Fellow Passionate Python People
@@ -31,6 +31,10 @@ The `Hitchhiker's guide to Packaging`_ team
 
 .. _Hitchhiker's guide to Packaging: http://the-hitchhikers-guide-to-packaging.readthedocs.io
 
+*******************************
+Websites
+*******************************
+
 Websites I referenced for inspiration
 
 * https://codepen.io/patrickhlauke/pen/azbYWZ
@@ -45,3 +49,4 @@ Websites I referenced for inspiration
 * https://github.com/pypa/pip/issues/5243#issuecomment-381513000
 * https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds
 * https://packaging.python.org/guides/single-sourcing-package-version/
+* https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/WritingReST/Index.html
