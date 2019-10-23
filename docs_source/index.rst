@@ -39,18 +39,20 @@ Welcome to Python Guide's docs!
 ..  _sphinxdoc: https://shawnjburke.github.io/py_guide/themes/sphinxdoc
 ..  _traditional: https://shawnjburke.github.io/py_guide/themes/traditional
 
-Python Guide is one humble [#f1]_ tech warriors opinions on the best way to get going with Python.  In addition, this
-guide tries to highlight anything specific to Python and Windows, as python docs are often linux leaning.
+Python Guide is one humble [#f1]_ tech warriors opinions on the best way to get going with
+Python.  In addition, this guide tries to highlight anything specific to Python and Windows,
+as python docs are often linux leaning.
 
-Oh, and it providse a generator which sets up a new project with best practices, in the same amount of time it
-takes to setup a virtual environment (and it sets that up too).
+Oh, and it provides a generator which sets up a new project with best practices, in the
+same amount of time it takes to setup a virtual environment (and it sets that up too).
 
-While the guide is setup to provide a best practice of how to develop in Python, it reflects development practices
-I believe are good in any language and are implemented here with Python.  Things such as writing documentation are
-included.  Recognizing these are subjects not always popular with programmers, they are popular with guys like me
-who have to lead companies and need to be able to do crazy things, like maintain code years (if not decades) after it
-was written.  Documentation is good; at very least necessary.  This guild will make things like that straight forward
-to setup where possible.
+While the guide is setup to provide a best practice of how to develop in Python, it reflects
+development practices I believe are good in any language and are implemented here with Python.
+Things such as writing documentation are included.  Recognizing these are subjects not
+always popular with programmers, they are popular with guys like me who have to lead
+companies and need to be able to do crazy things, like maintain code years (if not decades)
+after it was written.  Documentation is good; at very least necessary.  This guild will make
+things like that straight forward to setup where possible.
 
 ################
 Get Started

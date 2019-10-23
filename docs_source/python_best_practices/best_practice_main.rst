@@ -1,5 +1,5 @@
 ======================================
-Routing Paradigm for __main__()
+Routing Pattern for __main__()
 ======================================
 
 #############
@@ -15,15 +15,38 @@ A Generic Workflow for __main__()
 Parse Arguments
 ===============
 
-Python provides an arguments parser, ``argparse``; use it.  Let a user know how this thing is supposed to work.
-Even if it's supposed to just start up and run, give it help.  A smart user will call your module with ``--help``
-first to see what it does.  Encourage that behavior.
+Python provides an arguments parser, ``argparse``, use it.  Let a user know how this thing
+is supposed to work.  Even if it's supposed to just start up and run, give it help.
+A smart user will call your module with ``--help`` first to see what it does.
+**Encourage that behavior.**
+
+.. code-block:: doscon
+
+    c:\Python37>scripts\py_guide --help
+    usage: py_guide [-h] [--show_menu] [--version]
+                    [--list_of_strings list [list ...]]
+
+    py_guide is a best practices module recommending a basic project structure for
+    a teams python projects. Best Practices help teams scale. Starting with it
+    before you scale the team is a good thing.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --show_menu           When this parameter is provided the flag is set to
+                            true. When true a console menu will be shown.
+      --version             When this parameter is provided the version
+                            information will be displayed.
+      --list_of_strings list [list ...]
+                            The list parameter will collect, then echo a list of
+                            strings. This demonstrates the + value of nargs when
+                            using the parser.
+
 
 Route Arguments
 ===============
 
 I think about a console application, parsing arguments, like routing things at a web server or firewall.  Therefore
-I normally take my parsed arguments and toss to a method which routes them.  The mthod, in turn, normaly tosses them
+I normally take my parsed arguments and toss to a method which routes them.  The method, in turn, normally tosses them
 to an action method for that route.
 
 Action Arguments
