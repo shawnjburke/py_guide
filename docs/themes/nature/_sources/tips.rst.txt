@@ -53,3 +53,11 @@ version may be different than what is in setup.py, if you have updated the value
 
 .. [#version] Found at https://github.com/pypa/setuptools/blob/master/setuptools/version.py via
               https://packaging.python.org/guides/single-sourcing-package-version/
+
+##############################################
+Non-Python Related Components (NPRCs)
+##############################################
+
+`SQLite`_ is a good development tool if your application is going to have a an ANSI SQL backend
+
+.. _SQLite: https://www.sqlite.org/

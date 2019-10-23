@@ -39,15 +39,20 @@ Welcome to Python Guide's docs!
 ..  _sphinxdoc: https://shawnjburke.github.io/py_guide/themes/sphinxdoc
 ..  _traditional: https://shawnjburke.github.io/py_guide/themes/traditional
 
-Python Guide is one humble [#f1]_ tech warriors opinions on the best way to get going with Python.  In addition, this
-guide tries to highlight anything specific to Python and Windows, as python docs are often linux leaning.
+Python Guide is one humble [#f1]_ tech warriors opinions on the best way to get going with
+Python.  In addition, this guide tries to highlight anything specific to Python and Windows,
+as python docs are often linux leaning.
 
-While the guide is setup to provide a best practice of how to develop in Python, it reflects development practices
-I believe are good in any language and are implemented here with Python.  Things such as writing documentation are
-included.  Recognizing these are subjects not always popular with programmers, they are popular with guys like me
-who have to lead companies and need to be able to do crazy things, like maintain code years (if not decades) after it
-was written.  Documentation is good; at very least necessary.  This guild will make things like that straight forward
-to setup where possible.
+Oh, and it provides a generator which sets up a new project with best practices, in the
+same amount of time it takes to setup a virtual environment (and it sets that up too).
+
+While the guide is setup to provide a best practice of how to develop in Python, it reflects
+development practices I believe are good in any language and are implemented here with Python.
+Things such as writing documentation are included.  Recognizing these are subjects not
+always popular with programmers, they are popular with guys like me who have to lead
+companies and need to be able to do crazy things, like maintain code years (if not decades)
+after it was written.  Documentation is good; at very least necessary.  This guild will make
+things like that straight forward to setup where possible.
 
 ################
 Get Started
@@ -65,50 +70,7 @@ Here are the three simple steps to create a new project with best practices
 ..  _Install sjb.pyguide: python_best_practices/install_pyguide.html
 
 
-####################################
-What we have tried to think through
-####################################
 
-**Project Structure** - as an old programmer having a standard way to do any coding language, is just something I find
-efficient.  In addition to thinking like a developer I've worked in release management, IT, being the boss, and I
-tend to approach things in a wholistic fashion.  It doesn't matter how cool your code is if you can't install and
-maintain it.
-
-**Documentation is important** - if I have a structure that is already setup for how to document, leveraging in line code
-syntax, then developers are more likely to make use of it.  This is good, because documentation is not for you, but
-for the coder left maintaining your app, when you've moved on to your new fancy job (because of this awesome app you
-just made).
-
-**Documentation themes** - while creating parts of the project on Sphinx, I wanted to compare the themes.  I couldn't find
-one resource for that.  Therefore I created it here in this project.  You can see the same documentation generated
-into several different themes.
-
-**Releasing** - I have found releasing is an after thought.  This often results in things like finding out your project
-structure isn't conducive to packaging your release.  Or thinking through where you store your version number as it's
-used in several files (normally).
-
-**GitHub friendly** - we did thins like make docs the html directory of information for compatibility with GitHub.  It is so widely
-used that while Sphinx normally makes docs a source directory, it's configuration allowed for change, where GitHub
-(circa 2018-2019) would not.
-
-**Test Inspired Development** - I came from the TDD days and I liked it.  When you have a reusable set of tests you get
-build stability, reliability, the ability to come back to your own code and not break it, the ability for other people
-to work on your code (so you can go write something newer and cooler).
-
-##########################
-Ode to Python?
-##########################
-
-I learned to code in a Windows world.  Perhaps that makes me old.  Regardless, I grew up with camelCase and PascalCase
-in my code as is traditional Microsoft (M$ as many would put it).  There was a time when you never would have convinced
-me I would come to prefer snake_case as is common to Python.  I have.  In fact I'm quite enamored with you Python. You
-are quick with the script, or agile with the program structure.  You take pride in what makes a professional coder,
-appreciation for commenting, code read-ability, and syntactical grace.
-
-.. code-block::python
-    (name_parameters="are cool", use_them="yes", love_them="yes", defaulting_is_powerful=True)
-
-I guess that makes this my ode to Python.
 
 ..  toctree::
       :hidden:
@@ -130,6 +92,7 @@ I guess that makes this my ode to Python.
       :maxdepth: 2
       :caption: Best Practices:
 
+      python_best_practices/why_generator
       python_best_practices/project_structure
       python_best_practices/project_documentation_code
       python_best_practices/project_documentation_matters

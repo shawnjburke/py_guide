@@ -48,34 +48,46 @@
   <div class="section" id="project-documentation-matters">
 <h1>Project Documentation Matters<a class="headerlink" href="#project-documentation-matters" title="Permalink to this headline">¶</a></h1>
 <p>No, really Chris, it does.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The generator will create everything needed for documentation.  This includes
+Sphinx configuration, documentation file structure, and initial rst files
+for you project.  Here we explain why you get all that and what we did to
+figure it out.</p>
+</div>
 <div class="section" id="yes-yes-blah-blah-documentation-sucks">
 <h2>Yes, yes, blah, blah, documentation sucks<a class="headerlink" href="#yes-yes-blah-blah-documentation-sucks" title="Permalink to this headline">¶</a></h2>
-<p>Documentation is for the next developer.  Plain and simply.  And don’t start with arguments about job security if
-you are the only one who can read it, or tell me how much time you’ll loose if you do it, I am just not in the mood
-to hear it.  This is an age of auto-generated code documentation, and other tools like that.  Therefore, as with
-any good code documentation, we’ll make sure we carefully document intent, and the why’s of necessity, and write
-the code clearly in a way that documents that structure.   It’s a balance Padawan, chill out and let this documentation
+<p>Documentation is for the next developer.  Plain and simple.  And don’t start with arguments about
+job security if you are the only one who can read it, or tell me how much time you’ll loose if
+you do it, I am just not in the mood to hear it.  This is an age of auto-generated code
+documentation, and other tools like that.  Therefore, as with any good code documentation, we’ll
+make sure we carefully document intent, and the why’s of necessity, and write the code clearly
+in a way that documents that structure.   It’s a balance Padawan, chill out and let this documentation
 guide you <a class="footnote-reference" href="#footnote-01" id="id1">[1]</a>.</p>
-<p>PS - You, in six months, could very well be the next developer.  Wondering, WTF was I doing in with this code…</p>
+<p>PS - You, in six months, could very well be the next developer.  Wondering, WTF was I doing in
+with this code…</p>
 </div>
 <div class="section" id="setup-documentation-now">
 <h2>Setup Documentation Now<a class="headerlink" href="#setup-documentation-now" title="Permalink to this headline">¶</a></h2>
-<p>If you don’t setup documentation of your code up front, you won’t do it later.  Corollary: Unless you’re being paid to
-by something like selling the company; at which time doing this is a soul crushing pia.  Set it up now</p>
+<p>If you don’t setup documentation of your code up front, you won’t do it later.  Corollary: Unless
+you’re being paid to by something like selling the company; at which time doing this is a
+soul crushing pia.  Set it up now.</p>
 <div class="section" id="install-sphinx-engine">
 <h3>Install Sphinx Engine<a class="headerlink" href="#install-sphinx-engine" title="Permalink to this headline">¶</a></h3>
-<p>Sphinx is the document engine of choice in Python.   You’ll find most of what you need in the setup documentation of
-www.sphinx-doc.org.  Install it.</p>
+<p>Sphinx is the document engine of choice in Python.   You’ll find most of what you need in the
+setup documentation of www.sphinx-doc.org.  Install it.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt; pip install -U sphinx
 </pre></div>
 </div>
-<p>Now we have the Sphinx Engine.  The way it works is you create files and fill them with reStructuredText or another markup
-language.  Markdown seems to be popular in the github crowd and <a class="reference external" href="&lt;http://www.sphinx-doc.org/en/master/usage/markdown.html&gt;">sphinx can support markdown</a>.</p>
+<p>Now we have the Sphinx Engine.  The way it works is you create files and fill them with
+reStructuredText or another markup language.  Markdown seems to be popular in the github
+crowd and <a class="reference external" href="&lt;http://www.sphinx-doc.org/en/master/usage/markdown.html&gt;">sphinx can support markdown</a>.</p>
 </div>
 <div class="section" id="create-a-restructuredtext-markup-file">
 <h3>Create a reStructuredText markup file<a class="headerlink" href="#create-a-restructuredtext-markup-file" title="Permalink to this headline">¶</a></h3>
-<p>You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
-instance, create a folder in your project called docs_source <a class="footnote-reference" href="#footnote-02" id="id2">[2]</a>, a sibling of the project_name folder.  Inside that
+<p>You need to create a template file and then generate documentation from it.  You can code a
+template file by hand.  For instance, create a folder in your project called
+docs_source <a class="footnote-reference" href="#footnote-02" id="id2">[2]</a>, a sibling of the project_name folder.  Inside that
 folder add a readme.rst file.</p>
 <p>Inside a template file you can</p>
 <ul class="simple">
@@ -90,14 +102,15 @@ folder add a readme.rst file.</p>
 ├- project_name/
 │  └- tests/
 │  └- __init_.py
-├- README
+├- README.rst
 </pre></div>
 </div>
-<p>The readme.rst file will be used by the Sphinx engine to create an output file.  This seems a bit duplicative to the
-file we have in the root.  We’re not going to remove that file because it’s Pythonic, and we’ve decided to make having
-it a part of the coding standard.  Therefore will import the content of the root README file, via a directive in the
-docs\readme.rst file, which in turn creates an output file, such as html, when processed by Sphinx.  It’s confusing,
-right?  It will make some sense after a while.</p>
+<p>The readme.rst file will be used by the Sphinx engine to create an output file.  This seems
+a bit redundant to the file we have in the root.  We’re not going to remove that file
+because it’s Pythonic, and we’ve decided to make having it a part of the coding standard.
+Therefore will import the content of the root README file, via a directive in the
+docs\readme.rst file, which in turn creates an output file, such as html, when processed
+by Sphinx.  It’s confusing, right?  It will make some sense after a while.</p>
 <p>In the docs\readme.rst file add the following contents:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>README
 =================

@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Generate Code Documentation" href="project_documentation_code.html" />
-    <link rel="prev" title="Step 4: Generate Project" href="generate_project.html" /> 
+    <link rel="prev" title="Why Py Guide Generator?" href="why_generator.html" /> 
   </head><body>
     <div id="content">
       <div class="header">
@@ -29,7 +29,7 @@
           title="back to the documentation overview"><span>Python Project Structure</span></a></h1>
       </div>
       <div class="relnav" role="navigation" aria-label="related navigation">
-        <a href="generate_project.html">&laquo; Step 4: Generate Project</a> |
+        <a href="why_generator.html">&laquo; Why Py Guide Generator?</a> |
         <a href="#">Python Project Structure</a>
         | <a href="project_documentation_code.html">Generate Code Documentation &raquo;</a>
       </div>
@@ -65,6 +65,9 @@ implementation needs of the language; in this case, Python.</p>
 <h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
 <p>Throughout this guide we’ll build a program structure for best practices that will end up like this</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project_name/
+├── .idea
+├── build
+├── dist
 ├── docs/
 │   ├── .doctrees/
 │   ├── _sources/
@@ -75,21 +78,25 @@ implementation needs of the language; in this case, Python.</p>
 │   ├── index.html
 │   ├── search.html
 │   └── searchindex.js
-├── docs-source/
+├── docs_source/
 │   ├── _build/
 │   ├── _static/
 │   ├── _templates/
+│   ├── code/
 │   ├── conf.py
 │   ├── index.rst
 │   ├── make.bat
 │   ├── Makefile
 │   └── readme.rst
 ├── project_name/
-│   ├── tests/
 │   ├── __init__.py
 │   └── __main__.py
+├── tests/
 ├── venv/
+├── .gitignore
+├── dist_pypi.bat
 ├── LICENSE
+├── project.cfg
 ├── README.rst
 ├── requirements.txt
 └── setup.py

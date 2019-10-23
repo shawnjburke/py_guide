@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Generate Code Documentation" href="project_documentation_code.html" />
-    <link rel="prev" title="Step 4: Generate Project" href="generate_project.html" />
+    <link rel="prev" title="Why Py Guide Generator?" href="why_generator.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
 <!--[if lte IE 6]>
@@ -39,7 +39,7 @@
           <a href="project_documentation_code.html" title="Generate Code Documentation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="generate_project.html" title="Step 4: Generate Project"
+          <a href="why_generator.html" title="Why Py Guide Generator?"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 0.2.5 documentation</a> &#187;</li> 
       </ul>
@@ -61,6 +61,9 @@ implementation needs of the language; in this case, Python.</p>
 <h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
 <p>Throughout this guide we’ll build a program structure for best practices that will end up like this</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project_name/
+├── .idea
+├── build
+├── dist
 ├── docs/
 │   ├── .doctrees/
 │   ├── _sources/
@@ -71,21 +74,25 @@ implementation needs of the language; in this case, Python.</p>
 │   ├── index.html
 │   ├── search.html
 │   └── searchindex.js
-├── docs-source/
+├── docs_source/
 │   ├── _build/
 │   ├── _static/
 │   ├── _templates/
+│   ├── code/
 │   ├── conf.py
 │   ├── index.rst
 │   ├── make.bat
 │   ├── Makefile
 │   └── readme.rst
 ├── project_name/
-│   ├── tests/
 │   ├── __init__.py
 │   └── __main__.py
+├── tests/
 ├── venv/
+├── .gitignore
+├── dist_pypi.bat
 ├── LICENSE
+├── project.cfg
 ├── README.rst
 ├── requirements.txt
 └── setup.py
@@ -266,7 +273,7 @@ into the rest of the documentation structure.</td></tr>
           <a href="project_documentation_code.html" title="Generate Code Documentation"
              >next</a> |</li>
         <li class="right" >
-          <a href="generate_project.html" title="Step 4: Generate Project"
+          <a href="why_generator.html" title="Why Py Guide Generator?"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Python Guide for Practicing Wizards 0.2.5 documentation</a> &#187;</li> 
       </ul>

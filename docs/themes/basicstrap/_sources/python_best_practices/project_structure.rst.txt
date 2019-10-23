@@ -17,6 +17,9 @@ Throughout this guide we'll build a program structure for best practices that wi
 .. code-block:: text
 
     project_name/
+    ├── .idea
+    ├── build
+    ├── dist
     ├── docs/
     │   ├── .doctrees/
     │   ├── _sources/
@@ -27,21 +30,25 @@ Throughout this guide we'll build a program structure for best practices that wi
     │   ├── index.html
     │   ├── search.html
     │   └── searchindex.js
-    ├── docs-source/
+    ├── docs_source/
     │   ├── _build/
     │   ├── _static/
     │   ├── _templates/
+    │   ├── code/
     │   ├── conf.py
     │   ├── index.rst
     │   ├── make.bat
     │   ├── Makefile
     │   └── readme.rst
     ├── project_name/
-    │   ├── tests/
     │   ├── __init__.py
     │   └── __main__.py
+    ├── tests/
     ├── venv/
+    ├── .gitignore
+    ├── dist_pypi.bat
     ├── LICENSE
+    ├── project.cfg
     ├── README.rst
     ├── requirements.txt
     └── setup.py

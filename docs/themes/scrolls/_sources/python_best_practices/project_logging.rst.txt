@@ -4,7 +4,7 @@ Great Software has Great Logging
 
 I wouldn't have cared about logging when I first started developing.  My love of logging comes from years of having to
 support production systems.  Sometimes those systems are decades old without anyone on the team having been a part of
-their creation.  Many times the logging left by others has saved me.  Great Software, has Great Logging.
+their creation.  Many times the logging left by others has saved me.  Great Software, has Great Logging [#f1]_.
 
 From `The Office Python Documentation`_ I thought the following was a good summary of how logging works:
 
@@ -88,3 +88,7 @@ as what people see on the "screen".
     log.addHandler(stdout_log)
     # Important to set overall logger to catch all statements which it can then route to handlers
     log.setLevel(logging.DEBUG)
+
+..  [#f1] While I doubt he was the first, I think I owe a guy I worked with named
+    Brian Lucas for being the one to get "Great Software has Great Logging" stuck
+    in my brain

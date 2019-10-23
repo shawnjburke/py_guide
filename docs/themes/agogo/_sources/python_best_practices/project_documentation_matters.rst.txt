@@ -4,46 +4,59 @@ Project Documentation Matters
 
 No, really Chris, it does.
 
+.. tip::
+    The generator will create everything needed for documentation.  This includes
+    Sphinx configuration, documentation file structure, and initial rst files
+    for you project.  Here we explain why you get all that and what we did to
+    figure it out.
+
 ##########################################
 Yes, yes, blah, blah, documentation sucks
 ##########################################
 
-Documentation is for the next developer.  Plain and simply.  And don't start with arguments about job security if
-you are the only one who can read it, or tell me how much time you'll loose if you do it, I am just not in the mood
-to hear it.  This is an age of auto-generated code documentation, and other tools like that.  Therefore, as with
-any good code documentation, we'll make sure we carefully document intent, and the why's of necessity, and write
-the code clearly in a way that documents that structure.   It's a balance Padawan, chill out and let this documentation
+Documentation is for the next developer.  Plain and simple.  And don't start with arguments about
+job security if you are the only one who can read it, or tell me how much time you'll loose if
+you do it, I am just not in the mood to hear it.  This is an age of auto-generated code
+documentation, and other tools like that.  Therefore, as with any good code documentation, we'll
+make sure we carefully document intent, and the why's of necessity, and write the code clearly
+in a way that documents that structure.   It's a balance Padawan, chill out and let this documentation
 guide you [#footnote-01]_.
 
-PS - You, in six months, could very well be the next developer.  Wondering, WTF was I doing in with this code...
+PS - You, in six months, could very well be the next developer.  Wondering, WTF was I doing in
+with this code...
 
 #########################
 Setup Documentation Now
 #########################
 
-If you don't setup documentation of your code up front, you won't do it later.  Corollary: Unless you're being paid to
-by something like selling the company; at which time doing this is a soul crushing pia.  Set it up now
+If you don't setup documentation of your code up front, you won't do it later.  Corollary: Unless
+you're being paid to by something like selling the company; at which time doing this is a
+soul crushing pia.  Set it up now.
 
 **********************
 Install Sphinx Engine
 **********************
-Sphinx is the document engine of choice in Python.   You'll find most of what you need in the setup documentation of
-www.sphinx-doc.org.  Install it.
+
+Sphinx is the document engine of choice in Python.   You'll find most of what you need in the
+setup documentation of www.sphinx-doc.org.  Install it.
 
 .. code-block:: shell
 
     >> pip install -U sphinx
 
-Now we have the Sphinx Engine.  The way it works is you create files and fill them with reStructuredText or another markup
-language.  Markdown seems to be popular in the github crowd and `sphinx can support markdown`_.
+Now we have the Sphinx Engine.  The way it works is you create files and fill them with
+reStructuredText or another markup language.  Markdown seems to be popular in the github
+crowd and `sphinx can support markdown`_.
 
 .. _sphinx can support markdown: <http://www.sphinx-doc.org/en/master/usage/markdown.html>
 
 **************************************
 Create a reStructuredText markup file
 **************************************
-You need to create a template file and then generate documentation from it.  You can code a template file by hand.  For
-instance, create a folder in your project called docs_source [#footnote-02]_, a sibling of the project_name folder.  Inside that
+
+You need to create a template file and then generate documentation from it.  You can code a
+template file by hand.  For instance, create a folder in your project called
+docs_source [#footnote-02]_, a sibling of the project_name folder.  Inside that
 folder add a readme.rst file.
 
 Inside a template file you can
@@ -63,13 +76,14 @@ Inside a template file you can
     ├- project_name/
     │  └- tests/
     │  └- __init_.py
-    ├- README
+    ├- README.rst
 
-The readme.rst file will be used by the Sphinx engine to create an output file.  This seems a bit duplicative to the
-file we have in the root.  We're not going to remove that file because it's Pythonic, and we've decided to make having
-it a part of the coding standard.  Therefore will import the content of the root README file, via a directive in the
-docs\\readme.rst file, which in turn creates an output file, such as html, when processed by Sphinx.  It's confusing,
-right?  It will make some sense after a while.
+The readme.rst file will be used by the Sphinx engine to create an output file.  This seems
+a bit redundant to the file we have in the root.  We're not going to remove that file
+because it's Pythonic, and we've decided to make having it a part of the coding standard.
+Therefore will import the content of the root README file, via a directive in the
+docs\\readme.rst file, which in turn creates an output file, such as html, when processed
+by Sphinx.  It's confusing, right?  It will make some sense after a while.
 
 In the docs\\readme.rst file add the following contents:
 

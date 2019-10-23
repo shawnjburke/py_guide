@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Best Practice for __main__ method &#8212; Python Guide for Practicing Wizards 0.2.5 documentation</title>
+    <title>Routing Pattern for __main__() &#8212; Python Guide for Practicing Wizards 0.2.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -43,8 +43,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="best-practice-for-main-method">
-<h1>Best Practice for __main__ method<a class="headerlink" href="#best-practice-for-main-method" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="routing-pattern-for-main">
+<h1>Routing Pattern for __main__()<a class="headerlink" href="#routing-pattern-for-main" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="console-apps">
 <h2>Console Apps<a class="headerlink" href="#console-apps" title="Permalink to this headline">¶</a></h2>
 <p>How you startup will vary based on the interface.  The following are for console applications.</p>
@@ -52,14 +52,35 @@
 <h3>A Generic Workflow for __main__()<a class="headerlink" href="#a-generic-workflow-for-main" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="parse-arguments">
 <h4>Parse Arguments<a class="headerlink" href="#parse-arguments" title="Permalink to this headline">¶</a></h4>
-<p>Python provides an arguments parser, <code class="docutils literal notranslate"><span class="pre">argparse</span></code>; use it.  Let a user know how this thing is supposed to work.
-Even if it’s supposed to just start up and run, give it help.  A smart user will call your module with <code class="docutils literal notranslate"><span class="pre">--help</span></code>
-first to see what it does.  Encourage that behavior.</p>
+<p>Python provides an arguments parser, <code class="docutils literal notranslate"><span class="pre">argparse</span></code>, use it.  Let a user know how this thing
+is supposed to work.  Even if it’s supposed to just start up and run, give it help.
+A smart user will call your module with <code class="docutils literal notranslate"><span class="pre">--help</span></code> first to see what it does.
+<strong>Encourage that behavior.</strong></p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">c:\Python37&gt;</span>scripts\py_guide --help
+<span class="go">usage: py_guide [-h] [--show_menu] [--version]</span>
+<span class="go">                [--list_of_strings list [list ...]]</span>
+
+<span class="go">py_guide is a best practices module recommending a basic project structure for</span>
+<span class="go">a teams python projects. Best Practices help teams scale. Starting with it</span>
+<span class="go">before you scale the team is a good thing.</span>
+
+<span class="go">optional arguments:</span>
+<span class="go">  -h, --help            show this help message and exit</span>
+<span class="go">  --show_menu           When this parameter is provided the flag is set to</span>
+<span class="go">                        true. When true a console menu will be shown.</span>
+<span class="go">  --version             When this parameter is provided the version</span>
+<span class="go">                        information will be displayed.</span>
+<span class="go">  --list_of_strings list [list ...]</span>
+<span class="go">                        The list parameter will collect, then echo a list of</span>
+<span class="go">                        strings. This demonstrates the + value of nargs when</span>
+<span class="go">                        using the parser.</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="route-arguments">
 <h4>Route Arguments<a class="headerlink" href="#route-arguments" title="Permalink to this headline">¶</a></h4>
 <p>I think about a console application, parsing arguments, like routing things at a web server or firewall.  Therefore
-I normally take my parsed arguments and toss to a method which routes them.  The mthod, in turn, normaly tosses them
+I normally take my parsed arguments and toss to a method which routes them.  The method, in turn, normally tosses them
 to an action method for that route.</p>
 </div>
 <div class="section" id="action-arguments">
@@ -72,7 +93,9 @@ and taking action on that.</p>
 </div>
 <div class="section" id="web-applications">
 <h2>Web Applications<a class="headerlink" href="#web-applications" title="Permalink to this headline">¶</a></h2>
-<p>In the future, tips for this type of user interface.  Perhaps as simple as use django which seems popular in the space.</p>
+<p>In the future, tips for this type of user interface.</p>
+<p>API first with Flask and OpenAPI (swagger)?</p>
+<p>Dare I bother suggesting user interface?  Is that the domain of angular?</p>
 </div>
 </div>
 
@@ -84,7 +107,7 @@ and taking action on that.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Best Practice for __main__ method</a><ul>
+<li><a class="reference internal" href="#">Routing Pattern for __main__()</a><ul>
 <li><a class="reference internal" href="#console-apps">Console Apps</a><ul>
 <li><a class="reference internal" href="#a-generic-workflow-for-main">A Generic Workflow for __main__()</a><ul>
 <li><a class="reference internal" href="#parse-arguments">Parse Arguments</a></li>
