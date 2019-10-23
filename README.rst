@@ -7,10 +7,11 @@ Documentation
 ########################
 
 https://shawnjburke.github.io/py_guide/
+
 https://py-guide.readthedocs.io/en/latest/
 
 The docs are hosted with gitHub Pages, with html in the docs/ folder, powered by reStructured text markup in the
-data-source folder.  You can get to the root at `py_quide`.  They are also mirrored on Read the Docs.
+data_source folder.  You can get to the root at `py_quide`.  They are also mirrored on Read the Docs.
 
 ##########################
 Purpose of this Project
@@ -35,8 +36,7 @@ Best practice steps are organized as follows:
 Installation
 ############################
 
-At this time you can't install this module.  At a later version the installation will provide an interface to create
-the recommended project structure, documented here.
+This application can be installed via pip.
 
 ..  code-block:: Python
 
