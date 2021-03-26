@@ -81,7 +81,7 @@ if __name__ == "__main__":
           install_requires=[
               'configparser2==4.0.0',
               'Menu==3.1.0',
-              'Jinja2==2.10.1',
+              'Jinja2==2.11.3',
               'requests',
               'twine==1.13.0'
           ],
